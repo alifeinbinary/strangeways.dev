@@ -2,12 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>strangeways.dev</title>
+    <title>Strangeways Developments — Web & Application Development</title>
+    <meta name="description" content="Minimal, fast, and reliable web and application development. I design and build performant products with modern stacks and best practices." />
+    <link rel="canonical" href="https://strangeways.dev/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Strangeways Developments — Web & Application Development" />
+    <meta property="og:description" content="Minimal, fast, and reliable web and application development. I design and build performant products with modern stacks and best practices." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://strangeways.dev/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Strangeways Developments — Web & Application Development" />
+    <meta name="twitter:description" content="Minimal, fast, and reliable web and application development." />
+
+    <!-- Theme color for PWA/Chrome UI -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored ? stored : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+  
 </html>
