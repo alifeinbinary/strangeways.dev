@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import PortfolioCard from './components/PortfolioCard'
+import Preloader from './components/Preloader'
 import { portfolio } from './data/portfolio'
 
 function ObfuscatedEmail() {
@@ -20,6 +21,7 @@ function ObfuscatedEmail() {
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
+      <Preloader />
       <Header />
       <main>
         {/* Hero */}
@@ -76,7 +78,7 @@ export default function App() {
         </section>
       </main>
       <footer className="mt-auto border-t border-neutral-200 py-6 text-center text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-400">
-        © {new Date().getFullYear()} Strangeways Developments
+        © {new Date().getFullYear()} strangeways.dev
       </footer>
     </div>
   )
