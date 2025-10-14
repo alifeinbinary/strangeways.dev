@@ -4,6 +4,7 @@ import Preloader from './components/Preloader'
 import Booker from './components/Booker'
 import { portfolio } from './data/portfolio'
 import { Tools } from './components/Tools'
+import Services from './components/Services'
 
 function ObfuscatedEmail() {
   const user = 'studio'
@@ -30,20 +31,21 @@ export default function App() {
         <section className="container-responsive py-16 sm:py-24">
           <div className="max-w-3xl">
             <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-              Strangeways Developments
+              Modern web and application development
             </h1>
             <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-300">
-              Minimal, fast, and reliable web and application development. I design and build performant products with modern stacks and best practices.
+              We bring 18 years of experience to the table, delivering Minimal, fast, and reliable web and application development. I design and build performant products with modern stacks and best practices.
             </p>
           </div>
         </section>
-
+        {/* Services */}
+        <Services />
         {/* Work */}
         <section id="work" className="container-responsive py-8 sm:py-12">
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Selected work</h2>
             <a href="#contact" className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
-              Hire me →
+              Hire us →
             </a>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -79,6 +81,29 @@ export default function App() {
             >
               strangeways.dev
             </a>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-xl font-semibold tracking-tight">Contact</h2>
+              <form name="contact" method="POST" data-netlify="true" className='flex flex-col gap-4'>
+                <p>
+                  <label>Your Name: <input type="text" name="name" className='border border-neutral-200 rounded-md px-4 py-2' /></label>
+                </p>
+                <p>
+                  <label>Your Email: <input type="email" name="email" className='border border-neutral-200 rounded-md px-4 py-2' /></label>
+                </p>
+                <p>
+                  <label>Your Role: <select name="role[]" multiple className='border border-neutral-200 rounded-md px-4 py-2'>
+                    <option value="leader">Leader</option>
+                    <option value="follower">Follower</option>
+                  </select></label>
+                </p>
+                <p>
+                  <label>Message: <textarea name="message" className='border border-neutral-200 rounded-md px-4 py-2'></textarea></label>
+                </p>
+                <p>
+                  <button type="submit" className='bg-brand-600 text-white px-4 py-2 rounded-md'>Send</button>
+                </p>
+              </form>
+            </div>
           </div>
         </section>
       </main>
