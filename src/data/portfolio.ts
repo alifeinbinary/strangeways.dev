@@ -8,30 +8,57 @@ export type PortfolioItem = {
 
 export const portfolio: PortfolioItem[] = [
   {
-    id: 'example-1',
-    title: 'Acme SaaS Dashboard',
-    url: 'https://example.com/acme',
+    id: 'alifeinbinary',
+    title: 'A Life in Binary',
+    url: 'https://www.alifeinbinary.com',
     screenshot:
-      'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop',
+      '/alifeinbinary.webp',
     caseStudy:
-      'Designed and built a performant analytics dashboard with role-based access, realtime charts, and a blazing-fast Next.js frontend. Implemented CI/CD and observability.',
+      'Designed and built a performant serverless web application with an integrated music player, custom API, and audio visualiser. Built with React on the AWS platform.',
   },
   {
-    id: 'example-2',
-    title: 'Globex Marketing Site',
-    url: 'https://example.com/globex',
+    id: 'stegg',
+    title: 'Stegg',
+    url: 'https://stegg.alifeinbinary.com',
     screenshot:
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop',
+      '/stegg.webp',
     caseStudy:
-      'Delivered a multilingual, SEO-optimized marketing site with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
+      'Delivered a multilingual, SEO-optimized steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
   },
   {
-    id: 'example-3',
-    title: 'Initech Mobile Web App',
-    url: 'https://example.com/initech',
+    id: 'strangeways',
+    title: 'Strangeways Studios',
+    url: 'https://strangeways.co',
     screenshot:
-      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop',
+      '/strangeways.webp',
     caseStudy:
-      'Built a PWA with offline support, background sync, and push notifications. Reduced bundle size by 45% and improved TTI by 30%.',
+      'Built a serverless web application that sports an integrated music player, custom API, and 360 virtual tour. Built with React on the AWS platform.',
   },
+  {
+    id: 'musichall',
+    title: 'Music Hall',
+    url: 'https://musichall.band',
+    screenshot:
+      '/musichall.webp',
+    caseStudy:
+      'A static website for the band Music Hall. Built with React.',
+  },
+  {
+    id: 'occupythemovie',
+    title: 'Occupy The Movie',
+    url: 'https://occupythemovie.com',
+    screenshot:
+      '/occupythemovie.webp',
+    caseStudy:
+      'A static website for the award winning documentary film Occupy: The Movie. Built with React.',
+  },
+  {
+    id: 'attendtherapy',
+    title: 'Attend Therapy',
+    url: 'https://attendtherapy.com',
+    screenshot:
+      '/attendtherapy.webp',
+    caseStudy:
+      'A static website for the mental health platform Attend Therapy. Built with React.',
+  }
 ]

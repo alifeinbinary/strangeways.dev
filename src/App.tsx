@@ -1,7 +1,9 @@
 import Header from './components/Header'
 import PortfolioCard from './components/PortfolioCard'
 import Preloader from './components/Preloader'
+import Booker from './components/Booker'
 import { portfolio } from './data/portfolio'
+import { Tools } from './components/Tools'
 
 function ObfuscatedEmail() {
   const user = 'studio'
@@ -56,15 +58,18 @@ export default function App() {
           <div className="prose prose-neutral max-w-3xl dark:prose-invert">
             <h2>Approach</h2>
             <p>
-              I prioritize clarity, performance, and maintainability. Accessibility, responsive design, and SEO are first-class citizens.
-              I deliver quickly without compromising quality, with strong collaboration and documentation.
+              We prioritize clarity, performance, and maintainability. Accessibility, responsive design, and SEO are first-class citizens.
+              We deliver quickly without compromising quality, with strong collaboration and documentation.
             </p>
           </div>
         </section>
-
+        <section id="tools" className="container-responsive py-16">
+          <Tools />
+        </section>
         {/* Contact */}
         <section id="contact" className="container-responsive py-16">
           <div className="flex flex-wrap items-center gap-4">
+            <Booker />
             <ObfuscatedEmail />
             <a
               href="https://strangeways.dev"

@@ -3,7 +3,7 @@ import type { PortfolioItem } from '../data/portfolio'
 export default function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
     <article className="card flex flex-col overflow-hidden">
-      <a href={item.url} target="_blank" rel="noopener noreferrer" className="group relative block aspect-[16/9] overflow-hidden rounded-lg">
+      <a href={item.url} target="_blank" rel="noopener noreferrer" className="group relative block aspect-[13/9] overflow-hidden rounded-lg">
         <img
           src={item.screenshot}
           alt={item.title}
