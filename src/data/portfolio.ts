@@ -26,6 +26,15 @@ export const portfolio: PortfolioItem[] = [
       'Delivered a multilingual, SEO-optimized steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
   },
   {
+    id: 'ollami',
+    title: 'Ollami',
+    url: 'https://github.com/alifeinbinary/ollami',
+    screenshot:
+      '/ollami.webp',
+    caseStudy:
+      'Ollami is a cross-platform desktop application that allows users to run AI models locally. Built with SvelteKit and Python.',
+  },
+  {
     id: 'strangeways',
     title: 'Strangeways Studios',
     url: 'https://strangeways.co',

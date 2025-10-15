@@ -35,7 +35,7 @@ body {
 }
 
 a {
-  @apply text-brand-600 underline-offset-2 hover:underline dark:text-brand-400;
+  @apply text-brand-600 underline-offset-2 hover:underline dark:text-brand-700;
 }
 
 .container-responsive {
