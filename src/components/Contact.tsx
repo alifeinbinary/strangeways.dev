@@ -31,7 +31,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="container-responsive py-8">
+        <section id="contact" className="container-responsive py-8 cv-auto">
             <div className="mb-6 text-center items-center">
                 <h2 className="text-3xl font-semibold tracking-tight">Get in touch</h2>
                 <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">We offer a free 15-minute consultation to discuss your project and answer any questions you may have.</p>

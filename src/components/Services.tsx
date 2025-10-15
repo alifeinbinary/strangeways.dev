@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Services() {
     return (
-        <section id="services" className="py-16 sm:py-24">
+        <section id="services" className="py-16 sm:py-24 cv-auto">
             <div className="container-responsive">
                 <div className="mb-8 max-w-3xl">
                     <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Services</h2>
