@@ -1,25 +1,11 @@
 import Header from './components/Header'
 import PortfolioCard from './components/PortfolioCard'
 import Preloader from './components/Preloader'
-import Booker from './components/Booker'
 import { portfolio } from './data/portfolio'
 import { Tools } from './components/Tools'
 import Services from './components/Services'
+import Contact from './components/Contact'
 
-function ObfuscatedEmail() {
-  const user = 'studio'
-  const domain = 'strangeways.co'
-  const addr = `${user}@${domain}`
-  const href = `mailto:${addr}`
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center gap-2 rounded-md border border-neutral-200 bg-white px-4 py-2 text-sm font-medium shadow-subtle transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800"
-    >
-      <span>Contact: {user}[at]{domain}</span>
-    </a>
-  )
-}
 
 export default function App() {
   return (
@@ -69,43 +55,7 @@ export default function App() {
           <Tools />
         </section>
         {/* Contact */}
-        <section id="contact" className="container-responsive py-16">
-          <div className="flex flex-wrap items-center gap-4">
-            <Booker />
-            <ObfuscatedEmail />
-            <a
-              href="https://strangeways.dev"
-              className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              strangeways.dev
-            </a>
-            <div className="flex flex-col gap-4">
-              <h2 className="text-xl font-semibold tracking-tight">Contact</h2>
-              <form name="contact" method="POST" data-netlify="true" className='flex flex-col gap-4'>
-                <p>
-                  <label>Your Name: <input type="text" name="name" className='border border-neutral-200 rounded-md px-4 py-2' /></label>
-                </p>
-                <p>
-                  <label>Your Email: <input type="email" name="email" className='border border-neutral-200 rounded-md px-4 py-2' /></label>
-                </p>
-                <p>
-                  <label>Your Role: <select name="role[]" multiple className='border border-neutral-200 rounded-md px-4 py-2'>
-                    <option value="leader">Leader</option>
-                    <option value="follower">Follower</option>
-                  </select></label>
-                </p>
-                <p>
-                  <label>Message: <textarea name="message" className='border border-neutral-200 rounded-md px-4 py-2'></textarea></label>
-                </p>
-                <p>
-                  <button type="submit" className='bg-brand-600 text-white px-4 py-2 rounded-md'>Send</button>
-                </p>
-              </form>
-            </div>
-          </div>
-        </section>
+        <Contact />
       </main>
       <footer className="mt-auto border-t border-neutral-200 py-6 text-center text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-400">
         © {new Date().getFullYear()} strangeways.dev

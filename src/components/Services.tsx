@@ -1,3 +1,6 @@
+import { faCloud, faFileInvoice, faGaugeSimpleHigh, faGear, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Services() {
     return (
         <section id="services" className="py-16 sm:py-24">
@@ -17,7 +20,7 @@ export default function Services() {
                             <ul className="mt-4 space-y-3 text-sm">
                                 <li className="flex items-start gap-3">
                                     <span className="mt-0.5 text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l7 3v6c0 5-3.5 9-7 11-3.5-2-7-6-7-11V5l7-3z"/></svg>
+                                        <FontAwesomeIcon icon={faShieldHalved} />
                                     </span>
                                     <span>
                                         <strong className="font-semibold">18+ years</strong> of hands-on web engineering and infrastructure.
@@ -25,7 +28,7 @@ export default function Services() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="mt-0.5 text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5a9 9 0 109 9h-2a7 7 0 11-7-7V5zM7 17l5-5 1 1-5 5H7z"/></svg>
+                                        <FontAwesomeIcon icon={faGaugeSimpleHigh} />
                                     </span>
                                     <span>
                                         <strong className="font-semibold">Performance-first</strong> delivery with modern stacks and rigorous fundamentals.
@@ -33,7 +36,7 @@ export default function Services() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="mt-0.5 text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-6h-1V8a5 5 0 10-10 0h2a3 3 0 016 0v3H6a2 2 0 00-2 2v7a2 2 0 002 2h12a2 2 0 002-2v-7a2 2 0 00-2-2z"/></svg>
+                                        <FontAwesomeIcon icon={faUnlock} />
                                     </span>
                                     <span>
                                         <strong className="font-semibold">Cost and lock-in mitigation</strong> via serverless and open-source where it fits.
@@ -41,7 +44,7 @@ export default function Services() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="mt-0.5 text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.4 13a7.96 7.96 0 000-2l2.1-1.6-2-3.4-2.5 1a8.1 8.1 0 00-1.7-1L13 2h-4l-.3 2.9a8.1 8.1 0 00-1.7 1l-2.5-1-2 3.4L4.6 11a7.96 7.96 0 000 2l-2.1 1.6 2 3.4 2.5-1c.5.4 1.1.7 1.7 1L9 22h4l.3-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.4L19.4 13zM12 15a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                        <FontAwesomeIcon icon={faFileInvoice} />
                                     </span>
                                     <span>
                                         <strong className="font-semibold">Engagements</strong> on retainer or hourly (2h minimum).
@@ -63,7 +66,7 @@ export default function Services() {
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 4-8 4-8-4 8-4zm0 7l8 4-8 4-8-4 8-4zm0 7l8 4-8 4-8-4 8-4z"/></svg>
+                                        <FontAwesomeIcon icon={faLayerGroup} />
                                     </span>
                                     <h3 className="text-lg font-semibold leading-tight">Hosted web applications</h3>
                                 </div>
@@ -78,15 +81,15 @@ export default function Services() {
                                 {/* Minimal diagram */}
                                 <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
                                     <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="12" y="40" width="90" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <text x="30" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-[10px]">Client</text>
-                                        <line x1="102" y1="60" x2="160" y2="60" className="stroke-neutral-400"/>
-                                        <rect x="160" y="28" width="90" height="64" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <text x="170" y="55" className="fill-neutral-600 dark:fill-neutral-300 text-[10px]">Cloudflare</text>
-                                        <text x="170" y="70" className="fill-neutral-600 dark:fill-neutral-300 text-[10px]">Workers</text>
-                                        <line x1="250" y1="60" x2="320" y2="60" className="stroke-neutral-400"/>
-                                        <rect x="320" y="28" width="70" height="64" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <text x="330" y="55" className="fill-neutral-600 dark:fill-neutral-300 text-[10px]">Payload</text>
+                                        <rect x="12" y="40" width="90" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <text x="30" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">Client</text>
+                                        <line x1="102" y1="60" x2="160" y2="60" className="stroke-neutral-400" />
+                                        <rect x="160" y="28" width="100" height="64" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <text x="170" y="55" className="fill-neutral-600 dark:fill-neutral-300 text-md">Cloudflare</text>
+                                        <text x="170" y="75" className="fill-neutral-600 dark:fill-neutral-300 text-md">Workers</text>
+                                        <line x1="260" y1="60" x2="320" y2="60" className="stroke-neutral-400" />
+                                        <rect x="320" y="40" width="80" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <text x="330" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">Payload</text>
                                     </svg>
                                 </div>
                             </article>
@@ -95,7 +98,7 @@ export default function Services() {
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18a4 4 0 010-8 5 5 0 019.6-1.2A4.5 4.5 0 1118 18H6z"/></svg>
+                                        <FontAwesomeIcon icon={faCloud} />
                                     </span>
                                     <h3 className="text-lg font-semibold leading-tight">Serverless on AWS</h3>
                                 </div>
@@ -109,17 +112,15 @@ export default function Services() {
                                 </ul>
                                 <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
                                     <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="12" y="40" width="90" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <text x="30" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-[10px]">Client</text>
-                                        <line x1="102" y1="60" x2="180" y2="60" className="stroke-neutral-400"/>
-                                        <rect x="180" y="28" width="70" height="64" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <text x="192" y="55" className="fill-neutral-600 dark:fill-neutral-300 text-[10px]">CF</text>
-                                        <text x="188" y="70" className="fill-neutral-600 dark:fill-neutral-300 text-[10px]">CDN</text>
-                                        <line x1="250" y1="60" x2="290" y2="60" className="stroke-neutral-400"/>
-                                        <circle cx="305" cy="60" r="18" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <text x="298" y="63" className="fill-neutral-600 dark:fill-neutral-300 text-[9px]">λ</text>
-                                        <line x1="323" y1="60" x2="365" y2="60" className="stroke-neutral-400"/>
-                                        <rect x="365" y="40" width="20" height="40" rx="4" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
+                                        <rect x="12" y="40" width="90" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <text x="30" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">Client</text>
+                                        <line x1="102" y1="60" x2="150" y2="60" className="stroke-neutral-400" />
+                                        <rect x="150" y="28" width="100" height="64" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <text x="162" y="55" className="fill-neutral-600 dark:fill-neutral-300 text-md">Cloudflare</text>
+                                        <text x="162" y="75" className="fill-neutral-600 dark:fill-neutral-300 text-md">CDN</text>
+                                        <line x1="250" y1="60" x2="290" y2="60" className="stroke-neutral-400" />
+                                        <circle cx="305" cy="60" r="28" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <text x="288" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">AWS</text>
                                     </svg>
                                 </div>
                             </article>
@@ -128,7 +129,7 @@ export default function Services() {
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 2h6v4h-6v-4z"/></svg>
+                                        <FontAwesomeIcon icon={faNetworkWired} />
                                     </span>
                                     <h3 className="text-lg font-semibold leading-tight">Open‑source alternatives to SaaS</h3>
                                 </div>
@@ -142,11 +143,11 @@ export default function Services() {
                                 </ul>
                                 <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
                                     <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="20" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <rect x="155" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <rect x="290" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <line x1="110" y1="60" x2="155" y2="60" className="stroke-neutral-400"/>
-                                        <line x1="245" y1="60" x2="290" y2="60" className="stroke-neutral-400"/>
+                                        <rect x="20" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <rect x="155" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <rect x="290" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <line x1="110" y1="60" x2="155" y2="60" className="stroke-neutral-400" />
+                                        <line x1="245" y1="60" x2="290" y2="60" className="stroke-neutral-400" />
                                     </svg>
                                 </div>
                             </article>
@@ -155,7 +156,7 @@ export default function Services() {
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.4 13a7.96 7.96 0 000-2l2.1-1.6-2-3.4-2.5 1a8.1 8.1 0 00-1.7-1L13 2h-4l-.3 2.9a8.1 8.1 0 00-1.7 1l-2.5-1-2 3.4L4.6 11a7.96 7.96 0 000 2l-2.1 1.6 2 3.4 2.5-1c.5.4 1.1.7 1.7 1L9 22h4l.3-2.9c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.4L19.4 13zM12 15a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                        <FontAwesomeIcon icon={faGear} />
                                     </span>
                                     <h3 className="text-lg font-semibold leading-tight">Tech infrastructure deployment</h3>
                                 </div>
@@ -169,11 +170,11 @@ export default function Services() {
                                 </ul>
                                 <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
                                     <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="20" y="20" width="70" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <circle cx="160" cy="60" r="18" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <rect x="220" y="20" width="70" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <line x1="90" y1="60" x2="142" y2="60" className="stroke-neutral-400"/>
-                                        <line x1="178" y1="60" x2="220" y2="60" className="stroke-neutral-400"/>
+                                        <rect x="20" y="20" width="70" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <circle cx="160" cy="60" r="18" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <rect x="220" y="20" width="70" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <line x1="90" y1="60" x2="142" y2="60" className="stroke-neutral-400" />
+                                        <line x1="178" y1="60" x2="220" y2="60" className="stroke-neutral-400" />
                                     </svg>
                                 </div>
                             </article>
@@ -182,7 +183,7 @@ export default function Services() {
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v6H4V5zm0 8h16v6H4v-6zm3 2h4v2H7v-2z"/></svg>
+                                        <FontAwesomeIcon icon={faServer} />
                                     </span>
                                     <h3 className="text-lg font-semibold leading-tight">Linux system administration</h3>
                                 </div>
@@ -196,10 +197,10 @@ export default function Services() {
                                 </ul>
                                 <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
                                     <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="40" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <rect x="170" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
-                                        <path d="M240 60 L300 60" className="stroke-neutral-400 fill-none"/>
-                                        <rect x="300" y="48" width="60" height="24" rx="6" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700"/>
+                                        <rect x="40" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <rect x="170" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <path d="M240 60 L300 60" className="stroke-neutral-400 fill-none" />
+                                        <rect x="300" y="48" width="60" height="24" rx="6" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
                                     </svg>
                                 </div>
                             </article>
