@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import AOS from 'aos';
 import Header from './components/Header'
 import Preloader from './components/Preloader'
 import Tools from './components/Tools'
@@ -13,12 +12,21 @@ import Booker from './components/Booker'
 
 export default function App() {
   useEffect(() => {
-    AOS.init({
-      duration: 500,
-      easing: 'ease-in-out',
-      delay: 50,
-      once: true
-    });
+    try {
+      const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      const hasAosElements = !!document.querySelector('[data-aos]');
+      if (!prefersReducedMotion && hasAosElements) {
+        import('aos').then((mod) => {
+          const AOS = mod.default;
+          AOS.init({
+            duration: 500,
+            easing: 'ease-in-out',
+            delay: 50,
+            once: true,
+          });
+        }).catch(() => {/* noop */});
+      }
+    } catch {}
   }, []);
   return (
     <div className="flex min-h-screen flex-col">

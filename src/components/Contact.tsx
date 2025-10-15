@@ -14,6 +14,22 @@ export default function Contact() {
             </a>
         )
     }
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const myForm = event.target;
+        const formData = new FormData(myForm as HTMLFormElement);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData as any).toString()
+        })
+            .then(() => console.log("Form successfully submitted"))
+            .catch(error => console.error(error));
+    };
+
     return (
         <section id="contact" className="container-responsive py-8">
             <div className="mb-6 text-center items-center">
@@ -36,7 +52,7 @@ export default function Contact() {
                 <article className="card md:col-span-2 flex flex-col overflow-hidden p-6" data-aos="fade-left">
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl font-semibold tracking-tight">Contact</h2>
-                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className='flex flex-col gap-4'>
+                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={handleSubmit} id="contact-form">
                             <input type="hidden" name="form-name" value="contact" />
                             <p className="hidden">
                                 <label>Don’t fill this out: <input name="bot-field" /></label>
