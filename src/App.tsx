@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
 import Header from './components/Header'
 import Preloader from './components/Preloader'
 import Tools from './components/Tools'
@@ -10,6 +12,14 @@ import Footer from './components/Footer'
 import Booker from './components/Booker'
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: 'ease-in-out',
+      delay: 50,
+      once: true
+    });
+  }, []);
   return (
     <div className="flex min-h-screen flex-col">
       <Preloader />

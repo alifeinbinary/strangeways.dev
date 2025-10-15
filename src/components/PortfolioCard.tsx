@@ -1,16 +1,6 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
 import type { PortfolioItem } from '../data/portfolio'
 
 export default function PortfolioCard({ item }: { item: PortfolioItem }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-sine',
-      delay: 100,
-      once: false
-    });
-  }, []);
   const baseDir = `/portfolio/${item.id}/`
   const baseName = item.id
   const srcSet = [320, 480, 640, 768, 960, 1200]

@@ -1,15 +1,5 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-
 export default function Contact() {
-    useEffect(() => {
-        AOS.init({
-            duration: 500,
-            easing: 'ease-in-out',
-            delay: 50,
-            once: false
-        });
-    }, []);
+
     function ObfuscatedEmail() {
         const user = 'studio'
         const domain = 'strangeways.co'

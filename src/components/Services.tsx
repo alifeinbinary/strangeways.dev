@@ -1,17 +1,7 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
 import { faCloud, faFileInvoice, faGaugeSimpleHigh, faGear, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Services() {
-    useEffect(() => {
-        AOS.init({
-            duration: 500,
-            easing: 'ease-in-out',
-            delay: 50,
-            once: false
-        });
-    }, []);
     return (
         <section id="services" className="py-16 sm:py-24">
             <div className="container-responsive">
