@@ -21,7 +21,12 @@ export default function Contact() {
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <article className="card flex flex-col overflow-hidden p-6">
-                    <h2 className="text-lg font-semibold tracking-tight">Email</h2>
+                    <h2 className="text-lg font-semibold tracking-tight">Mail</h2>
+                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Strangeways Studios</p>
+                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">PO Box 204</p>
+                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">V0R 2H0 </p>
+                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">British Columbia, Canada</p>
+                    <h2 className="mt-2 text-lg font-semibold tracking-tight">Email</h2>
                     <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Prefer email? We typically reply within one business day.</p>
                     <div className="mt-4">
                         <ObfuscatedEmail />
