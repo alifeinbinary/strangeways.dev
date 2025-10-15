@@ -11,8 +11,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'alifeinbinary',
     title: 'A Life in Binary',
     url: 'https://www.alifeinbinary.com',
-    screenshot:
-      '/alifeinbinary.webp',
+    screenshot: '/portfolio/alifeinbinary/alifeinbinary_768.webp',
     caseStudy:
       'Designed and built a performant serverless web application with an integrated music player, custom API, and audio visualiser. Built with React on the AWS platform.',
   },
@@ -20,8 +19,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'stegg',
     title: 'Stegg',
     url: 'https://stegg.alifeinbinary.com',
-    screenshot:
-      '/stegg.webp',
+    screenshot: '/portfolio/stegg/stegg_768.webp',
     caseStudy:
       'Delivered a multilingual, SEO-optimized steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
   },
@@ -29,8 +27,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'ollami',
     title: 'Ollami',
     url: 'https://github.com/alifeinbinary/ollami',
-    screenshot:
-      '/ollami.webp',
+    screenshot: '/portfolio/ollami/ollami_768.webp',
     caseStudy:
       'Ollami is a cross-platform desktop application that allows users to run AI models locally. Built with SvelteKit and Python.',
   },
@@ -38,8 +35,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'strangeways',
     title: 'Strangeways Studios',
     url: 'https://strangeways.co',
-    screenshot:
-      '/strangeways.webp',
+    screenshot: '/portfolio/strangeways/strangeways_768.webp',
     caseStudy:
       'Built a serverless web application that sports an integrated music player, custom API, and 360 virtual tour. Built with React on the AWS platform.',
   },
@@ -47,8 +43,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'musichall',
     title: 'Music Hall',
     url: 'https://musichall.band',
-    screenshot:
-      '/musichall.webp',
+    screenshot: '/portfolio/musichall/musichall_768.webp',
     caseStudy:
       'A static website for the band Music Hall. Built with React.',
   },
@@ -56,8 +51,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'occupythemovie',
     title: 'Occupy The Movie',
     url: 'https://occupythemovie.com',
-    screenshot:
-      '/occupythemovie.webp',
+    screenshot: '/portfolio/occupythemovie/occupythemovie_768.webp',
     caseStudy:
       'A static website for the award winning documentary film Occupy: The Movie. Built with React.',
   },
@@ -65,8 +59,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'attendtherapy',
     title: 'Attend Therapy',
     url: 'https://attendtherapy.com',
-    screenshot:
-      '/attendtherapy.webp',
+    screenshot: '/portfolio/attendtherapy/attendtherapy_768.webp',
     caseStudy:
       'A static website for the mental health platform Attend Therapy. Built with React.',
   }
