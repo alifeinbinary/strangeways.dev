@@ -1,6 +1,6 @@
 # Strangeways.dev
 
-Modern, fast, and minimal personal/portfolio site built with React, TypeScript, Vite, and Tailwind CSS. This repo contains the source for `strangeways.dev`, including a responsive layout, themed UI, and example components for pages like About, Contact, and a portfolio grid.
+Modern, fast, and minimal portfolio site built with React, TypeScript, Vite, and Tailwind CSS. This repo contains the source for `strangeways.dev`, including a responsive layout, themed UI, and example components for pages like About, Contact, and a portfolio grid.
 
 ---
 
