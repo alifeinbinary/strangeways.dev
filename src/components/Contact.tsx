@@ -1,4 +1,15 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+
 export default function Contact() {
+    useEffect(() => {
+        AOS.init({
+            duration: 500,
+            easing: 'ease-in-out',
+            delay: 50,
+            once: false
+        });
+    }, []);
     function ObfuscatedEmail() {
         const user = 'studio'
         const domain = 'strangeways.co'
@@ -20,7 +31,7 @@ export default function Contact() {
                 <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">We offer a free 15-minute consultation to discuss your project and answer any questions you may have.</p>
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                <article className="card flex flex-col overflow-hidden p-6">
+                <article className="card flex flex-col overflow-hidden p-6" data-aos="fade-right">
                     <h2 className="text-lg font-semibold tracking-tight">Mail</h2>
                     <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Strangeways Studios</p>
                     <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">PO Box 204</p>
@@ -32,7 +43,7 @@ export default function Contact() {
                         <ObfuscatedEmail />
                     </div>
                 </article>
-                <article className="card md:col-span-2 flex flex-col overflow-hidden p-6">
+                <article className="card md:col-span-2 flex flex-col overflow-hidden p-6" data-aos="fade-left">
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl font-semibold tracking-tight">Contact</h2>
                         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className='flex flex-col gap-4'>

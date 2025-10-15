@@ -1,6 +1,16 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
 import type { PortfolioItem } from '../data/portfolio'
 
 export default function PortfolioCard({ item }: { item: PortfolioItem }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-sine',
+      delay: 100,
+      once: false
+    });
+  }, []);
   const baseDir = `/portfolio/${item.id}/`
   const baseName = item.id
   const srcSet = [320, 480, 640, 768, 960, 1200]
@@ -8,7 +18,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
     .join(', ')
   const sizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
   return (
-    <article className="card flex flex-col overflow-hidden">
+    <article className="card flex flex-col overflow-hidden" data-aos="fade-up">
       <a href={item.url} target="_blank" rel="noopener noreferrer" className="group relative block aspect-[13/9] overflow-hidden rounded-lg">
         <img
           src={item.screenshot}

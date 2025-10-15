@@ -1,7 +1,17 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
 import { faCloud, faFileInvoice, faGaugeSimpleHigh, faGear, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Services() {
+    useEffect(() => {
+        AOS.init({
+            duration: 500,
+            easing: 'ease-in-out',
+            delay: 50,
+            once: false
+        });
+    }, []);
     return (
         <section id="services" className="py-16 sm:py-24">
             <div className="container-responsive">
@@ -63,7 +73,7 @@ export default function Services() {
                     <div className="lg:col-span-8">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                             {/* Hosted Web Applications */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
                                         <FontAwesomeIcon icon={faLayerGroup} />
@@ -95,7 +105,7 @@ export default function Services() {
                             </article>
 
                             {/* Serverless on AWS */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
                                         <FontAwesomeIcon icon={faCloud} />
@@ -126,7 +136,7 @@ export default function Services() {
                             </article>
 
                             {/* Open-source Alternatives */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
                                         <FontAwesomeIcon icon={faNetworkWired} />
@@ -153,7 +163,7 @@ export default function Services() {
                             </article>
 
                             {/* Tech Infrastructure Deployment */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
                                         <FontAwesomeIcon icon={faGear} />
@@ -180,7 +190,7 @@ export default function Services() {
                             </article>
 
                             {/* Linux System Administration */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
                                         <FontAwesomeIcon icon={faServer} />
@@ -207,7 +217,7 @@ export default function Services() {
                         </div>
 
                         {/* Process */}
-                        <div className="mt-10 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                        <div className="mt-10 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                             <h3 className="text-base font-semibold tracking-tight">Process</h3>
                             <ol className="mt-3 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
                                 <li>

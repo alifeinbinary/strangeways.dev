@@ -5,7 +5,6 @@ export default function Header() {
     <header className="border-b border-neutral-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-neutral-800 dark:bg-neutral-950/70">
       <div className="container-responsive flex items-center justify-between py-4">
         <a href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="h-2 w-2 rounded-full bg-brand-600 dark:bg-brand-400" />
           <span className="text-lg">Strangeways.dev</span>
         </a>
         <nav className="flex items-center gap-3">
