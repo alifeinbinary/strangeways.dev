@@ -1,3 +1,4 @@
+import { faRaspberryPi } from "@fortawesome/free-brands-svg-icons";
 import { faCloud, faFileInvoice, faGaugeSimpleHigh, faGear, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -194,6 +195,32 @@ export default function Services() {
                                     <li>Backups scheduled to S3 with cron.</li>
                                     <li>Hardening, patching, migrations, and HA setups.</li>
                                     <li>Monitoring and incident response readiness.</li>
+                                </ul>
+                                <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
+                                    <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
+                                        <rect x="40" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <rect x="170" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                        <path d="M240 60 L300 60" className="stroke-neutral-400 fill-none" />
+                                        <rect x="300" y="48" width="60" height="24" rx="6" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
+                                    </svg>
+                                </div>
+                            </article>
+
+                            {/* Embeddable devices */}
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
+                                        <FontAwesomeIcon icon={faRaspberryPi} />
+                                    </span>
+                                    <h3 className="text-lg font-semibold leading-tight">Embeddable devices</h3>
+                                </div>
+                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+                                    We design and build custom embedded devices for our clients.
+                                </p>
+                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                    <li>Custom embedded devices for our clients.</li>
+                                    <li>Custom embedded devices for our clients.</li>
+                                    <li>Custom embedded devices for our clients.</li>
                                 </ul>
                                 <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
                                     <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>

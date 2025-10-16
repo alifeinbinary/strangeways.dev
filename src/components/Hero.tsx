@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="container-responsive py-16 sm:py-24">
+        <section id="hero" className="container-responsive py-16 sm:py-24">
             <div className="max-w-3xl">
                 <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
                     Modern web and application development
