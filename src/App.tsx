@@ -8,7 +8,6 @@ import Hero from './components/Hero'
 import Work from './components/Work'
 import About from './components/About'
 import Footer from './components/Footer'
-import Booker from './components/Booker'
 import 'aos/dist/aos.css'
 
 export default function App() {
@@ -36,6 +35,15 @@ export default function App() {
       }
     } catch { }
   }, []);
+
+  useEffect(() => {
+    (async function () {
+      const { getCalApi } = await import("@calcom/embed-react");
+      const cal = await getCalApi({ "namespace": "15min", "embedJsUrl": "https://booking.strangeways.co/embed/embed.js" });
+      cal("floatingButton", { "calLink": "studio/15min", "calOrigin": "https://booking.strangeways.co", "config": { "layout": "month_view", "theme": "auto" }, "buttonText": "Book a free consultation", "hideButtonIcon": false, "buttonColor": "#1a1d3f", "buttonTextColor": "#f5f7ff" });
+      cal("ui", { "cssVarsPerTheme": { "light": { "cal-brand": "#1a1d3f" }, "dark": { "cal-brand": "#f5f7ff" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    })();
+  }, [])
   return (
     <div className="flex min-h-screen flex-col">
       <Preloader />
@@ -46,7 +54,6 @@ export default function App() {
         <Tools selected={selectedTools} onToggle={toggleTool} />
         <Work selected={selectedTools} onClear={clearTools} />
         <About />
-        <Booker />
         <Contact />
       </main>
       <Footer />
