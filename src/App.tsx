@@ -18,6 +18,7 @@ export default function App() {
       prev.includes(name) ? prev.filter((t) => t !== name) : [...prev, name]
     )
   }
+  const clearTools = () => setSelectedTools([])
   useEffect(() => {
     try {
       const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -43,7 +44,7 @@ export default function App() {
         <Hero />
         <Services />
         <Tools selected={selectedTools} onToggle={toggleTool} />
-        <Work selected={selectedTools} />
+        <Work selected={selectedTools} onClear={clearTools} />
         <About />
         <Booker />
         <Contact />
