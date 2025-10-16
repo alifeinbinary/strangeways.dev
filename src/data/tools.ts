@@ -68,11 +68,19 @@ export const tools: Tools[] = [
                 icon: ""
             },
             {
-                name: "PHP",
+                name: "Payload CMS",
                 icon: ""
             },
             {
-                name: "Python",
+                name: "Webiny",
+                icon: ""
+            },
+            {
+                name: "Strapi",
+                icon: ""
+            },
+            {
+                name: "Medusa",
                 icon: ""
             },
             {
@@ -80,7 +88,15 @@ export const tools: Tools[] = [
                 icon: ""
             },
             {
+                name: "Flask",
+                icon: ""
+            },
+            {
                 name: "Laravel",
+                icon: ""
+            },
+            {
+                name: "Wordpress",
                 icon: ""
             }
         ]

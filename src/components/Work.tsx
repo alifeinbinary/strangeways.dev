@@ -1,7 +1,14 @@
 import { portfolio } from "../data/portfolio"
 import PortfolioCard from "./PortfolioCard"
 
-export default function Work() {
+type WorkProps = {
+    selected: string[]
+}
+
+export default function Work({ selected }: WorkProps) {
+    const filtered = selected.length === 0
+        ? portfolio
+        : portfolio.filter((item) => selected.every((tag) => item.tools.includes(tag)))
     return (
         <section id="work" className="container-responsive py-8 sm:py-12 cv-auto">
             <div className="mb-6 flex items-end justify-between">
@@ -11,7 +18,7 @@ export default function Work() {
                 </a>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {portfolio.map((item) => (
+                {filtered.map((item) => (
                     <PortfolioCard key={item.id} item={item} />
                 ))}
             </div>

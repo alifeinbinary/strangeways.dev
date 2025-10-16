@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header'
 import Preloader from './components/Preloader'
 import Tools from './components/Tools'
@@ -12,6 +12,12 @@ import Booker from './components/Booker'
 import 'aos/dist/aos.css'
 
 export default function App() {
+  const [selectedTools, setSelectedTools] = useState<string[]>([])
+  const toggleTool = (name: string) => {
+    setSelectedTools((prev) =>
+      prev.includes(name) ? prev.filter((t) => t !== name) : [...prev, name]
+    )
+  }
   useEffect(() => {
     try {
       const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -36,8 +42,8 @@ export default function App() {
       <main>
         <Hero />
         <Services />
-        <Tools />
-        <Work />
+        <Tools selected={selectedTools} onToggle={toggleTool} />
+        <Work selected={selectedTools} />
         <About />
         <Booker />
         <Contact />
