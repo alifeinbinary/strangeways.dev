@@ -35,8 +35,19 @@ body {
   overflow-x: clip;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 a {
   @apply text-brand-600 underline-offset-2 hover:underline dark:text-brand-700;
+}
+
+h2 {
+  @apply text-4xl font-bold tracking-tight sm:text-3xl;
 }
 
 .container-responsive {

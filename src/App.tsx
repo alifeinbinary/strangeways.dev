@@ -9,6 +9,7 @@ import Work from './components/Work'
 import About from './components/About'
 import Footer from './components/Footer'
 import Booker from './components/Booker'
+import 'aos/dist/aos.css'
 
 export default function App() {
   useEffect(() => {
@@ -24,9 +25,9 @@ export default function App() {
             delay: 50,
             once: true,
           });
-        }).catch(() => {/* noop */});
+        }).catch(() => {/* noop */ });
       }
-    } catch {}
+    } catch { }
   }, []);
   return (
     <div className="flex min-h-screen flex-col">
@@ -35,9 +36,9 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <Tools />
         <Work />
         <About />
-        <Tools />
         <Booker />
         <Contact />
       </main>
