@@ -1,18 +1,23 @@
+import { tools, type Tools, type Tool } from "../data/tools"
+
 export default function Tools() {
     return (
         <section id="tools" className="container-responsive py-16">
-            <div className="prose prose-neutral max-w-3xl dark:prose-invert">
+            <div className="prose prose-neutral w-full max-w-none dark:prose-invert">
                 <h2>Tools</h2>
-                <p>Tools I use to build and deploy my projects.</p>
-                <ul className="list-none list-st">
-                    <li>Next.js</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>Git</li>
-                    <li>GitHub</li>
-                    <li>Netlify</li>
-                    <li>AWS</li>
-                </ul>
+                <p>We love building beautifully crafted, performant web digital products with the right tools.</p>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-4 lg:grid-cols-4">
+                    {tools.map((tool: Tools) => (
+                        <article className="card flex flex-col overflow-hidden">
+                            <h3>{tool.label}</h3>
+                            <ul className="flex flex-wrap gap-4 list-none p-0">
+                                {tool.tools.map((tool: Tool) => (
+                                    <li key={tool.name} className="px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 rounded-full text-sm">{tool.name}</li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     )
