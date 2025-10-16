@@ -4,6 +4,7 @@ export type PortfolioItem = {
   url: string
   screenshot: string
   caseStudy: string
+  tools: string[]
 }
 
 export const portfolio: PortfolioItem[] = [
@@ -14,6 +15,7 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/alifeinbinary/alifeinbinary_768.webp',
     caseStudy:
       'Designed and built a performant serverless web application with an integrated music player, custom API, and audio visualiser. Built with React on the AWS platform.',
+    tools: ['React', 'AWS', 'Cloudflare', 'Tailwind CSS', 'TypeScript', 'Webiny', 'Git', 'Node.js']
   },
   {
     id: 'stegg',
@@ -22,6 +24,7 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/stegg/stegg_768.webp',
     caseStudy:
       'Delivered a multilingual, SEO-optimized steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
+    tools: ['React', 'Github', 'Cloudflare', 'Tailwind CSS', 'TypeScript', 'Node.js', 'Git', 'AWS', 'Webiny']
   },
   {
     id: 'ollami',
@@ -30,6 +33,7 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/ollami/ollami_768.webp',
     caseStudy:
       'Ollami is a cross-platform desktop application that allows users to run AI models locally. Built with SvelteKit and Python.',
+    tools: ['SvelteKit', 'Python', 'Tailwind CSS', 'TypeScript', 'Docker', 'Git']
   },
   {
     id: 'strangeways',
@@ -38,6 +42,7 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/strangeways/strangeways_768.webp',
     caseStudy:
       'Built a serverless web application that sports an integrated music player, custom API, and 360 virtual tour. Built with React on the AWS platform.',
+    tools: ['React', 'AWS', 'Cloudflare', 'Webiny', 'Tailwind CSS', 'TypeScript', 'Git', 'Node.js']
   },
   {
     id: 'musichall',
@@ -46,6 +51,7 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/musichall/musichall_768.webp',
     caseStudy:
       'A static website for the band Music Hall. Built with React.',
+    tools: ['React', 'Netlify', 'Cloudflare', 'Tailwind CSS', 'TypeScript', 'Git']
   },
   {
     id: 'occupythemovie',
@@ -54,6 +60,7 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/occupythemovie/occupythemovie_768.webp',
     caseStudy:
       'A static website for the award winning documentary film Occupy: The Movie. Built with React.',
+    tools: ['React', 'Netlify', 'Cloudflare', 'Tailwind CSS', 'TypeScript', 'Git']
   },
   {
     id: 'attendtherapy',
@@ -62,5 +69,6 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/attendtherapy/attendtherapy_768.webp',
     caseStudy:
       'A static website for the mental health platform Attend Therapy. Built with React.',
+    tools: ['React', 'Netlify', 'Cloudflare', 'Tailwind CSS', 'TypeScript', 'Git']
   }
 ]
