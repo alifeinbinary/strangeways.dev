@@ -1,6 +1,6 @@
 # Strangeways.dev
 
-Modern, fast, and minimal portfolio site built with React, TypeScript, Vite, and Tailwind CSS. This repo contains the source for `strangeways.dev`, including a responsive layout, themed UI, and example components for pages like About, Contact, and a portfolio grid.
+Modern, fast, and minimal portfolio site built with React, TypeScript, Vite, and Tailwind CSS. This repo contains the source for software development company `strangeways.dev`, including a responsive layout, themed UI, and example components for pages like About, Contact, and a portfolio grid.
 
 ---
 
@@ -46,42 +46,14 @@ cd strangeways.dev
 
 Install dependencies:
 
-- Using pnpm
-
 ```bash
 pnpm install
 ```
 
-- Using npm
-
-```bash
-npm install
-```
-
-- Using yarn
-
-```bash
-yarn install
-```
-
 Run the development server:
-
-- Using pnpm
 
 ```bash
 pnpm dev
-```
-
-- Using npm
-
-```bash
-npm run dev
-```
-
-- Using yarn
-
-```bash
-yarn dev
 ```
 
 Then open the printed local URL (usually <http://localhost:5173/>) in your browser.
@@ -105,18 +77,6 @@ pnpm dev
 pnpm build
 pnpm preview
 pnpm lint
-
-# npm
-npm run dev
-npm run build
-npm run preview
-npm run lint
-
-# yarn
-yarn dev
-yarn build
-yarn preview
-yarn lint
 ```
 
 ---
@@ -148,12 +108,6 @@ strangeways.dev/
 ```bash
 # pnpm
 pnpm build
-
-# npm
-npm run build
-
-# yarn
-yarn build
 ```
 
 Preview the production build locally:
@@ -161,12 +115,6 @@ Preview the production build locally:
 ```bash
 # pnpm
 pnpm preview
-
-# npm
-npm run preview
-
-# yarn
-yarn preview
 ```
 
 ---
@@ -182,9 +130,15 @@ Contributions, issues, and feature requests are welcome! Please:
 
 ## License
 
-This project is licensed under the **MIT License**. You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this software.
+This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
 
-As a condition, the **copyright notice** and **permission notice** must be included
-in all copies or substantial portions of the Software. In simple terms, you can use this code in your own projects (including commercial), but you must **include attribution** to the original author.
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material
 
-See the full license text in `LICENSE`.
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **NonCommercial** — You may not use the material for commercial purposes.
+- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
+
+For more details, see the full license text in [LICENSE](LICENSE).
