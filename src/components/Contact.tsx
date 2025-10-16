@@ -1,3 +1,7 @@
+import { faCcAmex, faCcDiscover, faCcMastercard, faCcVisa } from "@fortawesome/free-brands-svg-icons"
+import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 export default function Contact() {
 
     function ObfuscatedEmail() {
@@ -18,8 +22,14 @@ export default function Contact() {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const myForm = event.target;
-        const formData = new FormData(myForm as HTMLFormElement);
+        const form = event.currentTarget;
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        const formData = new FormData(form);
 
         fetch("/", {
             method: "POST",
@@ -32,22 +42,34 @@ export default function Contact() {
 
     return (
         <section id="contact" className="container-responsive py-8 cv-auto">
-            <div className="mb-6 text-center items-center">
-                <h2 className="text-3xl font-semibold tracking-tight">Get in touch</h2>
-                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">We offer a free 15-minute consultation to discuss your project and answer any questions you may have.</p>
+            <div className="mb-8 max-w-3xl">
+                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Get in touch</h2>
+                <p className="mt-3 text-neutral-600 dark:text-neutral-300">
+                    We offer a free 15-minute consultation to discuss your project and answer any questions you may have.
+                </p>
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <article className="card flex flex-col overflow-hidden p-6" data-aos="fade-right">
-                    <h2 className="text-lg font-semibold tracking-tight">Mail</h2>
-                    <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">Strangeways Studios</p>
+                    <h3 className="text-lg font-semibold tracking-tight">Mail</h3>
+                    <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Strangeways Studios</p>
                     <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">PO Box 204</p>
                     <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">V0R 2H0 </p>
                     <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">British Columbia, Canada</p>
-                    <h2 className="mt-2 text-lg font-semibold tracking-tight">Email</h2>
-                    <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Prefer email? We typically reply within one business day.</p>
-                    <div className="mt-4">
+                    <h3 className="mt-4 text-lg font-semibold tracking-tight">Email</h3>
+                    {/* <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Prefer email? We typically reply within one business day.</p> */}
+                    <div className="mt-2">
                         <ObfuscatedEmail />
                     </div>
+                    <h3 className="mt-4 text-lg font-semibold tracking-tight">Pay an invoice</h3>
+                    <div className="mt-2 flex items-center gap-2 text-2xl">
+                        <FontAwesomeIcon icon={faCcMastercard} />
+                        <FontAwesomeIcon icon={faCcVisa} />
+                        <FontAwesomeIcon icon={faCcAmex} />
+                        <FontAwesomeIcon icon={faCcDiscover} />
+                        <FontAwesomeIcon icon={faMoneyBillTransfer} />
+                    </div>
+                    <a href="https://invoicing.strangeways.co/client/subscriptions/VolejRejNm/purchase" className="mt-2 inline-flex items-center justify-center gap-2 rounded-md border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-900 shadow-subtle transition hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:ring-offset-0 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800">Pay Invoice</a>
+
                 </article>
                 <article className="card md:col-span-2 flex flex-col overflow-hidden p-6" data-aos="fade-left">
                     <div className="flex flex-col gap-4">
@@ -60,16 +82,26 @@ export default function Contact() {
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="name" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Your Name</label>
-                                    <input id="name" required type="text" name="name" className='w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' />
+                                    <input id="name" required type="text" name="name" autoComplete="name" minLength={2} onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter your name (at least 2 characters).')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="Your Name" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="email" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Your Email</label>
-                                    <input id="email" required type="email" name="email" className='w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' />
+                                    <input id="email" required type="email" name="email" autoComplete="email" inputMode="email" onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter a valid email address.')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="your.email@example.com" />
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                <div className="flex flex-col gap-1">
+                                    <label htmlFor="phone" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Phone</label>
+                                    <input id="phone" required type="tel" name="phone" autoComplete="tel" inputMode="tel" pattern="^\\+?\\d{7,15}$" title="Use an international format like +15551234567 (7-15 digits, digits only)" onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter a valid phone number in international format, e.g. +15551234567.')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="+15551234567" />
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                    <label htmlFor="website" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Website</label>
+                                    <input id="website" required type="url" name="website" autoComplete="url" inputMode="url" onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter a valid URL including protocol, e.g. https://example.com.')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="https://your-website.com" />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <label htmlFor="message" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Message</label>
-                                <textarea id="message" required name="message" rows={5} className='w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white'></textarea>
+                                <textarea id="message" required name="message" rows={5} minLength={10} onInvalid={(e) => (e.currentTarget as HTMLTextAreaElement).setCustomValidity('Please enter a brief message (at least 10 characters).')} onInput={(e) => (e.currentTarget as HTMLTextAreaElement).setCustomValidity('')} className='form-textarea w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white'></textarea>
                             </div>
                             <div className="flex items-center justify-end">
                                 <button type="submit" className='inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white shadow-subtle transition hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500/30'>Send</button>

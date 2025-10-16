@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms" {
+  strategy: "base"; /* only generate global styles; or */
+}
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Tailwind v4 CSS-first theme tokens */
