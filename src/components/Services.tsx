@@ -52,11 +52,6 @@ export default function Services() {
                                     </span>
                                 </li>
                             </ul>
-                            <div className="mt-6">
-                                <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-brand-50 px-4 py-2 text-sm font-medium text-white shadow-subtle transition hover:bg-brand-100">
-                                    Book a free 15‑min consultation
-                                </a>
-                            </div>
                         </div>
                     </aside>
 
