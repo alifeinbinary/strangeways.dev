@@ -2,7 +2,7 @@ import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   return (
-    <header id="header" className="border-b border-neutral-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-neutral-800 dark:bg-neutral-950/70">
+    <header id="header" className="border-b border-neutral-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-neutral-800 dark:bg-neutral-950/70 z-20">
       <div className="container-responsive flex items-center justify-between py-4">
         <a href="/" className="flex items-center gap-2 font-semibold tracking-tight">
           <span className="text-lg italic tracking-normal">strangeways.dev</span>
