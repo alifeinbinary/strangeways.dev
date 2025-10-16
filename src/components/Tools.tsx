@@ -9,8 +9,12 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
     return (
         <section id="tools" className="container-responsive py-16">
             <div className="w-full max-w-none">
-                <h2>Tools</h2>
-                <p>We love building beautifully crafted, performant web digital products with the right tools.</p>
+                <div className="mb-8 max-w-3xl">
+                    <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Tools</h2>
+                    <p className="mt-3 text-neutral-600 dark:text-neutral-300">
+                        We love building beautifully crafted, performant web digital products with the right tools.
+                    </p>
+                </div>
                 <div className="grid grid-cols-1 gap-6 pt-3 sm:grid-cols-4 lg:grid-cols-4">
                     {tools.map((toolGroup: Tools) => (
                         <article key={toolGroup.label} className="card flex flex-col overflow-hidden">
