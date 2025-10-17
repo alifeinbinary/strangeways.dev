@@ -1,6 +1,8 @@
+import { useState } from "react"
 import { faCcAmex, faCcDiscover, faCcMastercard, faCcVisa } from "@fortawesome/free-brands-svg-icons"
 import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 export default function Contact() {
 
@@ -19,25 +21,41 @@ export default function Contact() {
         )
     }
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const [submitting, setSubmitting] = useState(false)
+    const [success, setSuccess] = useState(false)
+    const [error, setError] = useState<string | null>(null)
 
-        const form = event.currentTarget;
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+
+        const form = event.currentTarget
+        setError(null)
+        setSuccess(false)
 
         if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
+            form.reportValidity()
+            return
         }
 
-        const formData = new FormData(form);
+        const formData = new FormData(form)
+        setSubmitting(true)
 
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData as any).toString()
         })
-            .then(() => console.log("Form successfully submitted"))
-            .catch(error => console.error(error));
+            .then(() => {
+                setSuccess(true)
+                form.reset()
+            })
+            .catch((err) => {
+                console.error(err)
+                setError("Something went wrong. Please try again.")
+            })
+            .finally(() => {
+                setSubmitting(false)
+            })
     };
 
     return (
@@ -74,10 +92,20 @@ export default function Contact() {
                 <article className="card md:col-span-2 flex flex-col overflow-hidden p-6" data-aos="fade-left">
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl font-semibold tracking-tight">Contact</h2>
+                        {success && (
+                            <div className="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800 dark:border-green-900/50 dark:bg-green-950/50 dark:text-green-200">
+                                Thanks! Your message has been sent.
+                            </div>
+                        )}
+                        {error && (
+                            <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 dark:border-red-900/50 dark:bg-red-950/50 dark:text-red-200">
+                                {error}
+                            </div>
+                        )}
                         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={handleSubmit} id="contact-form">
                             <input type="hidden" name="form-name" value="contact" />
                             <p className="hidden">
-                                <label>Don’t fill this out: <input name="bot-field" /></label>
+                                <label>Don't fill this out: <input name="bot-field" /></label>
                             </p>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div className="flex flex-col gap-1">
@@ -103,8 +131,12 @@ export default function Contact() {
                                 <label htmlFor="message" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Message</label>
                                 <textarea id="message" required name="message" rows={5} minLength={10} onInvalid={(e) => (e.currentTarget as HTMLTextAreaElement).setCustomValidity('Please enter a brief message (at least 10 characters).')} onInput={(e) => (e.currentTarget as HTMLTextAreaElement).setCustomValidity('')} className='form-textarea w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white'></textarea>
                             </div>
+                            {/* Netlify reCAPTCHA widget. Netlify will render this on deployed site. */}
+                            <div data-netlify-recaptcha="true"></div>
                             <div className="flex items-center justify-end">
-                                <button type="submit" className='inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white shadow-subtle transition hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500/30'>Send</button>
+                                <button type="submit" disabled={submitting} className='inline-flex cursor-pointer items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white shadow-subtle transition hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500/30 disabled:cursor-not-allowed disabled:opacity-70'>
+                                    {submitting ? 'Sending…' : 'Send'}
+                                </button>
                             </div>
                         </form>
                     </div>
