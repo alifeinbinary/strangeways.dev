@@ -1,5 +1,5 @@
 import { faRaspberryPi } from "@fortawesome/free-brands-svg-icons";
-import { faCloud, faFileInvoice, faGaugeSimpleHigh, faGear, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { faCloud, faFileInvoice, faGaugeSimpleHigh, faGear, faHandshake, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Services() {
@@ -210,12 +210,12 @@ export default function Services() {
                                     <h3 className="text-lg font-semibold leading-tight">Embeddable devices</h3>
                                 </div>
                                 <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    We design and build custom embedded devices for our clients.
+                                    Embedded and edge AI devices with touchscreen interfaces, from prototype to pilot.
                                 </p>
                                 <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Custom embedded devices for our clients.</li>
-                                    <li>Custom embedded devices for our clients.</li>
-                                    <li>Custom embedded devices for our clients.</li>
+                                    <li>Python services with TypeScript React UIs for touch interfaces.</li>
+                                    <li>On‑device model inference and performance budgets; offline‑first UX.</li>
+                                    <li>OTA updates, device security hardening, logging, and remote diagnostics.</li>
                                 </ul>
                                 <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
                                     <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
@@ -225,6 +225,42 @@ export default function Services() {
                                         <rect x="300" y="48" width="60" height="24" rx="6" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
                                     </svg>
                                 </div>
+                            </article>
+
+                            {/* Engagement Models */}
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
+                                        <FontAwesomeIcon icon={faHandshake} />
+                                    </span>
+                                    <h3 className="text-lg font-semibold leading-tight">Engagement models</h3>
+                                </div>
+                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+                                    Flexible ways to work together, from white‑label delivery to retainers.
+                                </p>
+                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                    <li>White‑label for agencies and enterprise teams.</li>
+                                    <li>Staff augmentation / fractional tech lead.</li>
+                                    <li>Fixed‑scope projects and SLAs on retainers (2h minimum).</li>
+                                </ul>
+                            </article>
+
+                            {/* Security & Compliance */}
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
+                                        <FontAwesomeIcon icon={faShieldHalved} />
+                                    </span>
+                                    <h3 className="text-lg font-semibold leading-tight">Security & Compliance</h3>
+                                </div>
+                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+                                    Practical security baselines and compliance‑aligned workflows.
+                                </p>
+                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                    <li>Least privilege, IaC, backups, and patching cadence.</li>
+                                    <li>Dependency scanning, SAST/DAST, and CI/CD policy gates.</li>
+                                    <li>SOC2‑aligned practices, DPAs, and data residency options where applicable.</li>
+                                </ul>
                             </article>
                         </div>
 
