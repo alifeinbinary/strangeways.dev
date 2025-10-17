@@ -20,7 +20,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Strangeways Developments — Web & Application Development" />
-    <meta property="og:description" content="Minimal, fast, and reliable web and application development. I design and build performant products with modern stacks and best practices." />
+    <meta property="og:description" content="Minimal, fast, and reliable web and application development. We design and build performant products with modern stacks and best practices." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://strangeways.dev/" />
 
@@ -42,6 +42,48 @@
           if (theme === 'dark') document.documentElement.classList.add('dark');
         } catch (e) {}
       })();
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Strangeways Developments",
+      "url": "https://strangeways.dev/",
+      "logo": "https://strangeways.dev/icon.webp",
+      "sameAs": [
+        "https://github.com/alifeinbinary/strangeways.dev"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Strangeways Developments",
+      "url": "https://strangeways.dev/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://strangeways.dev/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Web and Application Development",
+      "provider": {
+        "@type": "Organization",
+        "name": "Strangeways Developments",
+        "url": "https://strangeways.dev/"
+      },
+      "areaServed": "Global",
+      "serviceType": "Software engineering, serverless, infrastructure as code, embedded UI/AI",
+      "url": "https://strangeways.dev/"
+    }
     </script>
   </head>
   <body>
