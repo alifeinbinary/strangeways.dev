@@ -9,11 +9,11 @@ export default function Hero() {
                     <picture>
                         <source
                             type="image/webp"
-                            srcSet="/hero/coder-at-desk_480.webp 480w, /hero/coder-at-desk_768.webp 768w, /hero/coder-at-desk_960.webp 960w, /hero/coder-at-desk_1200.webp 1200w"
+                            srcSet="/hero/cool-room_480.webp 480w, /hero/cool-room_768.webp 768w, /hero/cool-room_960.webp 960w, /hero/cool-room_1200.webp 1200w"
                             sizes="100vw"
                         />
                         <img
-                            src="/hero/coder-at-desk_768.webp"
+                            src="/hero/cool-room_768.webp"
                             alt=""
                             className="h-full w-full object-cover scale-110"
                             loading="eager"
@@ -36,7 +36,7 @@ export default function Hero() {
                             Modern web and application development
                         </h1>
                         <p className="mt-4 text-lg">
-                            We bring 18 years of experience to the table, delivering Minimal, fast, and reliable web and application development. I design and build performant products with modern stacks and best practices.
+                            We bring 18 years of experience to the table, delivering Minimal, fast, and reliable web and application development. We design and build performant products with modern stacks and best practices.
                         </p>
                     </div>
                 </div>

@@ -69,6 +69,6 @@ export const portfolio: PortfolioItem[] = [
     screenshot: '/portfolio/attendtherapy/attendtherapy_768.webp',
     caseStudy:
       'A static website for the mental health platform Attend Therapy. Built with React.',
-    tools: ['React', 'Netlify', 'Tailwind CSS', 'TypeScript', 'Git']
+    tools: ['React', 'Netlify', 'Bootstrap', 'TypeScript', 'Git']
   }
 ]
