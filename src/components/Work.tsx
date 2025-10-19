@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { portfolio } from "../data/portfolio"
 import PortfolioCard from "./PortfolioCard"
+import { Outlet } from "react-router-dom"
 
 type WorkProps = {
     selected: string[]
@@ -31,7 +32,7 @@ export default function Work({ selected, onClear }: WorkProps) {
         const a = [...arr]
         for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1))
-            ;[a[i], a[j]] = [a[j], a[i]]
+                ;[a[i], a[j]] = [a[j], a[i]]
         }
         return a
     }
@@ -46,6 +47,7 @@ export default function Work({ selected, onClear }: WorkProps) {
     const canCollapse = allShown && filtered.length > 3
     return (
         <section id="work" className="container-responsive py-8 sm:py-12 cv-auto">
+            <Outlet />
             <div className="mb-6 flex items-end justify-between">
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Selected work</h2>
                 <a href="#contact" className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
@@ -65,7 +67,7 @@ export default function Work({ selected, onClear }: WorkProps) {
                     <button
                         type="button"
                         onClick={onClear}
-                        className="ml-auto inline-flex items-center gap-1 rounded-full border border-neutral-300 px-3 py-1 text-xs text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
+                        className="ml-auto cursor-pointer inline-flex items-center gap-1 rounded-full border border-neutral-300 px-3 py-1 text-xs text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
                         aria-label="Clear active filters"
                     >
                         Clear
@@ -83,7 +85,7 @@ export default function Work({ selected, onClear }: WorkProps) {
                         <button
                             type="button"
                             onClick={handleShuffle}
-                            className="inline-flex items-center gap-1 rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
+                            className="inline-flex items-center gap-1 cursor-pointer rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
                             aria-label="Shuffle work order"
                         >
                             Shuffle
@@ -93,7 +95,7 @@ export default function Work({ selected, onClear }: WorkProps) {
                         <button
                             type="button"
                             onClick={handleShowMore}
-                            className="inline-flex items-center gap-1 rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
+                            className="inline-flex items-center gap-1 cursor-pointer rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
                             aria-label="Show more work items"
                         >
                             Show more
@@ -103,7 +105,7 @@ export default function Work({ selected, onClear }: WorkProps) {
                         <button
                             type="button"
                             onClick={handleCollapse}
-                            className="inline-flex items-center gap-1 rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
+                            className="inline-flex items-center gap-1 cursor-pointer rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
                             aria-label="Collapse work items to first three"
                         >
                             Collapse

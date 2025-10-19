@@ -1,4 +1,5 @@
 import type { PortfolioItem } from '../data/portfolio'
+import { Link } from 'react-router-dom'
 
 export default function PortfolioCard({ item }: { item: PortfolioItem }) {
   const baseDir = `/portfolio/${item.id}/`
@@ -8,8 +9,9 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
     .join(', ')
   const sizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
   return (
+
     <article className="card flex flex-col overflow-hidden" data-aos="fade-up">
-      <a href={item.url} target="_blank" rel="noopener noreferrer" className="group relative block aspect-[13/9] overflow-hidden rounded-lg">
+      <Link to={`/${item.id}`} className="group relative block aspect-[13/9] overflow-hidden rounded-lg">
         <img
           src={item.screenshot}
           srcSet={srcSet}
@@ -21,16 +23,16 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
           width={13}
           height={9}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition group-hover:opacity-100" />
-      </a>
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 transition group-hover:opacity-100" />
+      </Link>
       <div className="mt-4">
         <h3 className="text-lg font-semibold leading-tight">
-          <a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
-            {item.title}
-          </a>
+          {item.title}
         </h3>
         <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{item.caseStudy}</p>
       </div>
     </article>
+
   )
 }

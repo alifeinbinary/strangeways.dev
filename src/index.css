@@ -46,7 +46,7 @@ body {
 }
 
 a {
-  @apply text-brand-800 underline-offset-2 hover:underline dark:text-brand-200;
+  @apply text-brand-800 underline-offset-2 dark:text-brand-200;
 }
 
 h2 {

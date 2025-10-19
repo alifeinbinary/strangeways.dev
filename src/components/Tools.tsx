@@ -9,8 +9,8 @@ type ToolsProps = {
 export default function Tools({ selected, onToggle }: ToolsProps) {
     return (
         <section id="tools" className="container py-0 sm:py-4 px-0 sm:px-4">
-            <div className="relative h-[50vh] overflow-hidden">
-                <div className="h-[50vh] relative py-8 px-0 sm:px-4">
+            <div className="relative h-[500px] overflow-hidden">
+                <div className="h-[500px] relative py-8 px-0 sm:px-4">
                     {/* Parallaxed image */}
                     <Parallax translateY={[-20, 10]} disabled={false} className="absolute inset-0 z-0">
                         <picture>
