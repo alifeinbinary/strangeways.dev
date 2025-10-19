@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faq } from '../data/faq'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faq } from '../data/faq'
 
 export default function FAQ() {
     return (
@@ -18,7 +18,11 @@ export default function FAQ() {
                             </span>
                         </summary>
                         <div className="mt-3 text-neutral-600 dark:text-neutral-300">
-                            {item.answer}
+                            {typeof item.answer === 'string' ? (
+                                item.answer
+                            ) : (
+                                <div dangerouslySetInnerHTML={item.answer} />
+                            )}
                         </div>
                     </details>
                 ))}

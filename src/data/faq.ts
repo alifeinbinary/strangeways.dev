@@ -1,11 +1,20 @@
-export const faq = [
+type FAQAnswer = string | { __html: string };
+
+export interface FAQItem {
+    question: string;
+    answer: FAQAnswer;
+}
+
+export const faq: FAQItem[] = [
     {
         question: "What is Strangeways?",
-        answer: "Strangeways is a software development agency based in the British Columbia, Canada. It was founded by Andrew Halliwell in 2007 after working in e-commerce in London, UK. It is affiliated with a recording studio by the same name on Vancouver Island, which was also founded by Andrew in 2015."
+        answer: {
+            __html: "Strangeways is a software development agency based in British Columbia, Canada. It was founded by Andrew Halliwell in 2007 after working in e-commerce in London, UK. It is affiliated with <a href='https://strangeways.co' target='_blank' rel='noopener noreferrer' class='text-blue-600 hover:underline dark:text-blue-400'>a recording studio by the same name</a> on Vancouver Island, which was also founded by Andrew in 2015."
+        }
     },
     {
         question: "Do you use Shopify or other site builders?",
-        answer: "We don’t. We deliver fully custom solutions tailored to your requirements, with performance, accessibility, and long-term scalability that off‑the‑shelf site builders can’t reliably provide."
+        answer: "We don't. We deliver fully custom solutions tailored to your requirements, with performance, accessibility, and long-term scalability that off-the-shelf site builders can't reliably provide."
     },
     {
         question: "Do you outsource work overseas?",
@@ -40,11 +49,11 @@ export const faq = [
         answer: "We assess impact, update scope and timelines transparently, and proceed only with your approval."
     },
     {
-        question: "Can you work with my in‑house team?",
+        question: "Can you work with my in-house team?",
         answer: "Absolutely. We can collaborate, integrate with your workflows, and contribute to your repos and CI/CD."
     },
     {
         question: "Do you guarantee your work?",
-        answer: "We provide a post‑launch warranty window for critical bug fixes and stand behind our code quality."
+        answer: "We provide a post-launch warranty window for critical bug fixes and stand behind our code quality."
     }
 ]
