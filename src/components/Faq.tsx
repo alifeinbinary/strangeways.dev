@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faq } from '../data/faq'
 
-export default function FAQ() {
+export default function Faq() {
     return (
         <section id="faq" className="container-responsive py-8 sm:py-12 cv-auto">
             <div className="mb-6 flex items-end justify-between">
