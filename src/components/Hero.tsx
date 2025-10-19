@@ -3,7 +3,7 @@ import { Parallax } from "react-scroll-parallax"
 export default function Hero() {
     return (
         <section id="hero" className="container py-0 sm:py-4 px-0 sm:px-4">
-            <div className="relative h-[50vh] overflow-hidden">
+            <div className="relative h-[500px] overflow-hidden">
                 {/* Parallaxed image */}
                 <Parallax translateY={[-20, 20]} disabled={false} className="absolute inset-0 z-0">
                     <picture>
