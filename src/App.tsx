@@ -8,6 +8,7 @@ import Hero from './components/Hero'
 import Work from './components/Work'
 import About from './components/About'
 import Footer from './components/Footer'
+import FAQ from './components/FAQ'
 import 'aos/dist/aos.css'
 
 export default function App() {
@@ -55,6 +56,7 @@ export default function App() {
         <Work selected={selectedTools} onClear={clearTools} />
         <About />
         <Contact />
+        <FAQ />
       </main>
       <Footer />
     </div>
