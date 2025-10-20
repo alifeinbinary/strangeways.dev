@@ -5,6 +5,12 @@ import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
 
   return (
     <header id="header" className="border-b border-neutral-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-neutral-800 dark:bg-neutral-950/70 z-20">
@@ -15,9 +21,27 @@ export default function Header() {
         </a>
         <div className="flex items-center gap-3">
           <nav className="hidden md:flex items-center gap-3">
-            <a href="#work" className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">Work</a>
-            <a href="#about" className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">About</a>
-            <a href="#contact" className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">Contact</a>
+            <a
+              href="#work"
+              onClick={(e) => { e.preventDefault(); scrollToId('work') }}
+              className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+            >
+              Work
+            </a>
+            <a
+              href="#about"
+              onClick={(e) => { e.preventDefault(); scrollToId('about') }}
+              className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+            >
+              About
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollToId('contact') }}
+              className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+            >
+              Contact
+            </a>
             <ThemeToggle />
           </nav>
           <button
@@ -35,9 +59,27 @@ export default function Header() {
       {open && (
         <nav id="mobile-menu" className="md:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950">
           <div className="container-responsive py-3 flex flex-col gap-2">
-            <a onClick={() => setOpen(false)} href="#work" className="py-2 text-base text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white">Work</a>
-            <a onClick={() => setOpen(false)} href="#about" className="py-2 text-base text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white">About</a>
-            <a onClick={() => setOpen(false)} href="#contact" className="py-2 text-base text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white">Contact</a>
+            <a
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollToId('work') }}
+              href="#work"
+              className="py-2 text-base text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white"
+            >
+              Work
+            </a>
+            <a
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollToId('about') }}
+              href="#about"
+              className="py-2 text-base text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white"
+            >
+              About
+            </a>
+            <a
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollToId('contact') }}
+              href="#contact"
+              className="py-2 text-base text-neutral-700 hover:text-neutral-900 dark:text-neutral-200 dark:hover:text-white"
+            >
+              Contact
+            </a>
             <div className="py-2"><ThemeToggle /></div>
           </div>
         </nav>
