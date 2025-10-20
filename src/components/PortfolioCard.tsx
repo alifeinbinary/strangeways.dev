@@ -30,7 +30,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
         <h3 className="text-lg font-semibold leading-tight">
           {item.title}
         </h3>
-        <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{item.caseStudy}</p>
+        <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">{item.shortDescription}</p>
       </div>
     </article>
 
