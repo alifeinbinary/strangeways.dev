@@ -1,5 +1,5 @@
 import { faRaspberryPi } from "@fortawesome/free-brands-svg-icons";
-import { faCloud, faFileInvoice, faGaugeSimpleHigh, faGear, faHandshake, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { faFileInvoice, faGaugeSimpleHigh, faHandshake, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Services() {
@@ -9,7 +9,7 @@ export default function Services() {
                 <div className="mb-8 max-w-3xl">
                     <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Services</h2>
                     <p className="mt-3 text-neutral-600 dark:text-neutral-300">
-                        We help medium to large organizations, venture-backed startups, and agencies reduce tech costs, avoid vendor lock-in, and ship performant software with confidence.
+                        We help medium to large organisations, venture-backed start-ups, and agencies reduce tech costs, avoid vendor lock-in, and ship high-performance software with confidence.
                     </p>
                 </div>
 
@@ -53,155 +53,48 @@ export default function Services() {
                                 </li>
                             </ul>
                         </div>
+                        {/* Engagement Models */}
+                        <div className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
+                            <div className="flex items-center gap-3">
+                                <span className="text-brand-600 dark:text-brand-400" aria-hidden>
+                                    <FontAwesomeIcon icon={faHandshake} />
+                                </span>
+                                <h3 className="text-lg font-semibold leading-tight">Engagement models</h3>
+                            </div>
+                            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+                                Flexible ways to work together, from white-label delivery to retainers.
+                            </p>
+                            <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                <li>White-label for agencies and enterprise teams.</li>
+                                <li>Staff augmentation / fractional tech lead.</li>
+                                <li>Fixed-scope projects and SLAs on retainers (2h minimum).</li>
+                            </ul>
+                        </div>
                     </aside>
 
                     {/* Service cards */}
                     <div className="lg:col-span-8">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                            {/* Hosted Web Applications */}
+                            {/* Web Application Development */}
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
                                         <FontAwesomeIcon icon={faLayerGroup} />
                                     </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Hosted web applications</h3>
+                                    <h3 className="text-lg font-semibold leading-tight">Web application development</h3>
                                 </div>
                                 <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Modern, maintainable apps with best-in-class performance, accessibility, and SEO.
+                                    Build secure, scalable applications—internal tools or public products—that evolve with your business.
                                 </p>
                                 <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Preferred: <strong>Payload CMS</strong> (Next.js under the hood) on <strong>Cloudflare Workers</strong>.</li>
-                                    <li>Also experienced: <strong>Laravel (PHP)</strong>, <strong>Django (Python)</strong>.</li>
-                                    <li>Security, observability, CI/CD baked in.</li>
+                                    <li>Architected for your context: serverless, containerised, or hybrid on major clouds.</li>
+                                    <li>Security and observability by default: SSO, RBAC, encryption, logs/metrics/traces.</li>
+                                    <li>CI/CD pipelines for safe, frequent releases; cost-aware designs to minimise cloud spend.</li>
+                                    <li>Expertise with Next.js/Payload, Laravel, Django, and modern front-end stacks.</li>
                                 </ul>
-                                {/* Minimal diagram */}
-                                <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
-                                    <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="12" y="40" width="90" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <text x="30" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">Client</text>
-                                        <line x1="102" y1="60" x2="160" y2="60" className="stroke-neutral-400" />
-                                        <rect x="160" y="28" width="100" height="64" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <text x="170" y="55" className="fill-neutral-600 dark:fill-neutral-300 text-md">Cloudflare</text>
-                                        <text x="170" y="75" className="fill-neutral-600 dark:fill-neutral-300 text-md">Workers</text>
-                                        <line x1="260" y1="60" x2="320" y2="60" className="stroke-neutral-400" />
-                                        <rect x="320" y="40" width="80" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <text x="330" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">Payload</text>
-                                    </svg>
-                                </div>
                             </article>
 
-                            {/* Serverless on AWS */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faCloud} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Serverless on AWS</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Scale-to-zero architectures that minimize ops and align cost with usage.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Frameworks: <strong>Webiny</strong>, <strong>SST.dev</strong>.</li>
-                                    <li>Provisioning with <strong>Pulumi</strong>.</li>
-                                    <li>Services: Lambda, API Gateway, DynamoDB, S3, CloudFront.</li>
-                                </ul>
-                                <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
-                                    <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="12" y="40" width="90" height="40" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <text x="30" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">Client</text>
-                                        <line x1="102" y1="60" x2="150" y2="60" className="stroke-neutral-400" />
-                                        <rect x="150" y="28" width="100" height="64" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <text x="162" y="55" className="fill-neutral-600 dark:fill-neutral-300 text-md">Cloudflare</text>
-                                        <text x="162" y="75" className="fill-neutral-600 dark:fill-neutral-300 text-md">CDN</text>
-                                        <line x1="250" y1="60" x2="290" y2="60" className="stroke-neutral-400" />
-                                        <circle cx="305" cy="60" r="28" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <text x="288" y="65" className="fill-neutral-600 dark:fill-neutral-300 text-md">AWS</text>
-                                    </svg>
-                                </div>
-                            </article>
-
-                            {/* Open-source Alternatives */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faNetworkWired} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Open‑source alternatives to SaaS</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Replace costly subscriptions with self-hosted tools where it makes sense, keeping control of your data.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>We deploy: Nextcloud, Invoice Ninja, Cal.com, Plunk, Postiz, Umami, n8n, and more.</li>
-                                    <li>TCO analysis to decide build vs. buy pragmatically.</li>
-                                    <li>Backups, monitoring, and security hardening included.</li>
-                                </ul>
-                                <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
-                                    <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="20" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <rect x="155" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <rect x="290" y="20" width="90" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <line x1="110" y1="60" x2="155" y2="60" className="stroke-neutral-400" />
-                                        <line x1="245" y1="60" x2="290" y2="60" className="stroke-neutral-400" />
-                                    </svg>
-                                </div>
-                            </article>
-
-                            {/* Tech Infrastructure Deployment */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faGear} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Tech infrastructure deployment</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Reproducible environments with Infrastructure as Code, CI/CD, and observability from day one.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>IaC with <strong>Pulumi</strong> (and team familiarity with Terraform/CDK).</li>
-                                    <li>GitHub Actions pipelines, secrets, and policy baselines.</li>
-                                    <li>Logging, metrics, and alerting baked in.</li>
-                                </ul>
-                                <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
-                                    <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="20" y="20" width="70" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <circle cx="160" cy="60" r="18" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <rect x="220" y="20" width="70" height="80" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <line x1="90" y1="60" x2="142" y2="60" className="stroke-neutral-400" />
-                                        <line x1="178" y1="60" x2="220" y2="60" className="stroke-neutral-400" />
-                                    </svg>
-                                </div>
-                            </article>
-
-                            {/* Linux System Administration */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faServer} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Linux system administration</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Secure, reliable Ubuntu Server operations with Cloudflare in front for protection.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Backups scheduled to S3 with cron.</li>
-                                    <li>Hardening, patching, migrations, and HA setups.</li>
-                                    <li>Monitoring and incident response readiness.</li>
-                                </ul>
-                                <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
-                                    <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="40" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <rect x="170" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <path d="M240 60 L300 60" className="stroke-neutral-400 fill-none" />
-                                        <rect x="300" y="48" width="60" height="24" rx="6" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                    </svg>
-                                </div>
-                            </article>
-
-                            {/* Embeddable devices */}
+                            {/* Embeddable Devices */}
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
@@ -210,56 +103,51 @@ export default function Services() {
                                     <h3 className="text-lg font-semibold leading-tight">Embeddable devices</h3>
                                 </div>
                                 <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Embedded and edge AI devices with touchscreen interfaces, from prototype to pilot.
+                                    Reliable, connected devices for kiosks, installations, industrial tools, and consumer products.
                                 </p>
                                 <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Python services with TypeScript React UIs for touch interfaces.</li>
-                                    <li>On‑device model inference and performance budgets; offline‑first UX.</li>
-                                    <li>OTA updates, device security hardening, logging, and remote diagnostics.</li>
-                                </ul>
-                                <div className="mt-4 rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
-                                    <svg viewBox="0 0 400 120" className="h-24 w-full" aria-hidden>
-                                        <rect x="40" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <rect x="170" y="30" width="70" height="60" rx="8" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                        <path d="M240 60 L300 60" className="stroke-neutral-400 fill-none" />
-                                        <rect x="300" y="48" width="60" height="24" rx="6" className="fill-white stroke-neutral-300 dark:fill-neutral-950 dark:stroke-neutral-700" />
-                                    </svg>
-                                </div>
-                            </article>
-
-                            {/* Engagement Models */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faHandshake} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Engagement models</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Flexible ways to work together, from white‑label delivery to retainers.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>White‑label for agencies and enterprise teams.</li>
-                                    <li>Staff augmentation / fractional tech lead.</li>
-                                    <li>Fixed‑scope projects and SLAs on retainers (2h minimum).</li>
+                                    <li>Custom firmware on Linux-based systems; CAD design for manufacturability and durability.</li>
+                                    <li>Integrations for connectivity, sensors, displays, and peripherals with field reliability.</li>
+                                    <li>OTA updates, secure boot, signed releases, remote diagnostics, and fleet management.</li>
+                                    <li>Path from rapid prototype to small-batch or scaled production, including compliance guidance.</li>
                                 </ul>
                             </article>
 
-                            {/* Security & Compliance */}
+                            {/* Agentic AI Infrastructure & Orchestration */}
                             <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                                 <div className="flex items-center gap-3">
                                     <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faShieldHalved} />
+                                        <FontAwesomeIcon icon={faNetworkWired} />
                                     </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Security & Compliance</h3>
+                                    <h3 className="text-lg font-semibold leading-tight">Agentic AI infrastructure & orchestration</h3>
                                 </div>
                                 <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Practical security baselines and compliance‑aligned workflows.
+                                    Deploy practical AI agents to automate workflows—on-prem for control, or in the cloud for speed.
                                 </p>
                                 <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Least privilege, IaC, backups, and patching cadence.</li>
-                                    <li>Dependency scanning, SAST/DAST, and CI/CD policy gates.</li>
-                                    <li>SOC2‑aligned practices, DPAs, and data residency options where applicable.</li>
+                                    <li>On-prem GPUs for data control or trusted providers (OpenAI, Anthropic, Gemini) for time-to-value.</li>
+                                    <li>Agents with retrieval (RAG), tool use, guardrails, and persistent memory across sessions.</li>
+                                    <li>Security and compliance by design: access controls, anonymisation, audit trails.</li>
+                                    <li>Evaluation harnesses, quality dashboards, human-in-the-loop, and clear ROI tracking.</li>
+                                </ul>
+                            </article>
+
+                            {/* Self-hosted Business Infrastructure */}
+                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
+                                        <FontAwesomeIcon icon={faServer} />
+                                    </span>
+                                    <h3 className="text-lg font-semibold leading-tight">Self-hosted business infrastructure</h3>
+                                </div>
+                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+                                    Reduce dependency on costly SaaS and regain control with secure, open-source systems.
+                                </p>
+                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                    <li>Replace select SaaS with FOSS equivalents deployed at the edge, in colo, or on-prem.</li>
+                                    <li>Identity and access across services with SSO, MFA, and policy enforcement.</li>
+                                    <li>Resilience and operations: backups, disaster recovery, observability, and lifecycle management.</li>
+                                    <li>Data sovereignty and regulatory alignment (GDPR, HIPAA, SOC 2 practices).</li>
                                 </ul>
                             </article>
                         </div>
