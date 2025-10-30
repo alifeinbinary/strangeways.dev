@@ -1,4 +1,5 @@
 import { Parallax } from "react-scroll-parallax"
+import { scrollToId } from "../theme/utils"
 
 export default function Hero() {
     return (
@@ -33,10 +34,18 @@ export default function Hero() {
                 <div className="relative z-20 flex h-full max-w-3xl items-end text-neutral-900 dark:text-neutral-300 px-4 sm:px-4 pb-8">
                     <div>
                         <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-                            Modern web and application development
+                            Modern applications, AI, and infrastructure—built for control and scale
                         </h1>
                         <p className="mt-4 text-lg">
-                            We bring 18 years of experience to the table, delivering Minimal, fast, and reliable web and application development. We design and build performant products with modern stacks and best practices.
+                            We design and deliver web apps, embeddable devices, agentic AI, and self‑hosted infrastructure. Reduce costs and lock‑in, improve security and reliability, and move from pilot to production with confidence.
+                        </p>
+                        <div className="mt-6 flex gap-3">
+                            <a onClick={(e) => { e.preventDefault(); scrollToId('services') }} className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black">
+                                See capabilities
+                            </a>
+                        </div>
+                        <p className="mt-3 text-sm text-neutral-700 dark:text-neutral-300/90">
+                            18+ years · Security‑first · Performance at global scale · Compliance‑ready
                         </p>
                     </div>
                 </div>

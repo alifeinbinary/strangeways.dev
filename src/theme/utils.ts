@@ -14,3 +14,10 @@ export function applyThemeClass(t: Theme) {
     root.classList.remove('dark')
   }
 }
+
+export const scrollToId = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }

@@ -2,15 +2,11 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons'
 import ThemeToggle from './ThemeToggle'
+import { scrollToId } from '../theme/utils'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const scrollToId = (id: string) => {
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
+
 
   return (
     <header id="header" className="border-b border-neutral-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-neutral-800 dark:bg-neutral-950/70 z-20">
@@ -34,6 +30,13 @@ export default function Header() {
               className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
             >
               About
+            </a>
+            <a
+              href="#faq"
+              onClick={(e) => { e.preventDefault(); scrollToId('faq') }}
+              className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+            >
+              FAQ
             </a>
             <a
               href="#contact"

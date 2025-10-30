@@ -4,6 +4,7 @@ import PortfolioCard from "./PortfolioCard"
 import { Outlet } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faShuffle } from "@fortawesome/free-solid-svg-icons"
+import { scrollToId } from "../theme/utils"
 
 type WorkProps = {
     selected: string[]
@@ -51,7 +52,7 @@ export default function Work({ selected, onClear }: WorkProps) {
         <section id="work" className="container-responsive py-8 sm:py-12 cv-auto">
             <div className="mb-6 flex items-end justify-between">
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Selected work</h2>
-                <a href="#contact" className="text-sm text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
+                <a onClick={(e) => { e.preventDefault(); scrollToId('contact') }} className="text-sm cursor-pointer text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
                     Hire us →
                 </a>
             </div>
