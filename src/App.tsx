@@ -9,6 +9,7 @@ import Work from './components/Work'
 import About from './components/About'
 import Footer from './components/Footer'
 import Faq from './components/Faq'
+import Results from './components/Results'
 import 'aos/dist/aos.css'
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <Results />
         <Tools selected={selectedTools} onToggle={toggleTool} />
         <Work selected={selectedTools} onClear={clearTools} />
         <About />
