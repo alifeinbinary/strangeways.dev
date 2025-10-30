@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://strangeways.dev/sitemap.xml
