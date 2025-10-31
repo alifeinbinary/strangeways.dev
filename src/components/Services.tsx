@@ -53,23 +53,6 @@ export default function Services() {
                                 </li>
                             </ul>
                         </div>
-                        {/* Engagement Models */}
-                        <div className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                            <div className="flex items-center gap-3">
-                                <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                    <FontAwesomeIcon icon={faHandshake} />
-                                </span>
-                                <h3 className="text-lg font-semibold leading-tight">Engagement models</h3>
-                            </div>
-                            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                Flexible ways to work together, from white-label delivery to retainers.
-                            </p>
-                            <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                <li>White-label for agencies and enterprise teams.</li>
-                                <li>Staff augmentation / fractional tech lead.</li>
-                                <li>Fixed-scope projects and SLAs on retainers (2h minimum).</li>
-                            </ul>
-                        </div>
                     </aside>
 
                     {/* Service cards */}
@@ -150,6 +133,43 @@ export default function Services() {
                                     <li>Data sovereignty and regulatory alignment (GDPR, HIPAA, SOC 2 practices).</li>
                                 </ul>
                             </article>
+                        </div>
+
+                        <div id="how-we-work" className="mt-10 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
+                            <h3 className="text-base font-semibold tracking-tight">How we work</h3>
+                            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Choose the engagement that fits your team and timeline.</p>
+                            <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                                <article className="card rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
+                                    <h4 className="text-sm font-semibold">White-label delivery</h4>
+                                    <ul className="mt-2 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                        <li>Ideal for agencies and enterprise teams.</li>
+                                        <li>Commitment: by project or retainer.</li>
+                                        <li>Billing: fixed or time & materials.</li>
+                                        <li>Confidentiality and code ownership respected.</li>
+                                    </ul>
+                                    <a href="#contact" className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400">Discuss this model</a>
+                                </article>
+                                <article className="card rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
+                                    <h4 className="text-sm font-semibold">Fractional / staff augmentation</h4>
+                                    <ul className="mt-2 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                        <li>Ideal for CTOs/teams needing extra velocity.</li>
+                                        <li>Commitment: flexible hours, 2h minimum.</li>
+                                        <li>Billing: hourly or monthly retainer.</li>
+                                        <li>SLA: agreed response times and cadence.</li>
+                                    </ul>
+                                    <a href="#contact" className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400">Discuss this model</a>
+                                </article>
+                                <article className="card rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
+                                    <h4 className="text-sm font-semibold">Fixed-scope projects</h4>
+                                    <ul className="mt-2 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
+                                        <li>Ideal for well-defined outcomes and POCs.</li>
+                                        <li>Commitment: milestone-based delivery.</li>
+                                        <li>Billing: fixed price by scope.</li>
+                                        <li>Includes handoff and documentation.</li>
+                                    </ul>
+                                    <a href="#contact" className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400">Discuss this model</a>
+                                </article>
+                            </div>
                         </div>
 
                         {/* Process */}
