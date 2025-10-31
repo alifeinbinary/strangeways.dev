@@ -59,7 +59,7 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                                                     aria-describedby={tipId}
                                                     onClick={() => onToggle(tool.name)}
                                                     className={[
-                                                        "px-3 pt-1 w-auto h-auto cursor-pointer rounded-full text-[32px] transition-colors",
+                                                        "px-3 pt-2 pb-0 w-auto h-auto cursor-pointer rounded-full text-[32px] transition-colors",
                                                         isSelected
                                                             ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                                                             : "bg-neutral-100 dark:bg-neutral-800 text-inherit"
@@ -69,7 +69,7 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                                                         {typeof tool.icon !== "string" ? (
                                                             <FontAwesomeIcon icon={tool.icon} style={{ color: "#7f95ff" }} />
                                                         ) : (
-                                                            <img src={tool.icon} alt={tool.name} width={24} height={24} className="object-contain" />
+                                                            <img src={tool.icon} alt={tool.name} width={30} height={30} className="object-contain" />
                                                         )}
                                                         {/* <span>{tool.name}</span> */}
                                                     </span>
