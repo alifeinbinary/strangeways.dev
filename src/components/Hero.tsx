@@ -3,7 +3,7 @@ import { scrollToId } from "../theme/utils"
 
 export default function Hero() {
     return (
-        <section id="hero" className="container py-0 sm:py-4 px-0 sm:px-4">
+        <section id="hero" className="container mx-auto max-w-7xl py-0 sm:py-4 px-0 sm:px-4">
             <div className="relative h-[500px] overflow-hidden">
                 {/* Parallaxed image */}
                 <Parallax translateY={[-20, 20]} disabled={false} className="absolute inset-0 z-0">
