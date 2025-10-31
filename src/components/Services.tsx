@@ -1,8 +1,26 @@
 import { faRaspberryPi } from "@fortawesome/free-brands-svg-icons";
-import { faFileInvoice, faGaugeSimpleHigh, faHandshake, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock } from "@fortawesome/free-solid-svg-icons";
+import { faFileInvoice, faGaugeSimpleHigh, faHandshake, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { services } from "../data/services";
+import { howWeWorkItems } from "../data/how-we-work";
+
+const iconMap: { [key: string]: any } = {
+    faLayerGroup,
+    faRaspberryPi,
+    faNetworkWired,
+    faServer
+};
 
 export default function Services() {
+    const [expandedCards, setExpandedCards] = useState<{ [key: string]: boolean }>({});
+
+    const toggleCard = (cardId: string) => {
+        setExpandedCards(prev => ({
+            ...prev,
+            [cardId]: !prev[cardId]
+        }));
+    };
     return (
         <section id="services" className="py-16 sm:py-24 cv-auto">
             <div className="container-responsive">
@@ -58,117 +76,85 @@ export default function Services() {
                     {/* Service cards */}
                     <div className="lg:col-span-8">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                            {/* Web Application Development */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faLayerGroup} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Web application development</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Build secure, scalable applications—internal tools or public products—that evolve with your business.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Architected for your context: serverless, containerised, or hybrid on major clouds.</li>
-                                    <li>Security and observability by default: SSO, RBAC, encryption, logs/metrics/traces.</li>
-                                    <li>CI/CD pipelines for safe, frequent releases; cost-aware designs to minimise cloud spend.</li>
-                                    <li>Expertise with Next.js/Payload, Laravel, Django, and modern front-end stacks.</li>
-                                </ul>
-                            </article>
-
-                            {/* Embeddable Devices */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faRaspberryPi} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Embeddable devices</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Reliable, connected devices for kiosks, installations, industrial tools, and consumer products.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Custom firmware on Linux-based systems; CAD design for manufacturability and durability.</li>
-                                    <li>Integrations for connectivity, sensors, displays, and peripherals with field reliability.</li>
-                                    <li>OTA updates, secure boot, signed releases, remote diagnostics, and fleet management.</li>
-                                    <li>Path from rapid prototype to small-batch or scaled production, including compliance guidance.</li>
-                                </ul>
-                            </article>
-
-                            {/* Agentic AI Infrastructure & Orchestration */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faNetworkWired} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Agentic AI infrastructure & orchestration</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Deploy practical AI agents to automate workflows—on-prem for control, or in the cloud for speed.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>On-prem GPUs for data control or trusted providers (OpenAI, Anthropic, Gemini) for time-to-value.</li>
-                                    <li>Agents with retrieval (RAG), tool use, guardrails, and persistent memory across sessions.</li>
-                                    <li>Security and compliance by design: access controls, anonymisation, audit trails.</li>
-                                    <li>Evaluation harnesses, quality dashboards, human-in-the-loop, and clear ROI tracking.</li>
-                                </ul>
-                            </article>
-
-                            {/* Self-hosted Business Infrastructure */}
-                            <article className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                        <FontAwesomeIcon icon={faServer} />
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-tight">Self-hosted business infrastructure</h3>
-                                </div>
-                                <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                                    Reduce dependency on costly SaaS and regain control with secure, open-source systems.
-                                </p>
-                                <ul className="mt-3 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                    <li>Replace select SaaS with FOSS equivalents deployed at the edge, in colo, or on-prem.</li>
-                                    <li>Identity and access across services with SSO, MFA, and policy enforcement.</li>
-                                    <li>Resilience and operations: backups, disaster recovery, observability, and lifecycle management.</li>
-                                    <li>Data sovereignty and regulatory alignment (GDPR, HIPAA, SOC 2 practices).</li>
-                                </ul>
-                            </article>
+                            {services.map((service) => (
+                                <article key={service.id} className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800 relative" data-aos="fade-up-left">
+                                    <div className="mb-12">
+                                        <div className={`transition-all duration-300 ${expandedCards[service.id] ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-brand-600 dark:text-brand-400" aria-hidden>
+                                                    <FontAwesomeIcon icon={iconMap[service.icon]} size="2xl" />
+                                                </span>
+                                                <h3 className="text-3xl font-semibold leading-tight">{service.title}</h3>
+                                            </div>
+                                            <p className="mt-2 text-xl text-neutral-600 dark:text-neutral-300">
+                                                {service.description}
+                                            </p>
+                                        </div>
+                                        <ul className={`list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200 transition-all duration-300 ${expandedCards[service.id] ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
+                                            {service.details.map((detail, index) => (
+                                                <li className="mb-2" key={index}>{detail}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div className="absolute bottom-5 left-5">
+                                        {expandedCards[service.id] ? (
+                                            <button
+                                                className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black"
+                                                onClick={(e) => { e.preventDefault(); toggleCard(service.id) }}
+                                            >
+                                                <FontAwesomeIcon icon={faTimes} className="mr-2" />
+                                                Close
+                                            </button>
+                                        ) : (
+                                            <button
+                                                className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black"
+                                                onClick={(e) => { e.preventDefault(); toggleCard(service.id) }}
+                                            >
+                                                Learn more
+                                            </button>
+                                        )}
+                                    </div>
+                                </article>
+                            ))}
                         </div>
 
                         <div id="how-we-work" className="mt-10 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
                             <h3 className="text-base font-semibold tracking-tight">How we work</h3>
                             <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Choose the engagement that fits your team and timeline.</p>
                             <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                                <article className="card rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
-                                    <h4 className="text-sm font-semibold">White-label delivery</h4>
-                                    <ul className="mt-2 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                        <li>Ideal for agencies and enterprise teams.</li>
-                                        <li>Commitment: by project or retainer.</li>
-                                        <li>Billing: fixed or time & materials.</li>
-                                        <li>Confidentiality and code ownership respected.</li>
-                                    </ul>
-                                    <a href="#contact" className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400">Discuss this model</a>
-                                </article>
-                                <article className="card rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
-                                    <h4 className="text-sm font-semibold">Fractional / staff augmentation</h4>
-                                    <ul className="mt-2 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                        <li>Ideal for CTOs/teams needing extra velocity.</li>
-                                        <li>Commitment: flexible hours, 2h minimum.</li>
-                                        <li>Billing: hourly or monthly retainer.</li>
-                                        <li>SLA: agreed response times and cadence.</li>
-                                    </ul>
-                                    <a href="#contact" className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400">Discuss this model</a>
-                                </article>
-                                <article className="card rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
-                                    <h4 className="text-sm font-semibold">Fixed-scope projects</h4>
-                                    <ul className="mt-2 list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200">
-                                        <li>Ideal for well-defined outcomes and POCs.</li>
-                                        <li>Commitment: milestone-based delivery.</li>
-                                        <li>Billing: fixed price by scope.</li>
-                                        <li>Includes handoff and documentation.</li>
-                                    </ul>
-                                    <a href="#contact" className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400">Discuss this model</a>
-                                </article>
+                                {howWeWorkItems.map((item) => (
+                                    <article key={item.id} className="card rounded-lg border border-neutral-200 p-4 dark:border-neutral-800 relative">
+                                        <div className="mb-8">
+                                            <div className={`transition-all duration-300 ${expandedCards[item.id] ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
+                                                <h4 className="text-2xl font-semibold">{item.title}</h4>
+                                                <p className="mt-2 text-lg text-neutral-600 dark:text-neutral-300">{item.summary}</p>
+                                            </div>
+                                            <ul className={`list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200 transition-all duration-300 ${expandedCards[item.id] ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
+                                                {item.details.map((detail, index) => (
+                                                    <li key={index}>{detail}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="absolute bottom-4 left-4">
+                                            {expandedCards[item.id] ? (
+                                                <button
+                                                    className="inline-flex items-center cursor-pointer text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400"
+                                                    onClick={(e) => { e.preventDefault(); toggleCard(item.id) }}
+                                                >
+                                                    <FontAwesomeIcon icon={faTimes} className="mr-2" />
+                                                    Close
+                                                </button>
+                                            ) : (
+                                                <button
+                                                    className="inline-block text-sm font-semibold text-brand-600 hover:underline dark:text-brand-400"
+                                                    onClick={(e) => { e.preventDefault(); toggleCard(item.id) }}
+                                                >
+                                                    Learn more
+                                                </button>
+                                            )}
+                                        </div>
+                                    </article>
+                                ))}
                             </div>
                         </div>
 
