@@ -1,5 +1,5 @@
 import { faRaspberryPi } from "@fortawesome/free-brands-svg-icons";
-import { faFileInvoice, faGaugeSimpleHigh, faHandshake, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faFileInvoice, faGaugeSimpleHigh, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { services } from "../data/services";
