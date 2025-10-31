@@ -1,7 +1,14 @@
+import { faAws, faBootstrap, faCloudflare, faCss, faDigitalOcean, faDocker, faGit, faGithub, faJs, faLaravel, faNode, faPhp, faPython, faReact, faUbuntu, faWordpressSimple, type IconDefinition } from "@fortawesome/free-brands-svg-icons"
+import ts from "../assets/typescript.svg"
+import payload from "../assets/payload.svg"
+import webiny from "../assets/webiny.svg"
+import sst from "../assets/sst.svg"
+import tailwind from "../assets/tailwind.svg"
+import sveltekit from "../assets/sveltekit.svg"
 
 export type Tool = {
     name: string
-    icon: string
+    icon: string | IconDefinition
 }
 
 export type Tools = {
@@ -15,48 +22,52 @@ export const tools: Tools[] = [
         tools: [
             {
                 name: "TypeScript",
-                icon: ""
+                icon: ts
             },
             {
                 name: "JavaScript",
-                icon: ""
+                icon: faJs
             },
             {
                 name: "PHP",
-                icon: ""
+                icon: faPhp
             },
             {
                 name: "Python",
-                icon: ""
+                icon: faPython
             },
-            {
-                name: "Bash",
-                icon: ""
-            }
+            // {
+            //     name: "Bash",
+            //     icon: ""
+            // }
         ]
     },
     {
         label: "Frontend",
         tools: [
-            {
-                name: "Next.js",
-                icon: ""
-            },
+            // {
+            //     name: "Next.js",
+            //     icon: ""
+            // },
             {
                 name: "React",
-                icon: ""
+                icon: faReact
             },
             {
-                name: "SvelteKit",
-                icon: ""
+                name: "Tailwind",
+                icon: tailwind
             },
             {
-                name: "Tailwind CSS",
-                icon: ""
+                name: "CSS",
+                icon: faCss
             },
             {
                 name: "Bootstrap",
-                icon: ""
+                icon: faBootstrap
+            },
+            {
+                name: "SvelteKit",
+                icon: sveltekit
             }
         ]
     },
@@ -65,39 +76,39 @@ export const tools: Tools[] = [
         tools: [
             {
                 name: "Node.js",
-                icon: ""
+                icon: faNode
             },
             {
                 name: "Payload CMS",
-                icon: ""
+                icon: payload
             },
             {
                 name: "Webiny",
-                icon: ""
+                icon: webiny
             },
             {
-                name: "Strapi",
-                icon: ""
+                name: "SST",
+                icon: sst
             },
-            {
-                name: "Medusa",
-                icon: ""
-            },
-            {
-                name: "Django",
-                icon: ""
-            },
-            {
-                name: "Flask",
-                icon: ""
-            },
+            // {
+            //     name: "Medusa",
+            //     icon: ""
+            // },
+            // {
+            //     name: "Django",
+            //     icon: ""
+            // },
+            // {
+            //     name: "Flask",
+            //     icon: ""
+            // },
             {
                 name: "Laravel",
-                icon: ""
+                icon: faLaravel
             },
             {
                 name: "Wordpress",
-                icon: ""
+                icon: faWordpressSimple
             }
         ]
     },
@@ -106,35 +117,35 @@ export const tools: Tools[] = [
         tools: [
             {
                 name: "Docker",
-                icon: ""
+                icon: faDocker
             },
             {
                 name: "Git",
-                icon: ""
+                icon: faGit
             },
             {
                 name: "GitHub",
-                icon: ""
+                icon: faGithub
             },
-            {
-                name: "Netlify",
-                icon: ""
-            },
+            // {
+            //     name: "Netlify",
+            //     icon: ""
+            // },
             {
                 name: "AWS",
-                icon: ""
+                icon: faAws
             },
             {
                 name: "Cloudflare",
-                icon: ""
+                icon: faCloudflare
             },
             {
                 name: "DigitalOcean",
-                icon: ""
+                icon: faDigitalOcean
             },
             {
                 name: "Ubuntu Server",
-                icon: ""
+                icon: faUbuntu
             }
         ]
     }

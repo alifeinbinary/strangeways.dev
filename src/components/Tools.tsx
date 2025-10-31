@@ -1,14 +1,6 @@
 import { tools, type Tools, type Tool } from "../data/tools"
 import { Parallax } from "react-scroll-parallax"
-import ts from "../assets/typescript.svg"
-import py from "../assets/python.svg"
-import cf from "../assets/cloudflare.svg"
-import react from "../assets/react.svg"
-import payload from "../assets/payload.svg"
-import webiny from "../assets/webiny.svg"
-import sst from "../assets/sst.svg"
-import aws from "../assets/aws.svg"
-import ubuntu from "../assets/ubuntu.svg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 type ToolsProps = {
     selected: string[]
@@ -17,9 +9,9 @@ type ToolsProps = {
 
 export default function Tools({ selected, onToggle }: ToolsProps) {
     return (
-        <section id="tools" className="container py-0 sm:py-4 px-0 sm:px-4">
-            <div className="relative h-[600px] overflow-hidden">
-                <div className="h-[600px] relative py-8 px-0 sm:px-4">
+        <section id="tools" className="container mx-auto max-w-7xl py-0 sm:py-4 px-0 sm:px-4">
+            <div className="relative h-[500px] overflow-hidden">
+                <div className="h-[500px] relative py-8 px-0 sm:px-4">
                     {/* Parallaxed image */}
                     <Parallax translateY={[-20, 10]} disabled={false} className="absolute inset-0 z-0">
                         <picture>
@@ -58,41 +50,44 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                                 <ul className="flex flex-wrap gap-4 list-none p-0">
                                     {toolGroup.tools.map((tool: Tool) => {
                                         const isSelected = selected.includes(tool.name)
+                                        const tipId = `tip-${tool.name.toLowerCase().replace(/\s+/g, '-')}`
                                         return (
-                                            <li key={tool.name}>
+                                            <li key={tool.name} className="relative group flex items-center align-middle">
                                                 <button
                                                     type="button"
                                                     aria-pressed={isSelected}
+                                                    aria-describedby={tipId}
                                                     onClick={() => onToggle(tool.name)}
                                                     className={[
-                                                        "px-3 py-1.5 cursor-pointer rounded-full text-sm transition-colors",
+                                                        "px-3 pt-1 w-auto h-auto cursor-pointer rounded-full text-[32px] transition-colors",
                                                         isSelected
                                                             ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                                                             : "bg-neutral-100 dark:bg-neutral-800 text-inherit"
                                                     ].join(" ")}
                                                 >
-                                                    {tool.name}
+                                                    <span className="inline-flex items-center gap-2 align-baseline">
+                                                        {typeof tool.icon !== "string" ? (
+                                                            <FontAwesomeIcon icon={tool.icon} style={{ color: "#7f95ff" }} />
+                                                        ) : (
+                                                            <img src={tool.icon} alt={tool.name} width={24} height={24} className="object-contain" />
+                                                        )}
+                                                        {/* <span>{tool.name}</span> */}
+                                                    </span>
                                                 </button>
+                                                <span
+                                                    id={tipId}
+                                                    role="tooltip"
+                                                    className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 rounded text-xs bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap z-20 shadow-md"
+                                                >
+                                                    {tool.name}
+                                                    <span className="absolute left-1/2 -translate-x-1/2 top-5 h-2 w-2 rotate-45 bg-neutral-900 dark:bg-white"></span>
+                                                </span>
                                             </li>
                                         )
                                     })}
                                 </ul>
                             </article>
                         ))}
-                    </div>
-                    <p className="mt-8 text-center text-sm text-neutral-700 dark:text-neutral-300 relative z-20">
-                        Selected technologies we design, deploy, and operate
-                    </p>
-                    <div className="mt-3 flex flex-wrap items-center justify-center gap-6 relative z-30">
-                        <img src={ts} width={64} height={64} alt="TypeScript" />
-                        <img src={py} width={64} height={64} alt="Python" />
-                        <img src={cf} width={64} height={64} alt="Cloudflare" />
-                        <img src={aws} width={64} height={64} alt="AWS" />
-                        <img src={react} width={64} height={64} alt="React" />
-                        <img src={payload} width={64} height={64} alt="Payload" />
-                        <img src={sst} width={64} height={64} alt="SST" />
-                        <img src={webiny} width={64} height={64} alt="Webiny" />
-                        <img src={ubuntu} width={64} height={64} alt="Ubuntu" />
                     </div>
                 </div>
             </div>
