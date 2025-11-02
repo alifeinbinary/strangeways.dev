@@ -52,7 +52,7 @@ export default function Work({ selected, onClear }: WorkProps) {
         <section id="work" className="container-responsive py-8 sm:py-12 cv-auto">
             <div className="mb-6 flex items-end justify-between">
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">Selected work</h2>
-                <a onClick={(e) => { e.preventDefault(); scrollToId('contact') }} className="text-sm cursor-pointer text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
+                <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToId('contact') }} className="text-sm cursor-pointer text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white">
                     Hire us →
                 </a>
             </div>

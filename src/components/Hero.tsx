@@ -40,7 +40,7 @@ export default function Hero() {
                             We design and deliver web apps, embeddable devices, agentic AI, and self-hosted infrastructure. Reduce costs and lock-in, improve security and reliability, and move from pilot to production with confidence.
                         </p>
                         <div className="mt-6 flex gap-3">
-                            <a onClick={(e) => { e.preventDefault(); scrollToId('services') }} className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black">
+                            <a href="#services" onClick={(e) => { e.preventDefault(); scrollToId('services') }} className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black">
                                 See capabilities
                             </a>
                         </div>

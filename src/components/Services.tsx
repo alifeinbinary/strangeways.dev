@@ -1,5 +1,4 @@
-import { faRaspberryPi } from "@fortawesome/free-brands-svg-icons";
-import { faFileInvoice, faGaugeSimpleHigh, faLayerGroup, faNetworkWired, faServer, faShieldHalved, faUnlock, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faFileInvoice, faMicrochip, faGaugeSimpleHigh, faLayerGroup, faRobot, faServer, faShieldHalved, faUnlock, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { services } from "../data/services";
@@ -7,8 +6,8 @@ import { howWeWorkItems } from "../data/how-we-work";
 
 const iconMap: { [key: string]: any } = {
     faLayerGroup,
-    faRaspberryPi,
-    faNetworkWired,
+    faMicrochip,
+    faRobot,
     faServer
 };
 
@@ -77,7 +76,7 @@ export default function Services() {
                     <div className="lg:col-span-8">
                         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                             {services.map((service) => (
-                                <article key={service.id} className="card rounded-xl border border-neutral-200 p-5 dark:border-neutral-800 relative" data-aos="fade-up-left">
+                                <article key={service.id} className="card rounded-xl min-h-72 border border-neutral-200 p-5 dark:border-neutral-800 relative" data-aos="fade-up-left">
                                     <div className="mb-12">
                                         <div className={`transition-all duration-300 ${expandedCards[service.id] ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
                                             <div className="flex items-center gap-3">

@@ -21,7 +21,7 @@ export const services: ServiceItem[] = [
   },
   {
     id: 'embeddable-devices',
-    icon: 'faRaspberryPi',
+    icon: 'faMicrochip',
     title: 'Embeddable devices',
     description: 'Reliable, connected devices for kiosks, installations, industrial tools, and consumer products.',
     details: [
@@ -33,7 +33,7 @@ export const services: ServiceItem[] = [
   },
   {
     id: 'agentic-ai',
-    icon: 'faNetworkWired',
+    icon: 'faRobot',
     title: 'Agentic AI infrastructure & orchestration',
     description: 'Deploy practical AI agents to automate workflows—on-prem for control, or in the cloud for speed.',
     details: [

@@ -57,6 +57,7 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                                                     type="button"
                                                     aria-pressed={isSelected}
                                                     aria-describedby={tipId}
+                                                    aria-label={tool.name}
                                                     onClick={() => onToggle(tool.name)}
                                                     className={[
                                                         "px-3 pt-2 pb-0 w-auto h-auto cursor-pointer rounded-full text-[32px] transition-colors",
