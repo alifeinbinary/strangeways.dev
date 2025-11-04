@@ -46,7 +46,7 @@ export default function Header() {
     }
 
     const lightColourList = colours.filter(color => calculateLuminance(color) > 0.25);
-    const darkColourList = colours.filter(color => calculateLuminance(color) <= 0.25);
+    const darkColourList = colours.filter(color => calculateLuminance(color) <= 0.75);
 
     const colourList = theme === 'light' ? darkColourList : lightColourList;
 
