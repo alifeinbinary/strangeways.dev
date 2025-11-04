@@ -33,14 +33,14 @@ export default function Hero() {
 
                 {/* Gradient overlay */}
                 <div
-                    className="pointer-events-none absolute inset-0 z-10 bg-linear-to-t from-white/90 via-white/60 to-transparent dark:from-black/90 dark:via-black/60"
+                    className="pointer-events-none absolute inset-0 z-10 bg-linear-to-t from-white/80 via-white/60 to-white/30 dark:from-black/80 dark:via-black/60 dark:to-transparent"
                     aria-hidden="true"
                 />
 
                 {/* Content */}
                 <div className="relative z-20 flex h-full max-w-3xl items-end px-4 pb-8 text-neutral-900 sm:px-4 dark:text-neutral-300">
                     <div>
-                        <h1 className="text-3xl font-semibold tracking-tight text-shadow-lg/10 text-shadow-neutral-300 sm:text-5xl dark:text-shadow-none">
+                        <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
                             Modern applications, AI, and infrastructure—built
                             for control and scale
                         </h1>
