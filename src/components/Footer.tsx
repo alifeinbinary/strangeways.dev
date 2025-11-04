@@ -5,14 +5,21 @@ export default function Footer() {
     return (
         <footer
             id="footer"
-            className="mt-auto border-t border-neutral-200 py-6 text-center text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-400"
+            className="mt-auto border-t border-neutral-200 py-6 text-center text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-400 dark:bg-neutral-900"
         >
             <img
-                src="/icon.webp"
+                width={64}
+                height={64}
+                src="/tesseract-dark.svg"
                 alt="Strangeways Developments"
-                width={186}
-                height={186}
-                className="mb-2 inline-flex h-9 w-auto items-center justify-center"
+                className="mb-2 inline-flex h-12 w-auto items-center justify-center dark:hidden"
+            />
+            <img
+                width={64}
+                height={64}
+                src="/tesseract-light.svg"
+                alt="Strangeways Developments"
+                className="hidden mb-2 h-12 w-auto items-center justify-center dark:inline-flex"
             />
             <span className="flex items-center justify-center gap-2">
                 © {new Date().getFullYear()} strangeways.dev

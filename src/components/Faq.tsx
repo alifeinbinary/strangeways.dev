@@ -20,7 +20,7 @@ export default function Faq() {
                         className="group p-4 hover:bg-neutral-50 dark:hover:bg-neutral-900"
                     >
                         <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                            <span className="group-open:text-bold text-base font-medium">
+                            <span className="text-base font-medium">
                                 {item.question}
                             </span>
                             <span className="text-xl leading-none transition-transform duration-500 ease-in-out select-none group-open:rotate-45">
