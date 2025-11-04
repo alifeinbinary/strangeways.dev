@@ -5,6 +5,8 @@ import { Outlet } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShuffle } from '@fortawesome/free-solid-svg-icons'
 import { scrollToId } from '../theme/utils'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import type { ResponsiveMasonryProps } from '../types'
 
 type WorkProps = {
     selected: string[]
@@ -31,14 +33,14 @@ export default function Work({ selected, onClear }: WorkProps) {
         selected.length === 0
             ? base
             : portfolio.filter((item) =>
-                  selected.every((tag) => item.tools.includes(tag))
-              )
+                selected.every((tag) => item.tools.includes(tag))
+            )
 
     function shuffleArray<T>(arr: T[]): T[] {
         const a = [...arr]
         for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1))
-            ;[a[i], a[j]] = [a[j], a[i]]
+                ;[a[i], a[j]] = [a[j], a[i]]
         }
         return a
     }
@@ -101,12 +103,31 @@ export default function Work({ selected, onClear }: WorkProps) {
                 </div>
             )}
             <div
-                className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                className=""
                 aria-live="polite"
             >
-                {filtered.slice(0, visibleCount).map((item) => (
-                    <PortfolioCard key={item.id} item={item} />
-                ))}
+                <ResponsiveMasonry
+                    {...({
+                        columnsCountBreakPoints: {
+                            320: 2,
+                            640: 2,
+                            768: 3,
+                            960: 3,
+                        },
+                        className: 'relative z-20',
+                        gutterBreakPoints: {
+                            320: '1rem',
+                            768: '1rem',
+                            960: '1rem',
+                        },
+                    } as ResponsiveMasonryProps)}
+                >
+                    <Masonry>
+                        {filtered.slice(0, visibleCount).map((item) => (
+                            <PortfolioCard key={item.id} item={item} />
+                        ))}
+                    </Masonry>
+                </ResponsiveMasonry>
             </div>
             {(canShuffle || canShowMore || canCollapse) && (
                 <div className="mt-6 flex items-center justify-center gap-3">

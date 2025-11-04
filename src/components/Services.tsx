@@ -13,12 +13,7 @@ import { useState } from 'react'
 import { services } from '../data/services'
 import { howWeWorkItems } from '../data/how-we-work'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-
-interface ResponsiveMasonryProps {
-    columnsCountBreakPoints: { [key: number]: number }
-    className?: string
-    gutterBreakPoints?: { [key: number]: string }
-}
+import type { ResponsiveMasonryProps } from '../types'
 
 const iconMap: { [key: string]: any } = {
     faLayerGroup,
@@ -169,8 +164,8 @@ export default function Services() {
                                                             <FontAwesomeIcon
                                                                 icon={
                                                                     iconMap[
-                                                                        service
-                                                                            .icon
+                                                                    service
+                                                                        .icon
                                                                     ]
                                                                 }
                                                                 size="2xl"
