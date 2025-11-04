@@ -1,8 +1,17 @@
 import { useState } from "react"
+import { useForm } from "react-hook-form"
 import { faCcAmex, faCcDiscover, faCcMastercard, faCcVisa } from "@fortawesome/free-brands-svg-icons"
 import { faMoneyBillTransfer } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+type FormValues = {
+    name: string
+    email: string
+    phone: string
+    website: string
+    message: string
+    'bot-field'?: string
+}
 
 export default function Contact() {
 
@@ -24,42 +33,50 @@ export default function Contact() {
     const [submitting, setSubmitting] = useState(false)
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState<string | null>(null)
+    const { register, handleSubmit: rhfHandleSubmit, reset } = useForm<FormValues>({
+        mode: 'onChange',
+    })
 
-    const submitForm = (form: HTMLFormElement) => {
-        setError(null)
-        setSuccess(false)
+    const encode = (obj: Record<string, string>) =>
+        Object.entries(obj)
+            .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+            .join('&')
 
-        if (!form.checkValidity()) {
-            form.reportValidity()
-            return
+    const onSubmit = async (data: FormValues, event?: React.BaseSyntheticEvent) => {
+        try {
+            setError(null)
+            setSuccess(false)
+            setSubmitting(true)
+
+            const formEl = (event?.target as HTMLFormElement) ?? document.getElementById('contact-form') as HTMLFormElement | null
+            let body: string
+            if (formEl) {
+                // Include all DOM fields so Netlify picks up honeypot and reCAPTCHA token
+                const fd = new FormData(formEl)
+                if (!fd.get('form-name')) fd.append('form-name', 'contact')
+                // Merge RHF values to ensure consistency
+                Object.entries(data).forEach(([k, v]) => fd.set(k, String(v ?? '')))
+                body = new URLSearchParams(fd as any).toString()
+            } else {
+                // Fallback to encoding RHF data only
+                body = encode({ 'form-name': 'contact', ...data as any })
+            }
+
+            await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body,
+            })
+
+            setSuccess(true)
+            reset()
+        } catch (err) {
+            console.error(err)
+            setError('Something went wrong. Please try again.')
+        } finally {
+            setSubmitting(false)
         }
-
-        const formData = new FormData(form)
-        setSubmitting(true)
-
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData as any).toString()
-        })
-            .then(() => {
-                setSuccess(true)
-                form.reset()
-            })
-            .catch((err) => {
-                console.error(err)
-                setError("Something went wrong. Please try again.")
-            })
-            .finally(() => {
-                setSubmitting(false)
-            })
     }
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        const form = event.currentTarget
-        submitForm(form)
-    };
 
     return (
         <section id="contact" className="container-responsive py-8 cv-auto">
@@ -105,7 +122,7 @@ export default function Contact() {
                                 {error}
                             </div>
                         )}
-                        <form name="contact" method="POST" netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={handleSubmit} id="contact-form" data-netlify="true">
+                        <form name="contact" method="POST" netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={rhfHandleSubmit(onSubmit)} id="contact-form" data-netlify="true">
                             <input type="hidden" name="form-name" value="contact" />
                             <p className="hidden">
                                 <label>Don't fill this out: <input name="bot-field" /></label>
@@ -113,26 +130,36 @@ export default function Contact() {
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="name" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Your Name</label>
-                                    <input id="name" required type="text" name="name" autoComplete="name" minLength={2} onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter your name (at least 2 characters).')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="Your Name" />
+                                    <input id="name" type="text" autoComplete="name"
+                                        {...register('name', { required: true, minLength: 2 })}
+                                        className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="Your Name" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="email" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Your Email</label>
-                                    <input id="email" required type="email" name="email" autoComplete="email" inputMode="email" onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter a valid email address.')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="your.email@example.com" />
+                                    <input id="email" type="email" autoComplete="email" inputMode="email"
+                                        {...register('email', { required: true, pattern: /.+@.+\..+/ })}
+                                        className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="your.email@example.com" />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="phone" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Phone</label>
-                                    <input id="phone" required type="tel" name="phone" autoComplete="tel" inputMode="tel" pattern="^\\+?(?:[\\s().-]*\\d){7,15}$" title="Enter a valid phone number (7–15 digits). Digits with optional spaces, parentheses, dots, or hyphens are allowed. Examples: +1 555-123-4567, (604) 555 1234, 17789917797" onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter a valid phone number (7–15 digits). You may use spaces, parentheses, dots, or hyphens, e.g. +1 555-123-4567.')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="+15551234567" />
+                                    <input id="phone" type="tel" autoComplete="tel" inputMode="tel"
+                                        {...register('phone', { required: true, pattern: /^\+?(?:[\s().-]*\d){7,15}$/ })}
+                                        className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="+15551234567" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="website" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Website</label>
-                                    <input id="website" required type="text" name="website" autoComplete="url" inputMode="url" pattern="^(?:https?:\\/\\/)?(?:www\\.)?[A-Za-z0-9.-]+\\.[A-Za-z]{2,}(?:\\/.*)?$" title="Enter a valid website address. Examples: https://example.com, http://example.com, www.example.com, example.com" onInvalid={(e) => e.currentTarget.setCustomValidity('Please enter a valid website address, e.g. https://example.com or example.com.')} onInput={(e) => e.currentTarget.setCustomValidity('')} className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="https://your-website.com" />
+                                    <input id="website" type="text" autoComplete="url" inputMode="url"
+                                        {...register('website', { required: true, pattern: /^(?:https?:\/\/)?(?:www\.)?[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\/.*)?$/ })}
+                                        className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="https://your-website.com" />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <label htmlFor="message" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Message</label>
-                                <textarea id="message" required name="message" rows={5} minLength={10} onInvalid={(e) => (e.currentTarget as HTMLTextAreaElement).setCustomValidity('Please enter a brief message (at least 10 characters).')} onInput={(e) => (e.currentTarget as HTMLTextAreaElement).setCustomValidity('')} className='form-textarea w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white'></textarea>
+                                <textarea id="message" rows={5}
+                                    {...register('message', { required: true, minLength: 10 })}
+                                    className='form-textarea w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white'></textarea>
                             </div>
                             {/* Netlify reCAPTCHA widget. Netlify will render this on deployed site. */}
                             <div data-netlify-recaptcha="true"></div>
