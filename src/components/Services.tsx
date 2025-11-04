@@ -3,6 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { services } from "../data/services";
 import { howWeWorkItems } from "../data/how-we-work";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+
+interface ResponsiveMasonryProps {
+    columnsCountBreakPoints: { [key: number]: number }
+    className?: string
+    gutterBreakPoints?: { [key: number]: string }
+}
 
 const iconMap: { [key: string]: any } = {
     faLayerGroup,
@@ -74,47 +81,53 @@ export default function Services() {
 
                     {/* Service cards */}
                     <div className="lg:col-span-8">
-                        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                            {services.map((service) => (
-                                <article key={service.id} className="card rounded-xl min-h-72 border border-neutral-200 p-5 dark:border-neutral-800 relative" data-aos="fade-up-left">
-                                    <div className="mb-12">
-                                        <div className={`transition-all duration-300 ${expandedCards[service.id] ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
-                                            <div className="flex items-center gap-3">
-                                                <span className="text-brand-600 dark:text-brand-400" aria-hidden>
-                                                    <FontAwesomeIcon icon={iconMap[service.icon]} size="2xl" />
-                                                </span>
-                                                <h3 className="text-3xl font-semibold leading-tight">{service.title}</h3>
+                        <div className="">
+                            <ResponsiveMasonry
+                                {...{ columnsCountBreakPoints: { 320: 1, 768: 2, 960: 2 }, className: "relative z-20", gutterBreakPoints: { 320: "1rem", 768: "1rem", 960: "1rem" } } as ResponsiveMasonryProps}
+                            >
+                                <Masonry>
+                                    {services.map((service) => (
+                                        <article key={service.id} className="card rounded-xl h-fit border border-neutral-200 p-5 dark:border-neutral-800 relative" data-aos="fade-up-left">
+                                            <div className="mb-12">
+                                                <div className={`transition-all duration-300 ${expandedCards[service.id] ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
+                                                    <div className="flex items-center gap-3">
+                                                        <span className="text-brand-600 dark:text-brand-400" aria-hidden>
+                                                            <FontAwesomeIcon icon={iconMap[service.icon]} size="2xl" />
+                                                        </span>
+                                                        <h3 className="text-3xl font-semibold leading-tight">{service.title}</h3>
+                                                    </div>
+                                                    <p className="mt-2 text-xl text-neutral-600 dark:text-neutral-300">
+                                                        {service.description}
+                                                    </p>
+                                                </div>
+                                                <ul className={`list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200 transition-all duration-300 ${expandedCards[service.id] ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
+                                                    {service.details.map((detail, index) => (
+                                                        <li className="mb-2" key={index}>{detail}</li>
+                                                    ))}
+                                                </ul>
                                             </div>
-                                            <p className="mt-2 text-xl text-neutral-600 dark:text-neutral-300">
-                                                {service.description}
-                                            </p>
-                                        </div>
-                                        <ul className={`list-inside list-disc text-sm text-neutral-700 dark:text-neutral-200 transition-all duration-300 ${expandedCards[service.id] ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
-                                            {service.details.map((detail, index) => (
-                                                <li className="mb-2" key={index}>{detail}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className="absolute bottom-5 left-5">
-                                        {expandedCards[service.id] ? (
-                                            <button
-                                                className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black"
-                                                onClick={(e) => { e.preventDefault(); toggleCard(service.id) }}
-                                            >
-                                                <FontAwesomeIcon icon={faTimes} className="mr-2" />
-                                                Close
-                                            </button>
-                                        ) : (
-                                            <button
-                                                className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black"
-                                                onClick={(e) => { e.preventDefault(); toggleCard(service.id) }}
-                                            >
-                                                Learn more
-                                            </button>
-                                        )}
-                                    </div>
-                                </article>
-                            ))}
+                                            <div className="absolute bottom-5 left-5">
+                                                {expandedCards[service.id] ? (
+                                                    <button
+                                                        className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black"
+                                                        onClick={(e) => { e.preventDefault(); toggleCard(service.id) }}
+                                                    >
+                                                        <FontAwesomeIcon icon={faTimes} className="mr-2" />
+                                                        Close
+                                                    </button>
+                                                ) : (
+                                                    <button
+                                                        className="inline-flex items-center cursor-pointer rounded-full border border-neutral-300 bg-white/80 px-4 py-2 text-sm font-medium text-neutral-900 backdrop-blur transition hover:bg-white dark:border-neutral-700 dark:bg-black/60 dark:text-neutral-200 dark:hover:bg-black"
+                                                        onClick={(e) => { e.preventDefault(); toggleCard(service.id) }}
+                                                    >
+                                                        Learn more
+                                                    </button>
+                                                )}
+                                            </div>
+                                        </article>
+                                    ))}
+                                </Masonry>
+                            </ResponsiveMasonry>
                         </div>
 
                         <div id="how-we-work" className="mt-10 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800" data-aos="fade-up-left">
