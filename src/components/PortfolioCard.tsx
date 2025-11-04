@@ -9,21 +9,17 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
         .join(', ')
     const sizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
     return (
-        <Link
-            to={`/${item.id}`}
-            className="group relative block rounded-lg"
-        >
+        <Link to={`/${item.id}`} className="group relative block rounded-lg">
             <article
                 className="card flex flex-col overflow-hidden hover:bg-neutral-600 dark:hover:bg-neutral-300"
                 data-aos="fade-up"
             >
-
                 <img
                     src={item.screenshot}
                     srcSet={srcSet}
                     sizes={sizes}
                     alt={item.title}
-                    className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02] aspect-13/9"
+                    className="aspect-13/9 h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                     loading="lazy"
                     decoding="async"
                     width={13}

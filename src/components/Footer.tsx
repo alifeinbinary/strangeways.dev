@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer
             id="footer"
-            className="mt-auto border-t border-neutral-200 py-6 text-center text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-400 dark:bg-neutral-900"
+            className="mt-auto border-t border-neutral-200 py-6 text-center text-sm text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400"
         >
             <img
                 width={64}
@@ -19,7 +19,7 @@ export default function Footer() {
                 height={64}
                 src="/tesseract-light.svg"
                 alt="Strangeways Developments"
-                className="hidden mb-2 h-12 w-auto items-center justify-center dark:inline-flex"
+                className="mb-2 hidden h-12 w-auto items-center justify-center dark:inline-flex"
             />
             <span className="flex items-center justify-center gap-2">
                 © {new Date().getFullYear()} strangeways.dev

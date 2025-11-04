@@ -8,9 +8,9 @@ import {
 export default function Results() {
     return (
         <section id="results" className="container-full cv-auto py-8 sm:py-12">
-            <div className="container-responsive dark:bg-neutral-900 bg-neutral-200 py-6">
+            <div className="container-responsive bg-neutral-200 py-6 dark:bg-neutral-900">
                 <div className="mb-6 flex items-end justify-between">
-                    <h2 className="text-3xl font-semibold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-2xl">
+                    <h2 className="text-3xl font-semibold tracking-tight text-neutral-800 sm:text-2xl dark:text-neutral-200">
                         Results
                     </h2>
                 </div>

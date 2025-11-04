@@ -46,7 +46,7 @@ export default {
             },
         },
         fontSize: {
-            'xl': [
+           'xl': [
                 '2.25rem',
                 {
                     lineHeight: '1.75rem',
