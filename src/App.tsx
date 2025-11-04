@@ -39,12 +39,44 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    (async function () {
+    let initialized = false;
+    const init = async () => {
+      if (initialized) return; initialized = true;
       const { getCalApi } = await import("@calcom/embed-react");
-      const cal = await getCalApi({ "namespace": "15min", "embedJsUrl": "https://booking.strangeways.co/embed/embed.js" });
-      cal("floatingButton", { "calLink": "studio/15min", "calOrigin": "https://booking.strangeways.co", "config": { "layout": "month_view", "theme": "auto" }, "buttonText": "Book a free consultation", "hideButtonIcon": false, "buttonColor": "#1a1d3f", "buttonTextColor": "#f5f7ff" });
-      cal("ui", { "cssVarsPerTheme": { "light": { "cal-brand": "#1a1d3f" }, "dark": { "cal-brand": "#f5f7ff" } }, "hideEventTypeDetails": false, "layout": "month_view" });
-    })();
+      const cal = await getCalApi({ namespace: "15min", embedJsUrl: "https://booking.strangeways.co/embed/embed.js" });
+      cal("floatingButton", { calLink: "studio/15min", calOrigin: "https://booking.strangeways.co", config: { layout: "month_view", theme: "auto" }, buttonText: "Book a free consultation", hideButtonIcon: false, buttonColor: "#1a1d3f", buttonTextColor: "#f5f7ff" });
+      cal("ui", { cssVarsPerTheme: { light: { "cal-brand": "#1a1d3f" }, dark: { "cal-brand": "#f5f7ff" } }, hideEventTypeDetails: false, layout: "month_view" });
+    };
+
+    const scheduleIdleInit = () => {
+      try {
+        // @ts-ignore
+        if (typeof window.requestIdleCallback === 'function') {
+          // @ts-ignore
+          window.requestIdleCallback(() => init(), { timeout: 5000 });
+        } else {
+          setTimeout(init, 3000);
+        }
+      } catch {
+        setTimeout(init, 3000);
+      }
+    };
+
+    if (document.readyState === 'complete') scheduleIdleInit();
+    else window.addEventListener('load', scheduleIdleInit, { once: true });
+
+    const onFirstInteraction = () => { init(); cleanupInteraction(); };
+    const cleanupInteraction = () => {
+      window.removeEventListener('pointerdown', onFirstInteraction as any);
+      window.removeEventListener('keydown', onFirstInteraction as any);
+    };
+    window.addEventListener('pointerdown', onFirstInteraction as any, { once: true });
+    window.addEventListener('keydown', onFirstInteraction as any, { once: true });
+
+    return () => {
+      window.removeEventListener('load', scheduleIdleInit as any);
+      cleanupInteraction();
+    };
   }, [])
   return (
     <div className="flex min-h-screen flex-col">

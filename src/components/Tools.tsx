@@ -25,8 +25,7 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                                 src="/hero/coder-at-desk_768.webp"
                                 alt=""
                                 className="h-full w-full object-cover scale-110"
-                                loading="eager"
-                                fetchPriority="high"
+                                loading="lazy"
                                 decoding="async"
                             />
                         </picture>
