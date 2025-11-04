@@ -1,12 +1,12 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError } from 'react-router-dom'
 
 interface RouteError {
-    statusText?: string;
-    message?: string;
+    statusText?: string
+    message?: string
 }
 
 const Error = () => {
-    const error = useRouteError() as RouteError;
+    const error = useRouteError() as RouteError
 
     return (
         <div>
@@ -16,7 +16,7 @@ const Error = () => {
                 <i>{error?.statusText || error?.message}</i>
             </p>
         </div>
-    );
-};
+    )
+}
 
-export default Error;
+export default Error

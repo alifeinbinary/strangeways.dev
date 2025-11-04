@@ -1,18 +1,26 @@
-import { type LoaderFunction, type LoaderFunctionArgs } from "react-router-dom";
-import { portfolio } from "../data/portfolio";
+import { type LoaderFunction, type LoaderFunctionArgs } from 'react-router-dom'
+import { portfolio } from '../data/portfolio'
 
 export const appLoader: LoaderFunction = async () => {
-    return ({});
-};
+    return {}
+}
 
-export const postPageLoader: LoaderFunction = async ({ params }: LoaderFunctionArgs) => {
-    const id = params.id as string | undefined;
+export const postPageLoader: LoaderFunction = async ({
+    params,
+}: LoaderFunctionArgs) => {
+    const id = params.id as string | undefined
     if (!id) {
-        throw new Response("Not Found", { status: 404, statusText: "Missing id" });
+        throw new Response('Not Found', {
+            status: 404,
+            statusText: 'Missing id',
+        })
     }
-    const item = portfolio.find(p => p.id === id);
+    const item = portfolio.find((p) => p.id === id)
     if (!item) {
-        throw new Response("Not Found", { status: 404, statusText: `No portfolio item for id: ${id}` });
+        throw new Response('Not Found', {
+            status: 404,
+            statusText: `No portfolio item for id: ${id}`,
+        })
     }
-    return { item };
-};
+    return { item }
+}

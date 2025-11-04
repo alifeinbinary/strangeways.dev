@@ -1,106 +1,173 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://booking.strangeways.co" crossorigin>
-    <link rel="preload" as="image" href="/hero/cool-room_768.webp" imagesrcset="/hero/cool-room_480.webp 480w, /hero/cool-room_768.webp 768w, /hero/cool-room_960.webp 960w, /hero/cool-room_1200.webp 1200w" imagesizes="100vw" fetchpriority="high" type="image/webp">
-    <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
-    <link rel="dns-prefetch" href="//booking.strangeways.co">
-    <link rel="dns-prefetch" href="//static.cloudflareinsights.com">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@0;1&display=swap" rel="stylesheet">
-    <title>Strangeways Developments — Modern applications, AI, and infrastructure</title>
-    <meta name="description" content="We build secure web apps, embeddable devices, agentic AI with persistent memory, and self-hosted infrastructure—reducing costs, vendor lock-in and risk." />
-    <link rel="canonical" href="https://strangeways.dev/" />
-    <meta name="robots" content="index, follow" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="preconnect"
+            href="https://booking.strangeways.co"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            as="image"
+            href="/hero/cool-room_768.webp"
+            imagesrcset="/hero/cool-room_480.webp 480w, /hero/cool-room_768.webp 768w, /hero/cool-room_960.webp 960w, /hero/cool-room_1200.webp 1200w"
+            imagesizes="100vw"
+            fetchpriority="high"
+            type="image/webp"
+        />
+        <link
+            rel="preconnect"
+            href="https://static.cloudflareinsights.com"
+            crossorigin
+        />
+        <link rel="dns-prefetch" href="//booking.strangeways.co" />
+        <link rel="dns-prefetch" href="//static.cloudflareinsights.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@0;1&display=swap"
+            rel="stylesheet"
+        />
+        <title>
+            Strangeways Developments — Modern applications, AI, and
+            infrastructure
+        </title>
+        <meta
+            name="description"
+            content="We build secure web apps, embeddable devices, agentic AI with persistent memory, and self-hosted infrastructure—reducing costs, vendor lock-in and risk."
+        />
+        <link rel="canonical" href="https://strangeways.dev/" />
+        <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Strangeways Developments — Modern applications, AI, and infrastructure" />
-    <meta property="og:description" content="We build secure web apps, embeddable devices, agentic AI with persistent memory, and self-hosted infrastructure—reducing costs, vendor lock-in and risk." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://strangeways.dev/" />
-    <meta property="og:site_name" content="Strangeways Developments" />
-    <meta property="og:locale" content="en_US" />
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="Strangeways Developments — Modern applications, AI, and infrastructure"
+        />
+        <meta
+            property="og:description"
+            content="We build secure web apps, embeddable devices, agentic AI with persistent memory, and self-hosted infrastructure—reducing costs, vendor lock-in and risk."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://strangeways.dev/" />
+        <meta property="og:site_name" content="Strangeways Developments" />
+        <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Strangeways Developments — Modern applications, AI, and infrastructure" />
-    <meta name="twitter:description" content="We build secure web apps, embeddable devices, agentic AI with persistent memory, and self-hosted infrastructure." />
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Strangeways Developments — Modern applications, AI, and infrastructure"
+        />
+        <meta
+            name="twitter:description"
+            content="We build secure web apps, embeddable devices, agentic AI with persistent memory, and self-hosted infrastructure."
+        />
 
-    <!-- Theme color for PWA/Chrome UI -->
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+        <!-- Theme color for PWA/Chrome UI -->
+        <meta
+            name="theme-color"
+            content="#ffffff"
+            media="(prefers-color-scheme: light)"
+        />
+        <meta
+            name="theme-color"
+            content="#0a0a0a"
+            media="(prefers-color-scheme: dark)"
+        />
 
-    <!-- Prevent flash of wrong theme -->
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem('theme');
-          var theme = stored ? stored : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          if (theme === 'dark') document.documentElement.classList.add('dark');
-        } catch (e) {}
-      })();
-    </script>
+        <!-- Prevent flash of wrong theme -->
+        <script>
+            ;(function () {
+                try {
+                    var stored = localStorage.getItem('theme')
+                    var theme = stored
+                        ? stored
+                        : window.matchMedia('(prefers-color-scheme: dark)')
+                                .matches
+                          ? 'dark'
+                          : 'light'
+                    if (theme === 'dark')
+                        document.documentElement.classList.add('dark')
+                } catch (e) {}
+            })()
+        </script>
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Strangeways Developments",
-      "url": "https://strangeways.dev/",
-      "logo": "https://strangeways.dev/icon.webp",
-      "sameAs": [
-        "https://github.com/alifeinbinary/strangeways.dev"
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Strangeways Developments",
-      "url": "https://strangeways.dev/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://strangeways.dev/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Software and infrastructure services",
-      "provider": {
-        "@type": "Organization",
-        "name": "Strangeways Developments",
-        "url": "https://strangeways.dev/"
-      },
-      "areaServed": "Worldwide",
-      "url": "https://strangeways.dev/",
-      "serviceType": [
-        "Web application development",
-        "Embeddable devices (Linux-based firmware, OTA, fleet management)",
-        "Agentic AI infrastructure and orchestration (RAG, tool use, guardrails, persistent memory)",
-        "Self-hosted business infrastructure (FOSS, SSO, backups, observability)"
-      ]
-    }
-    </script>
-    <script defer src="https://metrics.strangeways.co/script.js" data-website-id="1225f0a2-1a57-492f-a327-407975a2489e"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- Hidden Netlify form for build-time detection -->
-    <!-- <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" hidden>
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Strangeways Developments",
+                "url": "https://strangeways.dev/",
+                "logo": "https://strangeways.dev/icon.webp",
+                "sameAs": ["https://github.com/alifeinbinary/strangeways.dev"]
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Strangeways Developments",
+                "url": "https://strangeways.dev/",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://strangeways.dev/?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Software and infrastructure services",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Strangeways Developments",
+                    "url": "https://strangeways.dev/"
+                },
+                "areaServed": "Worldwide",
+                "url": "https://strangeways.dev/",
+                "serviceType": [
+                    "Web application development",
+                    "Embeddable devices (Linux-based firmware, OTA, fleet management)",
+                    "Agentic AI infrastructure and orchestration (RAG, tool use, guardrails, persistent memory)",
+                    "Self-hosted business infrastructure (FOSS, SSO, backups, observability)"
+                ]
+            }
+        </script>
+        <script
+            defer
+            src="https://metrics.strangeways.co/script.js"
+            data-website-id="1225f0a2-1a57-492f-a327-407975a2489e"
+        ></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.tsx"></script>
+        <!-- Hidden Netlify form for build-time detection -->
+        <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="contact" />
       <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
       <input type="text" name="name" />
@@ -108,7 +175,6 @@
       <input type="tel" name="phone" />
       <input type="url" name="website" />
       <textarea name="message"></textarea>
-    </form> -->
-  </body>
-  
+    </form>
+    </body>
 </html>
