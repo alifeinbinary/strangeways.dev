@@ -25,10 +25,7 @@ export default function Contact() {
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState<string | null>(null)
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-
-        const form = event.currentTarget
+    const submitForm = (form: HTMLFormElement) => {
         setError(null)
         setSuccess(false)
 
@@ -56,6 +53,12 @@ export default function Contact() {
             .finally(() => {
                 setSubmitting(false)
             })
+    }
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        const form = event.currentTarget
+        submitForm(form)
     };
 
     return (
@@ -102,7 +105,7 @@ export default function Contact() {
                                 {error}
                             </div>
                         )}
-                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={handleSubmit} id="contact-form">
+                        <form name="contact" method="POST" netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={handleSubmit} id="contact-form" data-netlify="true">
                             <input type="hidden" name="form-name" value="contact" />
                             <p className="hidden">
                                 <label>Don't fill this out: <input name="bot-field" /></label>
