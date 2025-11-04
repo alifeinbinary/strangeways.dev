@@ -65,7 +65,7 @@ export default function Contact() {
             await fetch('/', {
                 method: 'POST',
                 // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                headers: { 'Content-Type': 'multipart/form-data' },
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body,
             })
 
