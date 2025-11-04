@@ -145,13 +145,13 @@ export default function Contact() {
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="phone" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Phone</label>
                                     <input id="phone" type="tel" autoComplete="tel" inputMode="tel"
-                                        {...register('phone', { required: true, pattern: /^\+?(?:[\s().-]*\d){7,15}$/ })}
+                                        {...register('phone', { required: false, pattern: /^\+?(?:[\s().-]*\d){7,15}$/ })}
                                         className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="+15551234567" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <label htmlFor="website" className="text-sm font-medium text-neutral-700 dark:text-neutral-200">Website</label>
                                     <input id="website" type="text" autoComplete="url" inputMode="url"
-                                        {...register('website', { required: true, pattern: /^(?:https?:\/\/)?(?:www\.)?[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\/.*)?$/ })}
+                                        {...register('website', { required: false, pattern: /^(?:https?:\/\/)?(?:www\.)?[A-Za-z0-9.-]+\.[A-Za-z]{2,}(?:\/.*)?$/ })}
                                         className='form-input w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-subtle transition focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white' placeholder="https://your-website.com" />
                                 </div>
                             </div>
