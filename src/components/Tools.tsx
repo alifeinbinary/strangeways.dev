@@ -11,8 +11,8 @@ type ToolsProps = {
 export default function Tools({ selected, onToggle }: ToolsProps) {
     return (
         <section id="tools" className="container mx-auto max-w-7xl py-0 sm:py-4 px-0 sm:px-4">
-            <div className="relative h-[500px] overflow-hidden">
-                <div className="h-[500px] relative py-8 px-0 sm:px-4">
+            <div className="relative fit-content overflow-hidden">
+                <div className="fit-content relative py-8 px-4">
                     {/* Parallaxed image */}
                     <Parallax translateY={[-20, 10]} disabled={false} className="absolute inset-0 z-0">
                         <picture>
@@ -34,11 +34,11 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
 
                     {/* Gradient overlay */}
                     <div
-                        className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-transparent via-white/60 dark:to-black/90 dark:via-black/60 to-white/90"
+                        className="pointer-events-none absolute inset-0 z-10 bg-linear-to-t from-transparent via-white/60 dark:to-black/90 dark:via-black/60 to-white/90"
                         aria-hidden="true"
                     />
 
-                    <div className="mb-8 max-w-3xl relative z-20">
+                    <div className="mb-4 max-w-3xl relative z-20">
                         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Tools</h2>
                         <p className="mt-3 text-neutral-600 dark:text-neutral-300">
                             We love building beautifully crafted, performant web digital products with the right tools. Select the tools you are interested in to filter out relevant projects where we've used those technologies.

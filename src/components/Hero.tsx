@@ -4,7 +4,7 @@ import { scrollToId } from "../theme/utils"
 export default function Hero() {
     return (
         <section id="hero" className="container mx-auto max-w-7xl py-0 sm:py-4 px-0 sm:px-4">
-            <div className="relative h-[500px] overflow-hidden">
+            <div className="relative fit-content pt-16 overflow-hidden">
                 {/* Parallaxed image */}
                 <Parallax translateY={[-20, 20]} disabled={false} className="absolute inset-0 z-0">
                     <picture>
@@ -26,14 +26,14 @@ export default function Hero() {
 
                 {/* Gradient overlay */}
                 <div
-                    className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-white/90 via-white/60 dark:from-black/90 dark:via-black/60 to-transparent"
+                    className="pointer-events-none absolute inset-0 z-10 bg-linear-to-t from-white/90 via-white/60 dark:from-black/90 dark:via-black/60 to-transparent"
                     aria-hidden="true"
                 />
 
                 {/* Content */}
                 <div className="relative z-20 flex h-full max-w-3xl items-end text-neutral-900 dark:text-neutral-300 px-4 sm:px-4 pb-8">
                     <div>
-                        <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+                        <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl text-shadow-lg/10 text-shadow-neutral-300 dark:text-shadow-none">
                             Modern applications, AI, and infrastructure—built for control and scale
                         </h1>
                         <p className="mt-4 text-lg">

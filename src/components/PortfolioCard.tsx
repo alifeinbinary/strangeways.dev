@@ -11,7 +11,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
 
     <article className="card flex flex-col overflow-hidden" data-aos="fade-up">
-      <Link to={`/${item.id}`} className="group relative block aspect-[13/9] overflow-hidden rounded-lg">
+      <Link to={`/${item.id}`} className="group relative block aspect-13/9 overflow-hidden rounded-lg">
         <img
           src={item.screenshot}
           srcSet={srcSet}
@@ -24,7 +24,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
           height={9}
         />
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 transition group-hover:opacity-100" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/5 to-transparent opacity-0 transition group-hover:opacity-100" />
       </Link>
       <div className="mt-4">
         <h3 className="text-lg font-semibold leading-tight">
