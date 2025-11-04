@@ -64,7 +64,7 @@ export default function Contact() {
 
             await fetch('/', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body,
             })
 
@@ -122,7 +122,7 @@ export default function Contact() {
                                 {error}
                             </div>
                         )}
-                        <form name="contact" method="POST" netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={rhfHandleSubmit(onSubmit)} id="contact-form" data-netlify="true">
+                        <form name="contact" method="POST" data-netlify-honeypot="bot-field" className='flex flex-col gap-4' onSubmit={rhfHandleSubmit(onSubmit)} id="contact-form" data-netlify="true">
                             <input type="hidden" name="form-name" value="contact" />
                             <p className="hidden">
                                 <label>Don't fill this out: <input name="bot-field" /></label>
