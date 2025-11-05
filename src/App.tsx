@@ -10,7 +10,7 @@ import About from './components/About'
 import Footer from './components/Footer'
 import Faq from './components/Faq'
 import Results from './components/Results'
-import 'aos/dist/aos.css'
+// import 'aos/dist/aos.css'
 
 export default function App() {
     const [selectedTools, setSelectedTools] = useState<string[]>([])
@@ -22,29 +22,29 @@ export default function App() {
         )
     }
     const clearTools = () => setSelectedTools([])
-    useEffect(() => {
-        try {
-            const prefersReducedMotion = window.matchMedia?.(
-                '(prefers-reduced-motion: reduce)'
-            ).matches
-            const hasAosElements = !!document.querySelector('[data-aos]')
-            if (!prefersReducedMotion && hasAosElements) {
-                import('aos')
-                    .then((mod) => {
-                        const AOS = mod.default
-                        AOS.init({
-                            duration: 500,
-                            easing: 'ease-in-out',
-                            delay: 50,
-                            once: true,
-                        })
-                    })
-                    .catch(() => {
-                        /* noop */
-                    })
-            }
-        } catch {}
-    }, [])
+    // useEffect(() => {
+    //     try {
+    //         const prefersReducedMotion = window.matchMedia?.(
+    //             '(prefers-reduced-motion: reduce)'
+    //         ).matches
+    //         const hasAosElements = !!document.querySelector('[data-aos]')
+    //         if (!prefersReducedMotion && hasAosElements) {
+    //             import('aos')
+    //                 .then((mod) => {
+    //                     const AOS = mod.default
+    //                     AOS.init({
+    //                         duration: 500,
+    //                         easing: 'ease-in-out',
+    //                         delay: 50,
+    //                         once: true,
+    //                     })
+    //                 })
+    //                 .catch(() => {
+    //                     /* noop */
+    //                 })
+    //         }
+    //     } catch {}
+    // }, [])
 
     useEffect(() => {
         let initialized = false
