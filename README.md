@@ -68,6 +68,7 @@ The following scripts are defined in `package.json`:
 - `build` — Type-check (`tsc -b`) and build production assets via Vite
 - `preview` — Preview the production build locally
 - `lint` — Run ESLint on the project
+- `prepare` — Setup Husky Git hooks
 
 Run them with your preferred package manager, e.g.:
 
@@ -85,20 +86,39 @@ pnpm lint
 
 ```text
 strangeways.dev/
-├─ public/                  # Static assets served as-is
+├─ public/                      # Static assets served as-is
+│  ├─ favicon/                  # Favicons
+│  ├─ hero/                     # Hero images
+│  ├─ portfolio/                # Portfolio images
+│  ├─ tesseract-dark.svg
+│  ├─ tesseract-light.svg
+│  └─ vite.svg
 ├─ src/
-│  ├─ assets/              # Local images, icons, etc.
-│  ├─ components/          # UI components (e.g., About, Contact, etc.)
-│  ├─ data/                # Data sources (e.g., portfolio items)
-│  ├─ theme/               # Theming, providers, hooks, utilities
-│  ├─ App.tsx              # Root app component
-│  └─ index.css            # Global styles (Tailwind)
-├─ index.html              # App entry HTML
-├─ vite.config.ts          # Vite configuration
-├─ tailwind.config.js      # Tailwind configuration
-├─ eslint.config.js        # ESLint configuration
-├─ tsconfig*.json          # TypeScript configurations
-└─ package.json
+│  ├─ assets/                   # Local SVGs, icons, etc.
+│  ├─ components/               # UI components (About, Contact, etc.)
+│  ├─ data/                     # Data sources (FAQ, services, tools, portfolio)
+│  ├─ routes/                   # Route components (e.g., PostPage, Error)
+│  ├─ theme/                    # Theming provider, hooks, utilities
+│  ├─ utils/                    # Helpers (e.g., loaders)
+│  ├─ App.css                   # App styles
+│  ├─ App.tsx                   # Root app component
+│  ├─ index.css                 # Global styles (Tailwind)
+│  ├─ main.tsx                  # App entry (React DOM bootstrap)
+│  ├─ routes.ts                 # Route definitions
+│  └─ types.d.ts                # Global TypeScript types
+├─ index.html                    # App entry HTML
+├─ vite.config.ts                # Vite configuration
+├─ tailwind.config.js            # Tailwind configuration
+├─ postcss.config.js             # PostCSS configuration
+├─ prettier.config.js            # Prettier configuration
+├─ eslint.config.js              # ESLint configuration
+├─ tsconfig.json                 # Root TypeScript config
+├─ tsconfig.app.json             # TS app config
+├─ tsconfig.node.json            # TS Node/build config
+├─ package.json
+├─ pnpm-lock.yaml
+├─ robots.txt
+└─ sitemap.xml
 ```
 
 ---
