@@ -7,10 +7,10 @@ export default function Hero() {
             id="hero"
             className="container mx-auto max-w-7xl px-0 py-0 sm:px-4 sm:py-4"
         >
-            <div className="fit-content relative overflow-hidden pt-16">
+            <div className="fit-content relative overflow-hidden pt-12">
                 {/* Parallaxed image */}
                 <Parallax
-                    translateY={[-20, 20]}
+                    translateY={[-50, 20]}
                     disabled={false}
                     className="absolute inset-0 z-0"
                 >
