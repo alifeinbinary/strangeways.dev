@@ -45,7 +45,7 @@ export default function PostPage() {
                         <h4 className="pt-2 pb-1 text-lg font-semibold">
                             Outcomes
                         </h4>
-                        <ul className="list-disc">
+                        <ul className="list-inside list-disc">
                             {Object.values(item.outcomes || {}).map(
                                 (outcome, index) => (
                                     <li

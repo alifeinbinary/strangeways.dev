@@ -51,7 +51,7 @@ export default function Services() {
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
                     {/* Sidebar: USPs */}
                     <aside className="lg:col-span-4">
-                        <div className="card sticky top-4 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                        <div className="card sticky top-16 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
                             <h3 className="text-sm font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
                                 Why Strangeways
                             </h3>
@@ -164,8 +164,8 @@ export default function Services() {
                                                             <FontAwesomeIcon
                                                                 icon={
                                                                     iconMap[
-                                                                        service
-                                                                            .icon
+                                                                    service
+                                                                        .icon
                                                                     ]
                                                                 }
                                                                 size="2xl"

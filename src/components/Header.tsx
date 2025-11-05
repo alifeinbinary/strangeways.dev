@@ -42,11 +42,7 @@ export default function Header() {
         'w',
         'a',
         'y',
-        's',
-        '.',
-        'd',
-        'e',
-        'v',
+        's'
     ]
 
     function calculateLuminance(hexColor: string) {
@@ -103,7 +99,7 @@ export default function Header() {
                                 Math.random() * colourList.length
                             )
                         }
-                        letter.style.transition = 'color 2.5s ease-in-out'
+                        letter.style.transition = 'color 2s ease-in-out'
                         letter.style.color = colourList[randomLetterColourIndex]
                     })
                 }, 1000)
@@ -123,7 +119,7 @@ export default function Header() {
     return (
         <header
             id="header"
-            className="z-20 border-b border-neutral-200 bg-white/70 backdrop-blur supports-backdrop-filter:bg-white/60 dark:border-neutral-800 dark:bg-neutral-950/70"
+            className="z-30 sticky top-0 border-b border-neutral-200 bg-white/70 backdrop-blur supports-backdrop-filter:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/70"
         >
             <div
                 className="container-responsive vertical-align:middle flex items-center justify-between py-2"
@@ -135,14 +131,14 @@ export default function Header() {
                         height={80}
                         src="/tesseract-dark.svg"
                         alt="Strangeways Developments"
-                        className="mr-1 inline-flex h-12 w-auto items-center justify-center dark:hidden"
+                        className="mr-1 inline-flex h-9 w-auto items-center justify-center dark:hidden"
                     />
                     <img
                         width={80}
                         height={80}
                         src="/tesseract-light.svg"
                         alt="Strangeways Developments"
-                        className="mr-1 hidden h-12 w-auto items-center justify-center dark:inline-flex"
+                        className="mr-1 hidden h-9 w-auto items-center justify-center dark:inline-flex"
                     />
                     <span className="text-xl tracking-tight uppercase sm:text-2xl">
                         <Link to={'/'}>
@@ -150,6 +146,10 @@ export default function Header() {
                                 {name.map((letter, index) => (
                                     <span key={index}>{letter}</span>
                                 ))}
+                                <span className="lowercase font-normal">.</span>
+                                <span className="lowercase font-normal">d</span>
+                                <span className="lowercase font-normal">e</span>
+                                <span className="lowercase font-normal">v</span>
                             </div>
                         </Link>
                     </span>
