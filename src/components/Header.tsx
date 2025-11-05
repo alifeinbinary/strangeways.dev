@@ -31,19 +31,7 @@ export default function Header() {
         '#1a1d3f', // 0.36
     ]
 
-    const name = [
-        's',
-        't',
-        'r',
-        'a',
-        'n',
-        'g',
-        'e',
-        'w',
-        'a',
-        'y',
-        's'
-    ]
+    const name = ['s', 't', 'r', 'a', 'n', 'g', 'e', 'w', 'a', 'y', 's']
 
     function calculateLuminance(hexColor: string) {
         const r = parseInt(hexColor.substring(1, 3), 16) / 255
@@ -119,7 +107,7 @@ export default function Header() {
     return (
         <header
             id="header"
-            className="z-30 sticky top-0 border-b border-neutral-200 bg-white/70 backdrop-blur supports-backdrop-filter:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/70"
+            className="sticky top-0 z-30 border-b border-neutral-200 bg-white/70 backdrop-blur supports-backdrop-filter:bg-white/70 dark:border-neutral-800 dark:bg-neutral-950/70"
         >
             <div
                 className="container-responsive vertical-align:middle flex items-center justify-between py-2"
@@ -146,10 +134,10 @@ export default function Header() {
                                 {name.map((letter, index) => (
                                     <span key={index}>{letter}</span>
                                 ))}
-                                <span className="lowercase font-normal">.</span>
-                                <span className="lowercase font-normal">d</span>
-                                <span className="lowercase font-normal">e</span>
-                                <span className="lowercase font-normal">v</span>
+                                <span className="font-normal lowercase">.</span>
+                                <span className="font-normal lowercase">d</span>
+                                <span className="font-normal lowercase">e</span>
+                                <span className="font-normal lowercase">v</span>
                             </div>
                         </Link>
                     </span>

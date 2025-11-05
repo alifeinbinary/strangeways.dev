@@ -63,7 +63,7 @@ h2 {
 }
 
 .card {
-    @apply shadow-subtle rounded-xl border border-neutral-200 bg-neutral-100 p-4 sm:p-6 transition-colors duration-500 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800;
+    @apply shadow-subtle rounded-xl border border-neutral-200 bg-neutral-100 p-4 transition-colors duration-500 hover:bg-neutral-50 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800;
 }
 
 /* Defer rendering for offscreen content */
