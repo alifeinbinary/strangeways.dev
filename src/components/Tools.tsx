@@ -30,7 +30,7 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                             />
                             <img
                                 src="/hero/coder-at-desk_768.webp"
-                                alt=""
+                                alt="Coders at work"
                                 className="h-full w-full scale-110 object-cover"
                                 loading="lazy"
                                 decoding="async"

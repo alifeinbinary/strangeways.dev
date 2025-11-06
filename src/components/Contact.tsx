@@ -20,8 +20,11 @@ type FormValues = {
 
 const encode = (data: Record<string, string>) => {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
+        .map(
+            (key) =>
+                encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+        )
+        .join('&')
 }
 
 export default function Contact() {

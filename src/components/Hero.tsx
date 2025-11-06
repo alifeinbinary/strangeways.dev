@@ -22,7 +22,7 @@ export default function Hero() {
                         />
                         <img
                             src="/hero/cool-room_768.webp"
-                            alt=""
+                            alt="Hero image of a cool room"
                             className="h-full w-full scale-110 object-cover"
                             loading="eager"
                             fetchPriority="high"
