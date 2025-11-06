@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer
             id="footer"
-            className="mt-auto mb-20 border-t border-neutral-200 px-4 py-6 text-center text-sm text-neutral-600 lg:mb-0 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400"
+            className="mt-auto border-t border-neutral-200 px-4 pt-6 pb-24 text-center text-sm text-neutral-600 lg:pb-6 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400"
         >
             <img
                 width={64}

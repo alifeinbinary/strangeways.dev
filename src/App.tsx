@@ -10,7 +10,7 @@ import About from './components/About'
 import Footer from './components/Footer'
 import Faq from './components/Faq'
 import Results from './components/Results'
-// import 'aos/dist/aos.css'
+import 'aos/dist/aos.css'
 
 export default function App() {
     const [selectedTools, setSelectedTools] = useState<string[]>([])
@@ -22,29 +22,29 @@ export default function App() {
         )
     }
     const clearTools = () => setSelectedTools([])
-    // useEffect(() => {
-    //     try {
-    //         const prefersReducedMotion = window.matchMedia?.(
-    //             '(prefers-reduced-motion: reduce)'
-    //         ).matches
-    //         const hasAosElements = !!document.querySelector('[data-aos]')
-    //         if (!prefersReducedMotion && hasAosElements) {
-    //             import('aos')
-    //                 .then((mod) => {
-    //                     const AOS = mod.default
-    //                     AOS.init({
-    //                         duration: 500,
-    //                         easing: 'ease-in-out',
-    //                         delay: 50,
-    //                         once: true,
-    //                     })
-    //                 })
-    //                 .catch(() => {
-    //                     /* noop */
-    //                 })
-    //         }
-    //     } catch {}
-    // }, [])
+    useEffect(() => {
+        try {
+            const prefersReducedMotion = window.matchMedia?.(
+                '(prefers-reduced-motion: reduce)'
+            ).matches
+            const hasAosElements = !!document.querySelector('[data-aos]')
+            if (!prefersReducedMotion && hasAosElements) {
+                import('aos')
+                    .then((mod) => {
+                        const AOS = mod.default
+                        AOS.init({
+                            duration: 500,
+                            easing: 'ease-in-out',
+                            delay: 50,
+                            once: true,
+                        })
+                    })
+                    .catch(() => {
+                        /* noop */
+                    })
+            }
+        } catch {}
+    }, [])
 
     useEffect(() => {
         let initialized = false
@@ -53,11 +53,11 @@ export default function App() {
             initialized = true
             const { getCalApi } = await import('@calcom/embed-react')
             const cal = await getCalApi({
-                namespace: '15min',
+                namespace: '30min',
                 embedJsUrl: 'https://booking.strangeways.co/embed/embed.js',
             })
             cal('floatingButton', {
-                calLink: 'studio/15min',
+                calLink: 'studio/30min',
                 calOrigin: 'https://booking.strangeways.co',
                 config: { layout: 'month_view', theme: 'auto' },
                 buttonText: 'Book a free consultation',
