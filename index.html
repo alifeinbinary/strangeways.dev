@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-VM5P7E536G"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || []
+            function gtag() {
+                dataLayer.push(arguments)
+            }
+            gtag('js', new Date())
+
+            gtag('config', 'G-VM5P7E536G')
+        </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
@@ -167,12 +181,7 @@
         <div id="root"></div>
         <script type="module" src="/src/main.tsx"></script>
         <!-- Hidden Netlify form for build-time detection -->
-        <form
-            name="contact"
-            netlify-honeypot="bot-field"
-            hidden
-            netlify
-        >
+        <form name="contact" netlify-honeypot="bot-field" hidden netlify>
             <input type="hidden" name="form-name" value="contact" />
             <p class="hidden">
                 <label>Don't fill this out: <input name="bot-field" /></label>
