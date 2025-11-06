@@ -18,6 +18,12 @@ type FormValues = {
     'bot-field'?: string
 }
 
+const encode = (data: Record<string, string>) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+}
+
 export default function Contact() {
     function ObfuscatedEmail() {
         const user = 'studio'
@@ -41,18 +47,11 @@ export default function Contact() {
     const [error, setError] = useState<string | null>(null)
     const {
         register,
-        handleSubmit: rhfHandleSubmit,
         reset,
+        handleSubmit: rhfHandleSubmit,
     } = useForm<FormValues>({
         mode: 'onChange',
     })
-
-    const encode = (obj: Record<string, string>) =>
-        Object.entries(obj)
-            .map(
-                ([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`
-            )
-            .join('&')
 
     const onSubmit = async (
         data: FormValues,
@@ -85,7 +84,6 @@ export default function Contact() {
 
             await fetch('/', {
                 method: 'POST',
-                // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
@@ -177,24 +175,15 @@ export default function Contact() {
                         )}
                         <form
                             name="contact"
-                            method="POST"
-                            data-netlify-honeypot="bot-field"
                             className="flex flex-col gap-4"
                             onSubmit={rhfHandleSubmit(onSubmit)}
                             id="contact-form"
-                            data-netlify="true"
                         >
                             <input
                                 type="hidden"
                                 name="form-name"
                                 value="contact"
                             />
-                            <p className="hidden">
-                                <label>
-                                    Don't fill this out:{' '}
-                                    <input name="bot-field" />
-                                </label>
-                            </p>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div className="flex flex-col gap-1">
                                     <label
@@ -297,8 +286,6 @@ export default function Contact() {
                                     className="form-textarea shadow-subtle focus:border-brand-500 focus:ring-brand-500/30 w-full rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 transition placeholder:text-neutral-400 focus:ring-2 focus:outline-none dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
                                 ></textarea>
                             </div>
-                            {/* Netlify reCAPTCHA widget. Netlify will render this on deployed site. */}
-                            <div data-netlify-recaptcha="true"></div>
                             <div className="flex items-center justify-end">
                                 <button
                                     type="submit"
