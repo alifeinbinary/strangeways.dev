@@ -33,14 +33,14 @@ export default function Work({ selected, onClear }: WorkProps) {
         selected.length === 0
             ? base
             : portfolio.filter((item) =>
-                selected.every((tag) => item.tools.includes(tag))
-            )
+                  selected.every((tag) => item.tools.includes(tag))
+              )
 
     function shuffleArray<T>(arr: T[]): T[] {
         const a = [...arr]
         for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1))
-                ;[a[i], a[j]] = [a[j], a[i]]
+            ;[a[i], a[j]] = [a[j], a[i]]
         }
         return a
     }
@@ -134,11 +134,20 @@ export default function Work({ selected, onClear }: WorkProps) {
                 </ResponsiveMasonry>
             </div>
             {filtered.length === 0 && (
-                <p className="card max-w-1/1 sm:max-w-1/2 lg:max-w-1/3 rounded-lg text-center text-md text-neutral-600 dark:text-neutral-300">
-                    We don't have any projects that match your filters but that doesn't mean we haven't worked with those tools before. Please <a className='cursor-pointer hover:underline' onClick={(e) => {
-                        e.preventDefault()
-                        scrollToId('contact')
-                    }}>contact us</a> to discuss your project.
+                <p className="card text-md max-w-1/1 rounded-lg text-center text-neutral-600 sm:max-w-1/2 lg:max-w-1/3 dark:text-neutral-300">
+                    We don't have any projects that match your filters but that
+                    doesn't mean we haven't worked with those tools before.
+                    Please{' '}
+                    <a
+                        className="cursor-pointer hover:underline"
+                        onClick={(e) => {
+                            e.preventDefault()
+                            scrollToId('contact')
+                        }}
+                    >
+                        contact us
+                    </a>{' '}
+                    to discuss your project.
                 </p>
             )}
             {(canShuffle || canShowMore || canCollapse) && (

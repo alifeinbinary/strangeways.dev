@@ -172,8 +172,8 @@ export default function Services() {
                                                             <FontAwesomeIcon
                                                                 icon={
                                                                     iconMap[
-                                                                    service
-                                                                        .icon
+                                                                        service
+                                                                            .icon
                                                                     ]
                                                                 }
                                                                 size="2xl"
