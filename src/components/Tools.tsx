@@ -97,7 +97,7 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                                                     >
                                                         <span className="inline-flex items-center gap-2 align-baseline">
                                                             {typeof tool.icon !==
-                                                            'string' ? (
+                                                                'string' ? (
                                                                 <FontAwesomeIcon
                                                                     icon={
                                                                         tool.icon

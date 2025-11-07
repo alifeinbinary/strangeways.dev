@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { portfolio } from '../data/portfolio'
 import PortfolioCard from './PortfolioCard'
-import { Outlet } from 'react-router-dom'
+import { useOutlet } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShuffle } from '@fortawesome/free-solid-svg-icons'
 import { scrollToId } from '../theme/utils'
@@ -33,14 +33,14 @@ export default function Work({ selected, onClear }: WorkProps) {
         selected.length === 0
             ? base
             : portfolio.filter((item) =>
-                  selected.every((tag) => item.tools.includes(tag))
-              )
+                selected.every((tag) => item.tools.includes(tag))
+            )
 
     function shuffleArray<T>(arr: T[]): T[] {
         const a = [...arr]
         for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1))
-            ;[a[i], a[j]] = [a[j], a[i]]
+                ;[a[i], a[j]] = [a[j], a[i]]
         }
         return a
     }
@@ -54,6 +54,7 @@ export default function Work({ selected, onClear }: WorkProps) {
     const canShuffle = selected.length === 0 && filtered.length > 1 && !allShown
     const canShowMore = !allShown
     const canCollapse = allShown && filtered.length > 3
+    const outlet = useOutlet()
     return (
         <section
             id="work"
@@ -75,7 +76,13 @@ export default function Work({ selected, onClear }: WorkProps) {
                 </a>
             </div>
             <div className="transition-height mb-8 h-auto rounded-lg border border-neutral-200 p-4 duration-500 ease-in-out dark:border-neutral-700">
-                <Outlet />
+                {!outlet && filtered.length > 0 && (
+                    <p>
+                        Click on a portfolio item to view details about it in
+                        this section.
+                    </p>
+                )}
+                {outlet}
             </div>
             {selected.length > 0 && (
                 <div className="mb-6 flex flex-wrap items-center gap-3">
@@ -126,6 +133,14 @@ export default function Work({ selected, onClear }: WorkProps) {
                     </Masonry>
                 </ResponsiveMasonry>
             </div>
+            {filtered.length === 0 && (
+                <p className="card max-w-1/1 sm:max-w-1/2 lg:max-w-1/3 rounded-lg text-center text-md text-neutral-600 dark:text-neutral-300">
+                    We don't have any projects that match your filters but that doesn't mean we haven't worked with those tools before. Please <a className='cursor-pointer hover:underline' onClick={(e) => {
+                        e.preventDefault()
+                        scrollToId('contact')
+                    }}>contact us</a> to discuss your project.
+                </p>
+            )}
             {(canShuffle || canShowMore || canCollapse) && (
                 <div className="mt-6 flex items-center justify-center gap-3">
                     {canShuffle && (
