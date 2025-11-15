@@ -43,7 +43,7 @@ export default function App() {
                         /* noop */
                     })
             }
-        } catch {}
+        } catch { }
     }, [])
 
     useEffect(() => {
