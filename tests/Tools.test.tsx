@@ -31,7 +31,7 @@ vi.mock('@fortawesome/react-fontawesome', () => ({
 
 describe('Tools', () => {
     it('renders heading and description', () => {
-        render(<Tools selected={[]} onToggle={() => { }} />)
+        render(<Tools selected={[]} onToggle={() => {}} />)
         expect(
             screen.getByRole('heading', { level: 2, name: /tools/i })
         ).toBeInTheDocument()

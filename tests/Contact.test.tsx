@@ -23,16 +23,16 @@ describe('Contact', () => {
             name: /studio\[at]strangeways\.co/i,
         })
         expect(emailLink).toBeInTheDocument()
-        expect(emailLink).toHaveAttribute('href', 'mailto:studio@strangeways.co')
+        expect(emailLink).toHaveAttribute(
+            'href',
+            'mailto:studio@strangeways.co'
+        )
     })
 
     it('submits the form successfully and shows success message', async () => {
         render(<Contact />)
 
-        await userEvent.type(
-            screen.getByLabelText(/your name/i),
-            'Jane Doe'
-        )
+        await userEvent.type(screen.getByLabelText(/your name/i), 'Jane Doe')
         await userEvent.type(
             screen.getByLabelText(/your email/i),
             'jane@example.com'
