@@ -1,10 +1,10 @@
-import { useState, useLayoutEffect } from 'react'
+import { faSquareMinus, faSquarePlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons'
-import ThemeToggle from './ThemeToggle'
+import { useLayoutEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTheme } from '../theme/useTheme'
 import { scrollToId } from '../theme/utils'
-import { Link } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -59,45 +59,43 @@ export default function Header() {
 
   useLayoutEffect(() => {
     const svg = document.querySelector('svg')
-    const path = svg?.querySelector('path') as SVGPathElement | null
     const word = document.querySelector('#brand')
-    const letters = document.querySelectorAll('#name span')
+    if (!svg || !word) return
 
-    if (letters && word && path && theme && svg) {
-      let intervalId: number | undefined
+    const path = svg.querySelector<SVGPathElement>('path')
+    if (!path) return
 
-      const animateLoop = () => {
-        intervalId = window.setInterval(() => {
-          const randomColourIndex = Math.floor(
+    const letters = document.querySelectorAll<HTMLSpanElement>('#name span')
+    let intervalId: number | undefined
+
+    const animateLoop = () => {
+      intervalId = window.setInterval(() => {
+        const randomColourIndex = Math.floor(Math.random() * colourList.length)
+        const randomColour = colourList[randomColourIndex]
+        path.style.transition = 'fill 1s ease-in-out'
+        path.style.fill = randomColour
+
+        letters.forEach((letter) => {
+          let randomLetterColourIndex = Math.floor(
             Math.random() * colourList.length
           )
-          const randomColour = colourList[randomColourIndex]
-          if (path) {
-            path.style.transition = 'fill 1s ease-in-out'
-            path.style.fill = randomColour
-          }
-          letters?.forEach((letter) => {
-            let randomLetterColourIndex = Math.floor(
+          while (randomLetterColourIndex === randomColourIndex) {
+            randomLetterColourIndex = Math.floor(
               Math.random() * colourList.length
             )
-            while (randomLetterColourIndex === randomColourIndex) {
-              randomLetterColourIndex = Math.floor(
-                Math.random() * colourList.length
-              )
-            }
-            letter.style.transition = 'color 2s ease-in-out'
-            letter.style.color = colourList[randomLetterColourIndex]
-          })
-        }, 1000)
-      }
+          }
+          letter.style.transition = 'color 2s ease-in-out'
+          letter.style.color = colourList[randomLetterColourIndex]
+        })
+      }, 1000)
+    }
 
-      // Start animation immediately on page load
-      animateLoop()
+    // Start animation immediately on page load
+    animateLoop()
 
-      return () => {
-        if (intervalId) {
-          window.clearInterval(intervalId)
-        }
+    return () => {
+      if (intervalId) {
+        window.clearInterval(intervalId)
       }
     }
   }, [colourList, theme])
@@ -129,9 +127,16 @@ export default function Header() {
           <span className="text-xl uppercase tracking-tight sm:text-2xl">
             <Link to={'/'}>
               <div id="name" className="ibm-plex-sans-700 italic">
-                {name.map((letter, index) => (
-                  <span key={index}>{letter}</span>
-                ))}
+                {(() => {
+                  const occurrences: Record<string, number> = {}
+                  return name.map((letter) => {
+                    const next = (occurrences[letter] ?? 0) + 1
+                    occurrences[letter] = next
+                    return (
+                      <span key={`${letter}-${String(next)}`}>{letter}</span>
+                    )
+                  })
+                })()}
                 <span className="font-normal lowercase">.</span>
                 <span className="font-normal lowercase">d</span>
                 <span className="font-normal lowercase">e</span>
