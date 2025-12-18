@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
 import Work from '../src/components/Work'
 
 vi.mock('react-router-dom', () => ({
@@ -34,7 +34,7 @@ vi.mock('../src/theme/utils', () => ({
 
 describe('Work', () => {
   it('renders heading and hire link', () => {
-    render(<Work selected={[]} onClear={() => {}} />)
+    render(<Work selected={[]} onClear={() => { /* empty */ }} />)
     expect(
       screen.getByRole('heading', { level: 2, name: /selected work/i })
     ).toBeInTheDocument()

@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
 import Tools from '../src/components/Tools'
 import { tools } from '../src/data/tools'
 
@@ -24,14 +24,14 @@ vi.mock('react-responsive-masonry', () => {
 })
 
 vi.mock('@fortawesome/react-fontawesome', () => ({
-  FontAwesomeIcon: (props: { icon: unknown }) => (
+  FontAwesomeIcon: () => (
     <span data-testid="fa-icon">icon</span>
   ),
 }))
 
 describe('Tools', () => {
   it('renders heading and description', () => {
-    render(<Tools selected={[]} onToggle={() => {}} />)
+    render(<Tools selected={[]} onToggle={() => { /* empty */ }} />)
     expect(
       screen.getByRole('heading', { level: 2, name: /tools/i })
     ).toBeInTheDocument()
