@@ -1,5 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import DOMPurify from 'dompurify'
 import { faq } from '../data/faq'
 
 export default function Faq() {
@@ -11,9 +12,9 @@ export default function Faq() {
         </h2>
       </div>
       <div className="divide-y divide-neutral-200 dark:divide-neutral-800">
-        {faq.map((item, idx) => (
+        {faq.map((item) => (
           <details
-            key={idx}
+            key={item.id}
             className="group p-4 hover:bg-neutral-50 dark:hover:bg-neutral-900"
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
@@ -26,7 +27,12 @@ export default function Faq() {
               {typeof item.answer === 'string' ? (
                 item.answer
               ) : (
-                <div dangerouslySetInnerHTML={item.answer} />
+                <div
+                  // eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(item.answer.__html),
+                  }}
+                />
               )}
             </div>
           </details>
