@@ -1,58 +1,58 @@
-import { useEffect, useState } from 'react'
-import { portfolio } from '../data/portfolio'
-import PortfolioCard from './PortfolioCard'
-import { useOutlet } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShuffle } from '@fortawesome/free-solid-svg-icons'
-import { scrollToId } from '../theme/utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useMemo, useState } from 'react'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import { useOutlet } from 'react-router-dom'
+import { portfolio } from '../data/portfolio'
+import { scrollToId } from '../theme/utils'
 import type { ResponsiveMasonryProps } from '../types'
+import PortfolioCard from './PortfolioCard'
 
 interface WorkProps {
   selected: string[]
   onClear: () => void
 }
 
-export default function Work({ selected, onClear }: WorkProps) {
-  const [base, setBase] = useState(portfolio)
-  const [visibleCount, setVisibleCount] = useState(3)
-
-  // Shuffle base order when no filters are active
-  useEffect(() => {
-    if (selected.length === 0) {
-      setBase(shuffleArray(portfolio))
-    }
-  }, [selected])
-
-  // Reset visible count whenever filters change
-  useEffect(() => {
-    setVisibleCount(3)
-  }, [selected])
-
-  const filtered =
-    selected.length === 0
-      ? base
-      : portfolio.filter((item) =>
-          selected.every((tag) => item.tools.includes(tag))
-        )
-
-  function shuffleArray<T>(arr: T[]): T[] {
-    const a = [...arr]
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[a[i], a[j]] = [a[j], a[i]]
-    }
-    return a
+function shuffleArray<T>(arr: T[]): T[] {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
   }
+  return a
+}
+
+type PortfolioItem = (typeof portfolio)[number]
+
+export default function Work({ selected, onClear }: WorkProps) {
+  const [shuffleNonce, setShuffleNonce] = useState(0)
+  const [visibleCounts, setVisibleCounts] = useState<Record<string, number>>({})
+
+  const selectedKey = selected.join('|')
+  const visibleCount = visibleCounts[selectedKey] ?? 3
+
+  const filtered = useMemo<PortfolioItem[]>(() => {
+    if (selected.length === 0) {
+      void shuffleNonce
+      return shuffleArray(portfolio)
+    }
+
+    return portfolio.filter((item) =>
+      selected.every((tag) => item.tools.includes(tag))
+    )
+  }, [selected, shuffleNonce])
 
   const handleShowMore = () => {
-    setVisibleCount((c) => Math.min(c + 3, filtered.length))
+    setVisibleCounts((prev) => {
+      const current = prev[selectedKey] ?? 3
+      return { ...prev, [selectedKey]: Math.min(current + 3, filtered.length) }
+    })
   }
   const handleShuffle = () => {
-    setBase((prev) => shuffleArray(prev))
+    setShuffleNonce((n) => n + 1)
   }
   const handleCollapse = () => {
-    setVisibleCount(3)
+    setVisibleCounts((prev) => ({ ...prev, [selectedKey]: 3 }))
   }
 
   const allShown = visibleCount >= filtered.length

@@ -1,22 +1,23 @@
+import type { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import {
+  faCircleInfo,
   faFileInvoice,
-  faMicrochip,
   faGaugeSimpleHigh,
   faLayerGroup,
+  faMicrochip,
   faRobot,
   faServer,
   faShieldHalved,
   faUnlock,
-  faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import { services } from '../data/services'
-import { howWeWorkItems } from '../data/how-we-work'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import { howWeWorkItems } from '../data/how-we-work'
+import { services } from '../data/services'
 import type { ResponsiveMasonryProps } from '../types'
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, IconDefinition> = {
   faLayerGroup,
   faMicrochip,
   faRobot,
@@ -171,8 +172,8 @@ export default function Services() {
                         <ul
                           className={`text-sm list-inside list-disc text-neutral-700 transition-all duration-300 dark:text-neutral-200 ${expandedCards[service.id] ? 'opacity-100' : 'h-0 overflow-hidden opacity-0'}`}
                         >
-                          {service.details.map((detail, index) => (
-                            <li className="mb-2" key={index}>
+                          {service.details.map((detail) => (
+                            <li className="mb-2" key={detail}>
                               {detail}
                             </li>
                           ))}
@@ -224,8 +225,8 @@ export default function Services() {
                       <ul
                         className={`text-sm list-inside list-disc text-neutral-700 transition-all duration-300 dark:text-neutral-200 ${expandedCards[item.id] ? 'opacity-100' : 'h-0 overflow-hidden opacity-0'}`}
                       >
-                        {item.details.map((detail, index) => (
-                          <li className="mb-2" key={index}>
+                        {item.details.map((detail) => (
+                          <li className="mb-2" key={detail}>
                             {detail}
                           </li>
                         ))}

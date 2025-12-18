@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from 'react'
 import type { PropsWithChildren } from 'react'
-import { applyThemeClass, getSystemTheme } from './utils'
+import { useEffect, useMemo, useState } from 'react'
 import { ThemeContext } from './useTheme'
+import { applyThemeClass, getSystemTheme } from './utils'
 
 type Theme = 'light' | 'dark'
 
@@ -35,9 +35,9 @@ export function ThemeProvider({ children }: PropsWithChildren) {
         setThemeState(getSystemTheme())
       }
     }
-    mq.addEventListener?.('change', listener)
+    mq.addEventListener('change', listener)
     return () => {
-      mq.removeEventListener?.('change', listener)
+      mq.removeEventListener('change', listener)
     }
   }, [])
 
