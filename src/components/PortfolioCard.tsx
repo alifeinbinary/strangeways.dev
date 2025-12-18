@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import type { PortfolioItem } from '../data/portfolio'
 
 export default function PortfolioCard({ item }: { item: PortfolioItem }) {
-  const baseDir = `/portfolio/${item.id}/`
+  const baseDir = `/media/portfolio/${item.id}/`
   const baseName = item.id
   const srcSet = [320, 480, 680, 768, 960, 1200]
     .map((w) => `${baseDir}${baseName}_${String(w)}.webp ${String(w)}w`)

@@ -14,7 +14,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'alifeinbinary',
     title: 'A Life in Binary',
     url: 'https://www.alifeinbinary.com',
-    screenshot: '/portfolio/alifeinbinary/alifeinbinary_768.webp',
+    screenshot: '/media/portfolio/alifeinbinary/alifeinbinary_768.webp',
     shortDescription:
       'Designed and delivered a serverless React app with a custom music API, streaming player, and real-time audio visualiser—fully owned by the client to avoid SaaS lock-in.',
     caseStudy:
@@ -44,7 +44,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'stegg',
     title: 'Stegg',
     url: 'https://stegg.alifeinbinary.com',
-    screenshot: '/portfolio/stegg/stegg_768.webp',
+    screenshot: '/media/portfolio/stegg/stegg_768.webp',
     shortDescription:
       'Delivered a multilingual, SEO-optimized steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
     caseStudy:
@@ -73,7 +73,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'ollami',
     title: 'Ollami',
     url: 'https://github.com/alifeinbinary/ollami',
-    screenshot: '/portfolio/ollami/ollami_768.webp',
+    screenshot: '/media/portfolio/ollami/ollami_768.webp',
     shortDescription:
       'Ollami is a cross-platform desktop application that allows users to run AI models locally. Built with SvelteKit and Python.',
     caseStudy:
@@ -96,7 +96,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'strangeways',
     title: 'Strangeways Studios',
     url: 'https://strangeways.co',
-    screenshot: '/portfolio/strangeways/strangeways_768.webp',
+    screenshot: '/media/portfolio/strangeways/strangeways_768.webp',
     shortDescription:
       'Built a serverless web application that sports an integrated music player, custom API, and 360 virtual tour. Built with React on the AWS platform.',
     caseStudy:
@@ -123,7 +123,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'musichall',
     title: 'Music Hall',
     url: 'https://musichall.band',
-    screenshot: '/portfolio/musichall/musichall_768.webp',
+    screenshot: '/media/portfolio/musichall/musichall_768.webp',
     shortDescription:
       'A static website for the band Music Hall. Built with React.',
     caseStudy: 'A static website for the band Music Hall. Built with React.',
@@ -144,7 +144,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'occupythemovie',
     title: 'Occupy The Movie',
     url: 'https://occupythemovie.com',
-    screenshot: '/portfolio/occupythemovie/occupythemovie_768.webp',
+    screenshot: '/media/portfolio/occupythemovie/occupythemovie_768.webp',
     shortDescription:
       'A static website for the award winning documentary film Occupy: The Movie. Built with React.',
     caseStudy:
@@ -166,7 +166,7 @@ export const portfolio: PortfolioItem[] = [
     id: 'attendtherapy',
     title: 'Attend Therapy',
     url: 'https://attendtherapy.com',
-    screenshot: '/portfolio/attendtherapy/attendtherapy_768.webp',
+    screenshot: '/media/portfolio/attendtherapy/attendtherapy_768.webp',
     shortDescription:
       'A static website for the mental health platform Attend Therapy. Built with React.',
     caseStudy:

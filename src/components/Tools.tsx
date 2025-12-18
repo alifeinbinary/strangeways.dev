@@ -1,7 +1,7 @@
-import { tools, type Tools, type Tool } from '../data/tools'
-import { Parallax } from 'react-scroll-parallax'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import { Parallax } from 'react-scroll-parallax'
+import { tools, type Tool, type Tools } from '../data/tools'
 
 interface ToolsProps {
   selected: string[]
@@ -25,11 +25,11 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
             <picture>
               <source
                 type="image/webp"
-                srcSet="/hero/coder-at-desk_480.webp 480w, /hero/coder-at-desk_768.webp 768w, /hero/coder-at-desk_960.webp 960w, /hero/coder-at-desk_1200.webp 1200w"
+                srcSet="/media/hero/coder-at-desk_480.webp 480w, /media/hero/coder-at-desk_768.webp 768w, /media/hero/coder-at-desk_960.webp 960w, /media/hero/coder-at-desk_1200.webp 1200w"
                 sizes="100vw"
               />
               <img
-                src="/hero/coder-at-desk_768.webp"
+                src="/media/hero/coder-at-desk_768.webp"
                 alt="Coders at work"
                 className="h-full w-full scale-110 object-cover"
                 loading="lazy"

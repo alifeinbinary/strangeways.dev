@@ -17,11 +17,11 @@ export default function Hero() {
           <picture>
             <source
               type="image/webp"
-              srcSet="/hero/cool-room_480.webp 480w, /hero/cool-room_768.webp 768w, /hero/cool-room_960.webp 960w, /hero/cool-room_1200.webp 1200w"
+              srcSet="/media/hero/cool-room_480.webp 480w, /media/hero/cool-room_768.webp 768w, /media/hero/cool-room_960.webp 960w, /media/hero/cool-room_1200.webp 1200w"
               sizes="100vw"
             />
             <img
-              src="/hero/cool-room_768.webp"
+              src="/media/hero/cool-room_768.webp"
               alt="Hero image of a cool room"
               className="h-full w-full scale-110 object-cover"
               loading="eager"
