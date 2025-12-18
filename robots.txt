@@ -25,4 +25,4 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
-Sitemap: https://strangeways.dev/sitemap.xml
+Sitemap: https://www.strangeways.dev/sitemap.xml
