@@ -24,14 +24,19 @@ vi.mock('react-responsive-masonry', () => {
 })
 
 vi.mock('@fortawesome/react-fontawesome', () => ({
-  FontAwesomeIcon: () => (
-    <span data-testid="fa-icon">icon</span>
-  ),
+  FontAwesomeIcon: () => <span data-testid="fa-icon">icon</span>,
 }))
 
 describe('Tools', () => {
   it('renders heading and description', () => {
-    render(<Tools selected={[]} onToggle={() => { /* empty */ }} />)
+    render(
+      <Tools
+        selected={[]}
+        onToggle={() => {
+          /* empty */
+        }}
+      />
+    )
     expect(
       screen.getByRole('heading', { level: 2, name: /tools/i })
     ).toBeInTheDocument()

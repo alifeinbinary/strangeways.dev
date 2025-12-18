@@ -34,7 +34,14 @@ vi.mock('../src/theme/utils', () => ({
 
 describe('Work', () => {
   it('renders heading and hire link', () => {
-    render(<Work selected={[]} onClear={() => { /* empty */ }} />)
+    render(
+      <Work
+        selected={[]}
+        onClear={() => {
+          /* empty */
+        }}
+      />
+    )
     expect(
       screen.getByRole('heading', { level: 2, name: /selected work/i })
     ).toBeInTheDocument()
