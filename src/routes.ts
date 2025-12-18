@@ -6,22 +6,22 @@ import Error from './routes/Error'
 import PostPage from './routes/PostPage'
 
 const router = createHashRouter(
-    [
+  [
+    {
+      path: '/',
+      element: React.createElement(App),
+      loader: appLoader,
+      errorElement: React.createElement(Error),
+      children: [
         {
-            path: '/',
-            element: React.createElement(App),
-            loader: appLoader,
-            errorElement: React.createElement(Error),
-            children: [
-                {
-                    path: '/:id',
-                    element: React.createElement(PostPage),
-                    loader: postPageLoader,
-                },
-            ],
+          path: '/:id',
+          element: React.createElement(PostPage),
+          loader: postPageLoader,
         },
-    ],
-    { basename: import.meta.env.VITE_PUBLIC_URL }
+      ],
+    },
+  ],
+  { basename: import.meta.env.VITE_PUBLIC_URL }
 )
 
 export default router

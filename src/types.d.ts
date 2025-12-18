@@ -1,5 +1,5 @@
 export interface ResponsiveMasonryProps {
-    columnsCountBreakPoints: { [key: number]: number }
-    className?: string
-    gutterBreakPoints?: { [key: number]: string }
+  columnsCountBreakPoints: Record<number, number>
+  className?: string
+  gutterBreakPoints?: Record<number, string>
 }

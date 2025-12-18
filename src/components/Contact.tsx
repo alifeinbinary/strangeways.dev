@@ -1,8 +1,8 @@
 import {
-    faCcAmex,
-    faCcDiscover,
-    faCcMastercard,
-    faCcVisa,
+  faCcAmex,
+  faCcDiscover,
+  faCcMastercard,
+  faCcVisa,
 } from '@fortawesome/free-brands-svg-icons'
 import { faMoneyBillTransfer } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

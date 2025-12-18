@@ -1,15 +1,15 @@
 {
-    "name": "strangeways-ca",
-    "compatibility_date": "2025-12-13",
-    "$schema": "./node_modules/wrangler/config-schema.json",
-    "observability": {
-        "enabled": true
+  "name": "strangeways-ca",
+  "compatibility_date": "2025-12-13",
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "observability": {
+    "enabled": true,
+  },
+  "pages_build_output_dir": "./dist",
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "strangeways-ca",
     },
-    "pages_build_output_dir": "./dist",
-    "r2_buckets": [
-        {
-            "binding": "MEDIA",
-            "bucket_name": "strangeways-ca"
-        }
-    ]
+  ],
 }

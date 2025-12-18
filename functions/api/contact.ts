@@ -8,21 +8,28 @@ export const onRequestPost = async (context: {
   const token = env.PLUNK_API_KEY?.trim()
 
   if (!token) {
-    return new Response(JSON.stringify({ ok: false, error: 'Missing API token' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    })
+    return new Response(
+      JSON.stringify({ ok: false, error: 'Missing API token' }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
   }
 
-  const body = (await context.request.json().catch(() => null)) as
-    | Record<string, unknown>
-    | null
+  const body = (await context.request.json().catch(() => null)) as Record<
+    string,
+    unknown
+  > | null
 
   if (!body) {
-    return new Response(JSON.stringify({ ok: false, error: 'Invalid JSON body' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    })
+    return new Response(
+      JSON.stringify({ ok: false, error: 'Invalid JSON body' }),
+      {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
   }
 
   const normalizedBody = {
@@ -42,7 +49,8 @@ export const onRequestPost = async (context: {
   return new Response(upstreamRes.body, {
     status: upstreamRes.status,
     headers: {
-      'Content-Type': upstreamRes.headers.get('Content-Type') ?? 'application/json',
-    }
+      'Content-Type':
+        upstreamRes.headers.get('Content-Type') ?? 'application/json',
+    },
   })
 }

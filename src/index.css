@@ -1,79 +1,77 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms' {
-    strategy: 'base'; /* only generate global styles; or */
+  strategy: 'base'; /* only generate global styles; or */
 }
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Tailwind v4 CSS-first theme tokens */
 @theme {
-    /* Brand colors */
-    --color-brand-50: #f5f7ff;
-    --color-brand-100: #e9edff;
-    --color-brand-200: #c8d3ff;
-    --color-brand-300: #a6b7ff;
-    --color-brand-400: #7f95ff;
-    --color-brand-500: #6378f6;
-    --color-brand-600: #4f60d6;
-    --color-brand-700: #424fb0;
-    --color-brand-800: #373f8c;
-    --color-brand-900: #2e356f;
-    --color-brand-950: #1a1d3f;
+  /* Brand colors */
+  --color-brand-50: #f7faf0;
+  --color-brand-100: #eef5df;
+  --color-brand-200: #ddeebf;
+  --color-brand-300: #c9e59b;
+  --color-brand-400: #b4d455;
+  --color-brand-500: #9cbf3b;
+  --color-brand-600: #7f9f2f;
+  --color-brand-700: #637f25;
+  --color-brand-800: #4d631d;
+  --color-brand-900: #3c4d17;
+  --color-brand-950: #1f280c;
 
-    /* Typography */
-    --font-sans:
-        'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
-        Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-        'Noto Color Emoji';
+  /* Typography */
+  --font-sans:
+    'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* Shadows */
-    --shadow-subtle:
-        0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.04);
+  /* Shadows */
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
 /* Base tweaks */
 html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    @apply min-h-screen bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
-    overflow-x: clip;
+  @apply min-h-screen bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    [data-aos] {
-        opacity: 1 !important;
-        transform: none !important;
-    }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 a {
-    @apply text-brand-800 dark:text-brand-200 underline-offset-2;
+  @apply text-brand-800 underline-offset-2 dark:text-brand-200;
 }
 
 h2 {
-    @apply text-4xl font-bold tracking-tight sm:text-4xl;
+  @apply text-4xl sm:text-4xl font-bold tracking-tight;
 }
 
 .container-responsive {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
 .card {
-    @apply shadow-subtle rounded-xl border border-neutral-200 bg-neutral-100 p-4 transition-colors duration-500 hover:bg-neutral-50 sm:p-6 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800;
+  @apply rounded-xl border border-neutral-200 bg-neutral-100 p-4 shadow-subtle transition-colors duration-500 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:bg-neutral-800 sm:p-6;
 }
 
 /* Defer rendering for offscreen content */
 .cv-auto {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 600px;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 .ibm-plex-sans-700 {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings: 'wdth' 100;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
 }
