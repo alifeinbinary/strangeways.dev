@@ -1,5 +1,5 @@
 {
-  "name": "strangeways-ca",
+  "name": "strangeways-dev",
   "compatibility_date": "2025-12-13",
   "$schema": "./node_modules/wrangler/config-schema.json",
   "observability": {
@@ -9,7 +9,7 @@
   "r2_buckets": [
     {
       "binding": "MEDIA",
-      "bucket_name": "strangeways-ca",
+      "bucket_name": "strangeways-dev",
     },
   ],
 }
