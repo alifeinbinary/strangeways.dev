@@ -1,9 +1,9 @@
 import React from 'react'
-import App from './App'
 import { createHashRouter } from 'react-router-dom'
-import { appLoader, postPageLoader } from './utils/loaders'
+import App from './App'
 import Error from './routes/Error'
 import PostPage from './routes/PostPage'
+import { appLoader, postPageLoader } from './utils/loaders'
 
 const router = createHashRouter(
   [
@@ -21,7 +21,7 @@ const router = createHashRouter(
       ],
     },
   ],
-  { basename: import.meta.env.VITE_PUBLIC_URL }
+  { basename: import.meta.env.VITE_PUBLIC_URL as string }
 )
 
 export default router

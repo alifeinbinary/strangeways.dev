@@ -1,12 +1,17 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import { RouterProvider } from 'react-router-dom'
+import { ParallaxProvider } from 'react-scroll-parallax'
+import './index.css'
 import router from './routes'
 import { ThemeProvider } from './theme/ThemeProvider'
-import { ParallaxProvider } from 'react-scroll-parallax'
 
-createRoot(document.getElementById('root')!).render(
+const rootEl = document.getElementById('root')
+if (!rootEl) {
+  throw new Error('Root element "#root" not found')
+}
+
+createRoot(rootEl).render(
   <StrictMode>
     <ParallaxProvider>
       <ThemeProvider>
