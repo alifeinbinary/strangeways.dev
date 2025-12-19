@@ -1,6 +1,6 @@
-import { useTheme } from '../theme/useTheme'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTheme } from '../theme/useTheme'
 
 export default function ThemeToggle() {
   const { theme, toggle } = useTheme()
@@ -18,9 +18,6 @@ export default function ThemeToggle() {
       ) : (
         <FontAwesomeIcon icon={faSun} />
       )}
-      <span className="hidden sm:inline">
-        {theme === 'dark' ? 'Dark' : 'Light'}
-      </span>
     </button>
   )
 }

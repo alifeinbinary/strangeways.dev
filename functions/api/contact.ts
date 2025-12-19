@@ -1,9 +1,10 @@
 export const onRequestPost = async (context: {
-  env: { PLUNK_API_KEY?: string }
+  env: { PLUNK_API_KEY?: string; PLUNK_API_URL?: string }
   request: Request
 }) => {
   const env = context.env as {
     PLUNK_API_KEY?: string
+    PLUNK_API_URL?: string
   }
   const token = env.PLUNK_API_KEY?.trim()
 
@@ -37,7 +38,7 @@ export const onRequestPost = async (context: {
     '': typeof body[''] === 'string' ? body[''] : '',
   }
 
-  const upstreamRes = await fetch('https://send.strangeways.co/api/v1/send', {
+  const upstreamRes = await fetch(env.PLUNK_API_URL + '/send', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

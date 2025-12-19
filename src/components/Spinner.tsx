@@ -23,12 +23,12 @@ export function Spinner({
     >
       <>
         <img
-          src="/tesseract-light.svg"
+          src="/tesseract-dark.svg"
           alt={label}
           className={`${sizeClasses[size]} block animate-spin dark:hidden`}
         />
         <img
-          src="/tesseract-dark.svg"
+          src="/tesseract-light.svg"
           alt={label}
           className={`${sizeClasses[size]} hidden animate-spin dark:block`}
         />
