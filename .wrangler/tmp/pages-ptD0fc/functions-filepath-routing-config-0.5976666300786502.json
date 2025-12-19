@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "routePath": "/api/contact",
+      "mountPath": "/api",
+      "method": "POST",
+      "module": [
+        "api/contact.ts:onRequestPost"
+      ]
+    },
+    {
+      "routePath": "/media/:all*",
+      "mountPath": "/media",
+      "method": "GET",
+      "module": [
+        "media/[[all]].ts:onRequestGet"
+      ]
+    },
+    {
+      "routePath": "/",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "index.ts:onRequest"
+      ]
+    }
+  ],
+  "baseURL": "/"
+}
