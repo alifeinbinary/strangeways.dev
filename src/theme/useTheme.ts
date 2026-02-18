@@ -1,8 +1,7 @@
-import { use } from 'react'
+import { createContext, use } from 'react'
 import type { Theme } from './utils'
-import { createContext } from 'react'
 
-export interface ThemeContextValue {
+interface ThemeContextValue {
   theme: Theme
   setTheme: (t: Theme) => void
   toggle: () => void

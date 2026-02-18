@@ -1,6 +1,6 @@
 type FAQAnswer = string | { __html: string }
 
-export interface FAQItem {
+interface FAQItem {
   id: number
   question: string
   answer: FAQAnswer

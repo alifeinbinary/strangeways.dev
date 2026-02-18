@@ -1,4 +1,4 @@
-export interface HowWeWorkItem {
+interface HowWeWorkItem {
   id: string
   title: string
   summary: string
