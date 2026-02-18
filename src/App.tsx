@@ -49,10 +49,10 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    let initialized = false
+    let initialised = false
     const init = async () => {
-      if (initialized) return
-      initialized = true
+      if (initialised) return
+      initialised = true
       const { getCalApi } = await import('@calcom/embed-react')
       const cal = await getCalApi({
         namespace: '30min',

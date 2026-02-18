@@ -33,7 +33,7 @@ export const onRequestPost = async (context: {
     )
   }
 
-  const normalizedBody = {
+  const normalisedBody = {
     ...body,
     '': typeof body[''] === 'string' ? body[''] : '',
   }
@@ -44,7 +44,7 @@ export const onRequestPost = async (context: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(normalizedBody),
+    body: JSON.stringify(normalisedBody),
   })
 
   return new Response(upstreamRes.body, {

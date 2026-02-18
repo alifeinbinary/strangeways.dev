@@ -46,12 +46,12 @@ export const portfolio: PortfolioItem[] = [
     url: 'https://stegg.alifeinbinary.com',
     screenshot: '/media/portfolio/stegg/stegg_768.webp',
     shortDescription:
-      'Delivered a multilingual, SEO-optimized steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
+      'Delivered a multilingual, SEO-optimised steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
     caseStudy:
-      'Delivered a multilingual, SEO-optimized steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
+      'Delivered a multilingual, SEO-optimised steganographic web application with a headless CMS, Lighthouse 95+ scores, and responsive design across devices.',
     outcomes: {
       0: 'Multilingual',
-      1: 'SEO-optimized',
+      1: 'SEO-optimised',
       2: 'Steganographic web application',
       3: 'Headless CMS',
       4: 'Lighthouse 95+ scores',

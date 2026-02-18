@@ -43,7 +43,7 @@ export const faq: FAQItem[] = [
     id: 6,
     question: 'Will my site be accessible and SEO-friendly?',
     answer:
-      'Yes. We build to WCAG best practices, optimize performance (Core Web Vitals), and implement technical SEO fundamentals from day one.',
+      'Yes. We build to WCAG best practices, optimise performance (Core Web Vitals), and implement technical SEO fundamentals from day one.',
   },
   {
     id: 7,
