@@ -22,8 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.wrangler/
+.wrangler/*
 .env
 
 no-commit/
 ./media/
+.wrangler/deploy/config.json
