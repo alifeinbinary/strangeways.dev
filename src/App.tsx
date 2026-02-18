@@ -64,7 +64,7 @@ export default function App() {
         config: { layout: 'month_view', theme: 'auto' },
         buttonText: 'Book a free consultation',
         hideButtonIcon: false,
-        buttonColor: '#1a1d3f',
+        buttonColor: '#637f25',
         buttonTextColor: '#f5f7ff',
       })
       cal('ui', {

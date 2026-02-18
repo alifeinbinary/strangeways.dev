@@ -9,6 +9,8 @@ interface ToolsProps {
 }
 
 export default function Tools({ selected, onToggle }: ToolsProps) {
+  const selectedCount = selected.length
+
   return (
     <section
       id="tools"
@@ -38,23 +40,30 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
             </picture>
           </Parallax>
 
-          {/* Gradient overlay */}
+          {/* Enhanced gradient overlay */}
           <div
-            className="bg-linear-to-t pointer-events-none absolute inset-0 z-10 from-transparent via-white/60 to-white/90 dark:via-black/60 dark:to-black/90"
+            className="bg-linear-to-t pointer-events-none absolute inset-0 z-10 from-transparent via-white/70 to-white/95 dark:via-black/70 dark:to-black/95"
             aria-hidden="true"
           />
 
-          <div className="relative z-20 mb-4 max-w-3xl">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Tools
-            </h2>
-            <p className="mt-3 text-neutral-900 dark:text-neutral-200">
+          <div className="relative z-20 mb-6 max-w-3xl">
+            <div className="mb-4 flex items-center gap-3">
+              <h2 className="sm:text-4xl text-3xl font-bold tracking-tight">
+                Tools
+              </h2>
+              {selectedCount > 0 && (
+                <span className="text-sm inline-flex items-center rounded-full bg-brand-100 px-3 py-1 font-medium text-brand-800 dark:bg-brand-900 dark:text-brand-200">
+                  {selectedCount} selected
+                </span>
+              )}
+            </div>
+            <p className="text-lg leading-relaxed text-neutral-800 dark:text-neutral-200">
               We love building beautifully crafted, performant web digital
-              products with the right tools. Select the tools you are interested
-              in to filter out relevant projects where we've used those
-              technologies.
+              products with the right tools. Select the technologies you're
+              interested in to filter relevant projects from our portfolio.
             </p>
           </div>
+
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 2, 750: 2, 900: 4 }}
             className="relative z-20"
@@ -63,12 +72,17 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
               {tools.map((toolGroup: Tools) => (
                 <article
                   key={toolGroup.label}
-                  className="card flex h-fit w-full flex-col overflow-hidden"
+                  className="card group/tool-category transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <h3 className="text-lg pb-3 font-semibold tracking-tight">
-                    {toolGroup.label}
-                  </h3>
-                  <ul className="flex list-none flex-wrap gap-1 p-0">
+                  <div className="mb-4 flex items-center justify-between">
+                    <h3 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+                      {toolGroup.label}
+                    </h3>
+                    <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                      {toolGroup.tools.length} tools
+                    </div>
+                  </div>
+                  <ul className="flex list-none flex-wrap gap-2 p-0">
                     {toolGroup.tools.map((tool: Tool) => {
                       const isSelected = selected.includes(tool.name)
                       const tipId = `tip-${tool.name.toLowerCase().replace(/\s+/g, '-')}`
@@ -81,44 +95,44 @@ export default function Tools({ selected, onToggle }: ToolsProps) {
                             type="button"
                             aria-pressed={isSelected}
                             aria-describedby={tipId}
-                            aria-label={tool.name}
+                            aria-label={`Toggle ${tool.name} filter`}
                             onClick={() => {
                               onToggle(tool.name)
                             }}
                             className={[
-                              'h-auto w-14 cursor-pointer rounded-full px-2 pb-0 pt-2 text-[32px] transition-colors duration-500 hover:bg-neutral-200 dark:hover:bg-neutral-700',
+                              'h-16 w-16 cursor-pointer rounded-2xl p-3 text-[28px] transition-all duration-300 hover:scale-110 hover:shadow-md',
                               isSelected
-                                ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
-                                : 'bg-neutral-100 text-inherit dark:bg-neutral-800',
+                                ? 'bg-linear-to-br from-brand-500 to-brand-600 text-white shadow-lg ring-2 ring-brand-500 ring-offset-2 dark:ring-offset-neutral-900'
+                                : 'bg-brand-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700',
                             ].join(' ')}
                           >
-                            <span className="inline-flex items-center gap-2 align-baseline">
+                            <span className="inline-flex h-full w-full items-center justify-center">
                               {typeof tool.icon !== 'string' ? (
                                 <FontAwesomeIcon
                                   icon={tool.icon}
+                                  className={isSelected ? 'text-white' : ''}
                                   style={{
-                                    color: '#7f95ff',
+                                    color: isSelected ? undefined : '#9cbf3b',
                                   }}
                                 />
                               ) : (
                                 <img
                                   src={tool.icon}
                                   alt={tool.name}
-                                  width={30}
-                                  height={30}
+                                  width={24}
+                                  height={24}
                                   className="object-contain"
                                 />
                               )}
-                              {/* <span>{tool.name}</span> */}
                             </span>
                           </button>
                           <span
                             id={tipId}
                             role="tooltip"
-                            className="text-xs pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-neutral-900 px-2 py-1 text-white opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100 dark:bg-white dark:text-neutral-900"
+                            className="text-sm pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-neutral-900 px-3 py-2 font-medium text-white opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 dark:bg-white dark:text-neutral-900"
                           >
                             {tool.name}
-                            <span className="absolute left-1/2 top-5 h-2 w-2 -translate-x-1/2 rotate-45 bg-neutral-900 dark:bg-white"></span>
+                            <span className="absolute left-1/2 top-full h-2 w-2 -translate-x-1/2 rotate-45 bg-neutral-900 dark:bg-white"></span>
                           </span>
                         </li>
                       )
