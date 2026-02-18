@@ -41,7 +41,8 @@ export default function Hero() {
         <div className="relative z-20 flex h-full max-w-3xl items-end px-4 pb-8 text-neutral-900 dark:text-neutral-300 sm:px-4">
           <div>
             <h1 className="sm:text-5xl text-3xl font-semibold tracking-tight">
-              We build software and infrastructure tools that help businesses thrive
+              We build software and infrastructure tools that help businesses
+              thrive
             </h1>
             <p className="text-lg mt-4">
               We design and deliver web apps, embeddable devices, agentic AI,

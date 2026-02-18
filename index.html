@@ -183,9 +183,19 @@
   </head>
   <body>
     <!-- SEO H1 for search engines - hidden when React loads -->
-    <h1 
-      id="seo-h1" 
-      style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;"
+    <h1
+      id="seo-h1"
+      style="
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      "
     >
       We build software and infrastructure tools that help businesses thrive.
     </h1>
@@ -195,12 +205,12 @@
     <script>
       // Hide the SEO H1 once React loads the real one
       setTimeout(() => {
-        const seoH1 = document.getElementById('seo-h1');
-        const reactH1 = document.querySelector('#root h1');
+        const seoH1 = document.getElementById('seo-h1')
+        const reactH1 = document.querySelector('#root h1')
         if (seoH1 && reactH1) {
-          seoH1.style.display = 'none';
+          seoH1.style.display = 'none'
         }
-      }, 100);
+      }, 100)
     </script>
     <!-- Hidden Netlify form for build-time detection -->
     <form name="contact" netlify-honeypot="bot-field" hidden netlify>
