@@ -8,8 +8,8 @@ export default function Hero() {
       className="container mx-auto max-w-7xl px-0 py-0 sm:px-4 sm:py-0"
     >
       <div className="fit-content relative overflow-hidden pt-12">
-        <div className='absolute inset-0 z-0'>
-          <Plasma 
+        <div className="absolute inset-0 z-0">
+          <Plasma
             color="#b4d455"
             speed={0.6}
             direction="forward"
