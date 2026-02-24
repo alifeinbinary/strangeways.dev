@@ -228,5 +228,3 @@ export const Plasma: React.FC<PlasmaProps> = ({
     />
   )
 }
-
-export default Plasma
