@@ -196,7 +196,7 @@ export const Plasma: React.FC<PlasmaProps> = ({
         const pingpongTime = isForward
           ? smooth * pingpongDuration
           : (1 - smooth) * pingpongDuration
-        
+
         ;(program.uniforms as Uniforms).uDirection.value = 1.0
         ;(program.uniforms as Uniforms).iTime.value = pingpongTime
       } else {
