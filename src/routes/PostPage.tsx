@@ -99,7 +99,9 @@ export default function PostPage() {
           <div className="relative">
             <div
               className={`min-h-[300px] overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-                caseStudyExpanded || !isLongCaseStudy ? 'max-h-[400px] overflow-y-auto' : 'max-h-36'
+                caseStudyExpanded || !isLongCaseStudy
+                  ? 'max-h-[400px] overflow-y-auto'
+                  : 'max-h-36'
               }`}
             >
               <div className="space-y-3">
@@ -114,14 +116,16 @@ export default function PostPage() {
               </div>
             </div>
             {isLongCaseStudy && !caseStudyExpanded && (
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-white to-transparent dark:from-neutral-900" />
+              <div className="bg-linear-to-t pointer-events-none absolute inset-x-0 bottom-0 h-16 from-white to-transparent dark:from-neutral-900" />
             )}
           </div>
           {isLongCaseStudy && (
             <button
               type="button"
-              onClick={() => { setCaseStudyExpanded(!caseStudyExpanded) }}
-              className="mt-3 self-start text-sm font-semibold text-brand-600 transition-colors duration-200 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
+              onClick={() => {
+                setCaseStudyExpanded(!caseStudyExpanded)
+              }}
+              className="text-sm mt-3 self-start font-semibold text-brand-600 transition-colors duration-200 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300"
             >
               {caseStudyExpanded ? 'Read less ↑' : 'Read more ↓'}
             </button>
@@ -188,7 +192,7 @@ export default function PostPage() {
         data-aos-delay="300"
       >
         <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
+          <p className="text-xs mb-2 font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
             Technology Stack
           </p>
           <div className="flex flex-wrap gap-2">
