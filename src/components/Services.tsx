@@ -114,7 +114,7 @@ export default function Services() {
           <div className="lg:col-span-8">
             <div className="">
               <ResponsiveMasonry
-                {...({
+                {...{
                   columnsCountBreakPoints: {
                     320: 1,
                     768: 2,
@@ -126,7 +126,7 @@ export default function Services() {
                     768: 1,
                     960: 1,
                   },
-                })}
+                }}
               >
                 <Masonry>
                   {services.map((service) => (
