@@ -5,7 +5,6 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { useOutlet } from 'react-router-dom'
 import { portfolio } from '../data/portfolio'
 import { scrollToId } from '../theme/utils'
-import type { ResponsiveMasonryProps } from '../types'
 import PortfolioCard from './PortfolioCard'
 
 interface WorkProps {
@@ -177,7 +176,7 @@ export default function Work({ selected, onClear }: WorkProps) {
 
       <div className="" aria-live="polite">
         <ResponsiveMasonry
-          {...({
+          {...{
             columnsCountBreakPoints: {
               320: 1,
               640: 2,
@@ -187,13 +186,13 @@ export default function Work({ selected, onClear }: WorkProps) {
             },
             className: 'relative z-20',
             gutterBreakPoints: {
-              320: '1.5rem',
-              768: '1.5rem',
-              960: '2rem',
+              320: 1.5,
+              768: 1.5,
+              960: 2,
             },
-          } as ResponsiveMasonryProps)}
+          }}
         >
-          <Masonry>
+          <Masonry {...{ gutter: '2.5rem' }}>
             {filtered.slice(0, visibleCount).map((item, index) => (
               <div
                 key={item.id}

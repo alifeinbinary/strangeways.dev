@@ -15,7 +15,6 @@ import { useState } from 'react'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { howWeWorkItems } from '../data/how-we-work'
 import { services } from '../data/services'
-import type { ResponsiveMasonryProps } from '../types'
 
 const iconMap: Record<string, IconDefinition> = {
   faLayerGroup,
@@ -123,11 +122,11 @@ export default function Services() {
                   },
                   className: 'relative z-20',
                   gutterBreakPoints: {
-                    320: '1rem',
-                    768: '1rem',
-                    960: '1rem',
+                    320: 1,
+                    768: 1,
+                    960: 1,
                   },
-                } as ResponsiveMasonryProps)}
+                })}
               >
                 <Masonry>
                   {services.map((service) => (
