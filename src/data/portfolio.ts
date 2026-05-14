@@ -163,6 +163,35 @@ export const portfolio: PortfolioItem[] = [
     ],
   },
   {
+    id: 'vancouversublets',
+    title: 'Vancouver Sublets',
+    url: 'https://www.vancouversublets.ca',
+    screenshot: '/media/portfolio/vancouversublets/vancouversublets_768.webp',
+    shortDescription:
+      'Transformed an unfinished rental platform into a high-performance, AI-discoverable listing site—then launched a data-driven paid campaign that generated over a million impressions and tens of thousands of clicks in its first week.',
+    caseStudy:
+      'With FIFA 2026 bringing tens of thousands of international visitors to Vancouver, a local sublet platform had a narrow window to capture a surge in demand for short-term rentals. The site was live but incomplete: ~36-second homepage load time, unoptimised images, minimal SEO, no analytics, and no acquisition strategy. We completed and optimised the platform for broader reach.\n\nPerformance came first. We replaced placeholder imagery with real listings, optimised images in modern formats, and enabled CDN delivery. We then instrumented the full stack: Google Analytics, Google Tag Manager, and Meta Pixel. We also authored a structured llms.txt and generated Markdown versions of every listing, making the catalogue directly ingestible by AI search engines like ChatGPT, Perplexity, and Claude.\n\nWith tracking live, we ran rapid A/B testing across key source markets to identify converting audiences and creatives. That intelligence shaped the full campaign rollout: targeted paid ads across Meta, Reddit, and Google, aimed at high-budget international travellers in cities with strong World Cup followings—London, Madrid, Paris, Rome, and Dubai. Real-time performance data enabled rapid pivots on creative and targeting, sustaining low CPC as we scaled.\n\nCompleted in 5 business days. Daily visitors grew from 125 to 2,000 (16x), and daily events from 150 to 7,000 (47x). The first week of the campaign delivered over one million impressions and tens of thousands of clicks.',
+    outcomes: {
+      0: 'Daily visitors increased from 125 to 2,000 (16x growth).',
+      1: 'Daily events increased from 150 to 7,000 (47x growth).',
+      2: 'Page load time reduced from ~36 seconds to sub-3 seconds.',
+      3: 'Over 1,000,000 ad impressions in the first week of the campaign.',
+      4: 'Tens of thousands of clicks delivered at a sustainable cost-per-click.',
+      5: 'llms.txt and per-listing Markdown files published for AI search discoverability.',
+      6: 'Multi-channel paid campaign across Meta, Reddit, and Google targeting international travellers.',
+      7: 'Project completed in 5 business days.',
+    },
+    tools: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Vercel',
+      'Google Analytics',
+      'Meta Ads',
+      'Reddit Ads',
+    ],
+  },
+  {
     id: 'attendtherapy',
     title: 'Attend Therapy',
     url: 'https://attendtherapy.com',
